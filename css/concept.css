@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+/* ====================================
+// コンセプト内容
+// ==================================== */
+
+.concept {
+    margin: 0 auto;
+}
+
+.concept__title {
+    font-size: 65px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+.concept__subTitle {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 56px;
+}
+
+.concept__contentTitle {
+    width: max-content;
+    font-size: 24px;
+    line-height: 1.75;
+    padding-bottom: 56px;
+    margin: 0 auto;
+}
+
+.concept__contentText {
+    font-size: 20px;
+    line-height: 1.75;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.concept__contentTextEnd {
+    font-size: 20px;
+    line-height: 1.75;
+    text-align: center;
+    padding-bottom: 134px;
+}
+
+.headingConcept {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 88px;
+}
+
+.stepContainer {
+    display: flex;
+}
+
+.stepContainer__left {
+    width: 38.8%; /* 388 / 1000 */
+}
+
+/* .step__unit { */
+    /* width: 38.8%;  */
+    /* 388 / 1000 */
+    /* height: 484px; */
+/* } */
+
+.step__heading {
+    width: 100%;
+    height: 63px;
+    display: flex;
+    border: solid 2px #333;
+    border-radius: 16px 0 0 0;
+    background-color: #fbff6c;
+    margin-bottom: 7px;
+}
+
+.step__number {
+    width: 118px;
+    height: 59px;
+    border-right: solid 2px #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step__numberText {
+    font-size: 20px;
+}
+
+.step__title {
+    width: 270px;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.step__titleText {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.step__image {
+    width: 100%;
+    /* width: 38.8%; */
+    /* 388 / 1000 */
+    height: auto;
+    aspect-ratio: 388 / 412;
+    border: solid 2px #333;
+    border-radius: 0 0 16px 0;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+/* .step__img {
+    width: 100%;
+    height: auto;
+} */
+
+.step1__content {
+    padding-bottom: 232px;
+}
+
+.step__Text {
+    /* width: 38.8%; */
+    /* 388 / 1000 */
+    font-size: 16px;
+    line-height: 1.75;
+    text-align: justify;
+    /* padding-bottom: 232px; */
+}
+
+.stepContainer__right {
+    position: relative;
+}
+
+.footprints__step2 {
+    width: 210px;
+    height: 380px;
+    top: -16px;
+    right: -272px;
+    position: absolute;
+}
+
+.footprints__step7 {
+    width: 210px;
+    height: 380px;
+    /* 画像を回転させる */
+    transform: rotate(40deg);
+    top: 2840px;
+    right: -440px;
+    position: absolute;
+}
+
+.step2__content {
+    padding-bottom: 196px;
+    /* position: relative; */
+}
+
+.stepContainer__left {
+    position: relative;
+}
+
+.footprints__step3 {
+    width: 210px;
+    height: 380px;
+    /* 画像を水平方向（X軸）に反転させ、回転させる */
+    transform: scaleX(-1) rotate(20deg);
+    /* transform: scaleX(-1); */
+    top: 1440px;
+    left: -224px;
+    position: absolute;
+}
+
+.step3__content {
+    padding-bottom: 208px;
+    position: relative;
+}
+
+.step4__content {
+    padding-bottom: 248px;
+}
+
+.step5__content {
+    padding-bottom: 232px;
+}
+
+/* .step6__content {
+    padding-bottom: 248px;
+} */
+
+.step7__content {
+    padding-bottom: 368px;
+    /* position: relative; */
+}
+
+.stepContainer__center {
+    width: 22.4%; /* 224 / 1000 */
+}
+
+.arrow1-2 {
+    padding-top: 312px;
+    padding-bottom: 568px;
+    text-align: center;
+}
+
+.arrowRight__img {
+    width: 40.2%; /* 90 /224 */
+    height: auto;
+    aspect-ratio: 9 / 6;
+}
+
+.arrow2-3 {
+    padding-bottom: 264px;
+    text-align: center;
+}
+
+.arrowLeft__img {
+    width: 40.2%; /* 90 /224 */
+    height: auto;
+    aspect-ratio: 9 / 6;
+    /* 画像を水平方向（X軸）に反転させる */
+    transform: scaleX(-1);
+}
+
+.arrow3-4 {
+    padding-bottom: 568px;
+    text-align: center;
+}
+
+.arrow4-5 {
+    padding-bottom: 248px;
+    text-align: center;
+}
+
+.arrow5-6 {
+    padding-bottom: 568px;
+    text-align: center;
+}
+
+.arrow6-7 {
+    text-align: center;
+}
+
+.stepContainer__right {
+    padding-top: 192px;
+    width: 38.8%; /* 388 / 1000 */
+}
+

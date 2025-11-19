@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/* ====================================
+// ヘッダー
+// ==================================== */
+
+/* ====================================
+// カテゴリボタン
+// ==================================== */
+.category {
+    max-width: 880px;
+    /* padding-top: 104px; */
+    padding-bottom: 96px;
+    margin: 0 auto;
+}
+
+.category
+
+.category__list {
+    /* max-width: 1000px; */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center;
+    gap: 40px; */
+    justify-content: space-between;
+}
+
+/* .select-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 144px;
+    /* width: 16.4% */
+    /* height: 48px;
+    border: 1px solid #333;
+    border-radius: 24px;
+    background-color: #fbff6c;
+}  */
+
+/* .category__item--selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 144px;
+    height: 48px;
+    border: solid 1px #333;
+    border-radius: 24px;
+    background-color: #fbff6c;
+} */
+
+/* .category__item {
+    width: 144px;
+    height: 48px;
+} */
+
+.category__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    width: 144px;
+    height: 48px;
+    border: solid 1px #333;
+    border-radius: 24px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.category__btn:hover {
+    opacity: 0.75;/* ボタンにカーソルを合わせた時の不透明度を調節 */
+    /* transition: 0.5s ease; */
+    cursor: pointer;
+    background-color: #fbff6c;
+}
+
+input[name="tab__item"] {
+  display: none;
+}
+
+/*選択されているタブのスタイルを変える*/
+.category__list input:checked + .category__btn {
+  background-color: #fbff6c;
+}
+
+/* ====================================
+// グリッド画像
+// ==================================== */
+#all__content,
+#website__content,
+#banner__content,
+#graphic__content,
+#illust__content {
+    display: none;
+}
+
+#all__content.is-active,
+#website__content.is-active,
+#banner__content.is-active,
+#graphic__content.is-active,
+#illust__content.is-active {
+    display: block;
+}
+
+.noImg__text {
+    font-size: 60px;
+    font-weight: bold;
+    /* padding-top: 96px; */
+    padding-bottom: 386px;
+    text-align: center;
+}
+
+.grid__container {
+    /* width: 100%; */
+    height: auto;
+    /* align-items: stretch; */
+    /* padding-top: 96px; */
+    padding-bottom: 386px;
+    display: grid;
+    grid-template-columns	:repeat(3, 1fr);
+    grid-template-rows	:repeat(4, 1fr);
+    /* gapを%で設定すると横と縦のgap幅が異なる */
+    /* gapを%で設定するとgrid全体の高さがgap分短くなってしまう */
+    /* gap: 5%; */
+    gap: 50px 50px;
+}
+
+.grid__item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 12px;
+}
+
+.grid__item--landscape {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 12px;
+}
+
+
+

@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+.mockup {
+    max-width: 828px;
+    height: auto;
+    aspect-ratio: 828 / 556;
+    background-color: white;
+    border: solid 2px #333;
+    border-radius: 32px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 104px;
+}
+
+.mockup__pc {
+    width: 69.8%; /* 578 / 828 */
+    height: auto;
+    aspect-ratio: 578 / 497;
+    position: absolute;
+    top: 5.3%; /* 29.5 / 556 */
+    /* right: 170px; */
+    right: 20.5%; /* 170 / 828 */
+}
+
+.mockup__sp {
+    width: 26.3%; /* 218 / 828 */
+    height: auto;
+    aspect-ratio: 218 / 403;
+    position: absolute;
+    top: 21.6%; /* 120 / 556 */
+    /* right: 60px; */
+    right: 7.2%; /* 60 / 556 */
+}
+
+.workInfo {
+    max-width: 828px;
+    margin: 0 auto;
+}
+
+.workInfo__list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.workInfo__textContainer {
+    display: flex;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #333;
+}
+
+.workInfo__textTitle {
+    font-size: 16px;
+    font-weight: bold;
+    width: 30.9%; /* 256 / 828 */
+    /* max-width: 256px;
+    width: 100%; */
+}
+
+.workInfo__textContent {
+    font-size: 16px;
+    /* margin-left: 30.9%;  */
+    /* 256 / 828 */
+}
+
+.workIntent {
+    padding-top: 56px;
+    padding-bottom: 172px;
+    display: flex;
+}
+
+.workIntent__listItem {
+    width: 69.1%;/* 100% - 30.9% */
+}
+
+.workIntent__targetList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.workIntent__targetContainer {
+    /* width: 68.8%; */
+    /* 570 / 828 */
+    height: 16px; /* display: inline-block;の関係で下に空白の行が生まれるため16pxに設定 */
+    display: flex;
+    /* font-size: 0; */
+    /* 親要素内のスペースを無効化 */
+}
+
+.workIntent__targetTitle {
+    /* width: 24.6%; */
+    /* 140 / 570 */
+    width: 12.3%; /* 70 / 570 */
+    font-size: 16px;
+    /* letter-spacing: 28px; */
+    text-align: justify;
+    /* text-justify: inter-character; */
+}
+
+.force-justify {
+    display: inline-block;
+    /* 垂直方向の配置をベースラインではなく、要素の底（bottom）に合わせる */
+    /* vertical-align: middle; */
+    width: 100%;
+}
+
+/* .workIntent__targetTitle p {
+    text-align: justify;
+    text-justify: inter-character;
+} */
+
+.workIntent__afterTargetTitle {
+    width: 12.3%; /* 70 / 570 */
+    font-size: 16px;
+}
+
+.workIntent__targetText {
+    font-size: 16px;
+    /* padding-bottom: 12px; */
+    /* line-height: 1.75; */
+}
+
+.workIntent__targetTextInner {
+    padding-bottom: 12px;
+}
+
+.workIntent__contentText {
+    padding-top: 64px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.workImg {
+    max-width: 828px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start; /* 内部の画像 (<img>) を上端に揃える */
+    padding-bottom: 336px;
+    gap: 80px;
+}
+
+.workImg__pc {
+    /* width: 516px; */
+    width: 62.3%;/* 516 / 828 */
+    /* height: 2150px; */
+    height: auto;
+    aspect-ratio: 516 / 2150;
+    /* padding-bottom: auto; */
+    object-fit: contain;
+}
+
+.workImg__sp {
+    /* width: 226px; */
+    width: 27.3%;/* 226 / 828 */ 
+    /* height: 3339px; */
+    height: auto;
+    aspect-ratio: 226 / 3339;
+}
+
+.backBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 72px;
+    border: solid 1px #333;
+    border-radius: 36px;
+    background-color: #27c1ae;
+    margin: 0 auto;
+    margin-bottom: 336px;
+    /* top: 40px; */
+    /* right: 50px; */
+    position: relative;
+    /* z-index: 9998; */
+    /* cursor: pointer; */
+}
+
+.backBtn__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.triangle-left {
+    background-color: white;
+    /* background-color: #333; */
+    height: 8px;
+    width: calc(8px / 2 * tan(60deg));
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    position: absolute;
+    top: 32px;
+    left: 10%;
+}

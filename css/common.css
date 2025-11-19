@@ -1,0 +1,337 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    /* position: relative; */
+}
+
+/* ====================================
+// ヘッダー
+// ==================================== */
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    position: fixed;
+    /* position: absolute; */
+    padding-top: 40px;
+    padding-right: 3.1%;
+    padding-left: 3.7%;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header__nav {
+    max-width: 535px;
+    width: 100%;
+}
+
+.header__logoItem {
+    width: 90px;
+}
+
+.header__navList {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__navItem {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header__contactBtn {
+    /* font-weight: bold; */
+    /* font-size: 16px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 144px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: #333;
+    /* top: 40px; */
+    /* right: 50px; */
+    /* position: absolute; */
+    /* z-index: 9998; */
+    /* cursor: pointer; */
+}
+
+.header__contactBtnText {
+    color: #fff;
+}
+
+.fixMenu__list {
+    max-width: 140px;
+    width: 100%;
+    position: fixed;
+    /* top: 166px; */
+    top: 128px;
+    right: 3.1%;
+    transform: rotate(90deg) translate(100%, 0);
+    transform-origin: right top;
+    /* cursor: pointer; */
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.fixMenu__text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ====================================
+// メイン
+// ==================================== */
+main {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* ====================================
+// タイトル
+// ==================================== */
+.title {
+    /* padding-top: 336px; */
+    padding-top: 196px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.heading__h1 {
+    /* width: auto; */
+    width: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    /* font-weight: bold; */
+    padding-bottom: 16px;
+    border-bottom: 3px solid #333;
+    margin-bottom: 104px;
+}
+
+/* ====================================
+// コンタクト
+// ==================================== */
+.contact {
+    position: relative;
+}
+/* ============================ */
+/* カードの装飾 */
+.contact__outerLine {
+    max-width: 856px;
+    height: 1184px;
+    left: 10px;
+    right: 10px;
+    margin: auto;
+    border: solid 2px #333;
+    border-radius: 40px;
+    background-color: #efefef;
+    border-radius: 40px;
+    z-index: -100;
+    position: absolute;
+}
+
+.contact__innerLine {
+    max-width: 776px;
+    height: 1104px;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    margin: auto;
+    border: solid 1px #333;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: -99;
+    position: absolute;
+}
+/* ============================ */
+
+.contact__form {
+    /* position: relative; */
+    max-width: 1000px;
+    width: 100%;
+    height: 1184px;
+    margin: 0 auto;
+    /* z-index: 100; */
+    /* position: absolute; */
+    margin-bottom: 368px;
+}
+
+.form__title {
+    width: 344px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.heading__contact {
+    padding-top: 104px;
+    padding-bottom: 24px;
+    font-size: 60px;
+    font-weight: bold;
+    /* margin: 0 auto; */
+    text-align: center;
+    border-bottom: solid 4px #333;
+    /* position: relative; */
+}
+
+/* ============================ */
+/* ペンの装飾 */
+.penIllust__img {
+    width: 288px;
+    height: 312px;
+    top: -120px;
+    left: 344px;
+    right: 0;
+    z-index: -98;
+    position: absolute;
+}
+/* ============================ */
+
+.contact__info {
+    padding-top: 54px;
+    padding-bottom: 54px;
+    width: 54.8%;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.contact__text {
+    font-size: 16px;
+    line-height: 1.75;
+    padding-bottom: 28px;
+}
+
+.insta__text {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.contact__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 56px;
+    position: relative;
+}
+
+.contact__label {
+    width: 72%;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;/* デフォルトでインライン要素なのでブロック要素にして縦並びにする */
+    padding-bottom: 8px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.contact__name, .contact__mail {
+    width: 72%;
+    height: 48px;
+    border: solid 1px #333;
+    padding:8px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.contact__content {
+    width: 72%;
+    height: 196px;
+    border: solid 1px #333;
+    padding:8px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.contact__submit {
+    width: 45.6%;
+    height: 72px;
+    background: #595757;
+    border: solid 1px #333;
+    color: white;
+    font-size:24px;
+    font-weight:bold;
+    padding: 10px 20px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.triangle-right {
+    background-color: white;
+    /* background-color: #333; */
+    height: 8px;
+    width: calc(8px / 2 * tan(60deg));
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: absolute;
+    top: 32px;
+    right: 30%;
+}
+
+/* ====================================
+// フッター
+// ==================================== */
+
+.backcolor {
+    width: 100%;
+    height: 392px;
+    background-color: #333;
+}
+
+.footer__nav {
+    margin: 0 auto;
+}
+
+.footer__navList {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    padding-top: 112px;
+    padding-bottom: 48px;
+}
+
+.footer__navItem {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer__snsList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 88px;
+}   
+
+.footer__snsLogo {
+    width: 24px;
+    height: 24px;
+}
+
+.footer__snsItem {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.copyright {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright__text {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
