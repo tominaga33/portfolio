@@ -7,6 +7,8 @@ html {
 body {
     background-color: #fff;
     /* position: relative; */
+    overflow-x: hidden;
+    
 }
 
 /* ====================================
@@ -14,15 +16,20 @@ body {
 // ==================================== */
 .header__inner {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: flex-end;
     /* align-items: center; */
     position: fixed;
     /* position: absolute; */
     padding-top: 40px;
+    padding-bottom: 40px;
     padding-right: 3.1%;
-    padding-left: 3.7%;
+    /* padding-left: 3.7%; */
+    padding-left: auto;
     width: 100%;
     z-index: 9999;
+    background-color: #ffffffb6;
+    /* background-color: #fff; */
 }
 
 .header__nav {
@@ -32,6 +39,8 @@ body {
 
 .header__logoItem {
     width: 90px;
+    position: absolute;
+    left: 3.7%;
 }
 
 .header__navList {
@@ -95,6 +104,12 @@ main {
     max-width: 1020px;
     margin: 0 auto;
     padding: 0 10px;
+    /* overflow-x: hidden; */
+}
+
+.topPage main {
+    max-width: 100vw;
+    padding: 0 0;
 }
 
 /* ====================================
@@ -125,7 +140,35 @@ main {
 // ==================================== */
 .contact {
     position: relative;
+    /* conceptページの足跡が途切れてしまうのでbodyにoverflow-x: hidden;は変更 */
+    /* overflow-x: hidden; */
 }
+
+/* .contactPage { */
+    /* overflow: auto; */
+    /* padding-top: 1px; */
+    /* position: relative; */
+/* } */
+
+/* .contactPage .contact {
+    padding-top: 296px; */
+    /* margin-top: 296px; */
+/* } */
+
+/* bodyにcontactPageというクラスを設定する方法は、
+.contactPage .contactでpadding-top: 296px;と設定すると
+.contact__innerLineのposition:absoluteの基準がcontactのtop部分になってしまったり、
+.contactPage .contactでmarging-top: 296px;と設定すると
+CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてしまうため、断念 */
+
+.contactContainer {
+    padding-top: 296px;
+}
+
+/* .contactPage {
+    margin-top: 296px;
+} */
+
 /* ============================ */
 /* カードの装飾 */
 .contact__outerLine {

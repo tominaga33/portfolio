@@ -11,6 +11,8 @@
     gap: 6.1%;/* 56 / 920 */
     margin: 0 auto;
     padding-bottom: 104px;
+    /* 初期値ではalign-items: strechになっており、高さが大きい方に引き伸ばされてしまう */
+    align-items: center;
 }
 
 .profile__image {

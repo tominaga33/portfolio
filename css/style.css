@@ -1,1 +1,290 @@
 @charset "utf-8";
+
+.firstView {
+    /* max-width: 100vw; */
+    /* width: 100vw; */
+    padding-top: 144px;
+}
+
+.fv__img--2nd {
+    padding-top: 60px;
+}
+
+.pocket {
+    width: 294px;
+    height: 308px;
+    transform: scale(1);
+    border: solid 6px #333;
+    border-radius: 0 0 147px 147px;
+    background-color: #fff;
+    position: fixed;
+    left: calc(50% - 147px);
+    /* top: calc(50% - 147px); */
+    top: 300px;
+    z-index: 100;
+}
+
+.pocketCircle {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: solid 6px #333;
+    position: fixed;
+    left: calc(50% - 147px + 40px);
+    top: 250px;
+    z-index: 50;
+    background-color: #fbff6c;
+}
+
+.pocketSquare {
+    width: 138px;
+    height: 138px;
+    rotate: 45deg;
+    border: solid 6px #333;
+    position: fixed;
+    left: calc(50% - 147px + 110px);
+    top: 250px;
+    z-index: 40;
+    background-color: #27c1ae;
+}
+
+.logoBox {
+    width: 294px;
+    margin: 0 auto;
+    position: fixed;
+    left: calc(50% - 147px);
+    top: 320px;
+    z-index: 200;
+}
+
+.logoText {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stitch {
+    width: 294px;
+    height: auto;
+    margin: 0 auto;
+    position: fixed;
+    left: calc(50% - 147px);
+    top: 408px;
+    z-index: 200;
+}
+
+/* ====================================
+// ポケットから出てくるカード
+// ==================================== */
+.cardOuterBox {
+    width: 480px;
+    height: 300px;
+    border: solid 3px #333;
+    background-color: #efefef;
+    border-radius: 38px;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 256px;
+    transform: translate(-50%, 0);
+    padding-top: 20px;
+    opacity: 0;
+}
+
+.cardInnererBox {
+    width: 434px;
+    height: 254px;
+    border: solid 1px #333;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.concept__heading {
+    padding-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ====================================
+// コンセプト内容
+// ==================================== */
+.concept {
+    /* display: none; */
+    opacity: 0;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 272px;
+    transform: translate(-50%, 0);
+    z-index: 200;
+}
+
+.concept__title {
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.concept__subTitle {
+    font-size: 28px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.concept__contentTitle {
+    width: max-content;
+    font-size: 22px;
+    line-height: 1.75;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.concept__contentText {
+    font-size: 18px;
+    line-height: 1.75;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.concept__contentTextEnd {
+    font-size: 18px;
+    line-height: 1.75;
+    text-align: center;
+    padding-bottom: 34px;
+}
+
+.conceptBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 72px;
+    border: solid 1px #333;
+    border-radius: 36px;
+    background-color: #27c1ae;
+    margin: 0 auto;
+    position: relative;
+}
+
+.conceptBtn__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.triangle-right {
+    background-color: white;
+    height: 8px;
+    width: calc(8px / 2 * tan(60deg));
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: absolute;
+    top: 32px;
+    right: 10%;
+    z-index: 400;
+}
+
+/* ====================================
+// WORKS
+// ==================================== */
+.film {
+    width: 120px;
+    height: 170px;
+    margin: 0 auto;
+    padding-top: 1200px;
+    padding-bottom: 200px;
+}
+
+@keyframes infinity-scroll-right {
+from {
+  transform: translateX(-100%);
+}
+  to {
+  transform: translateX(0);
+}
+}
+
+.scroll-infinity__wrap {
+  /* width: 50vw */
+  display: flex;
+  /* overflow: hidden; */
+  transform: rotate(13deg);
+  /* transform: translate(1500px, 200px) rotate(13deg); */
+}
+.scroll-infinity__list {
+  display: flex;
+  list-style: none;
+  padding: 0
+}
+.scroll-infinity__list--right {
+  animation: infinity-scroll-right 80s infinite linear 0.5s both;
+}
+.scroll-infinity__item {
+    width: calc(100vw / 6);
+    /* width: calc(50vw / 6); */
+}
+.scroll-infinity__item>img {
+  width: 100%;
+  /* width: 100px; */
+  /* height: auto; */
+}
+
+
+
+
+
+
+
+/* 以下、別のパターン */
+.container {
+  width: 100vw; /* ビューポートの幅いっぱいに */
+  overflow: hidden; /* ラッパーからはみ出た部分を隠す */
+  height: 200px; /* 見せたい高さに調整 */
+  position: relative;
+  background-color: #eee; /* 背景色を見やすいように */
+}
+
+.sliding-wrapper {
+  display: flex; /* 子要素を横並びにする */
+  width: fit-content; /* 子要素の合計幅に合わせる */
+  position: absolute; /* 親 .container の中に配置 */
+  top: 0;
+  left: 0;
+  white-space: nowrap; /* テキストの折り返しを防ぐ (画像の場合は不要なことも) */
+
+  /* ここで横スライドの無限ループアニメーションを適用 */
+  animation: slideLeft 15s linear infinite; /* 15秒で左にスライド、無限ループ */
+
+  /* ★★★ ここがポイント！ラッパー全体を傾ける ★★★ */
+  transform: rotate(-5deg); /* 例: -5度傾ける (右斜め下方向に見える) */
+  transform-origin: top left; /* 傾きの基準点を左上に設定 (任意) */
+
+  /* 傾けたことで上下にできた隙間を埋めるための調整 (任意) */
+  transform: rotate(-5deg) translateY(-20px); 
+  /* 必要ならY軸で調整 */
+}
+
+.item {
+  width: 180px; /* 各画像やコンテンツの幅 */
+  height: 150px; /* 各画像やコンテンツの高さ */
+  margin: 10px; /* アイテム間の余白 */
+  object-fit: cover; /* 画像がはみ出さないように */
+  flex-shrink: 0; /* flexアイテムが縮まないように */
+  display: block; /* img要素はinline要素なので、ブロックにする (marginのため) */
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0) rotate(-5deg); /* 初期位置、傾きはそのまま */
+  }
+  100% {
+    /* ラッパーの幅の半分だけ移動することでループに見せる */
+    /* .item の合計幅 - コンテナの幅 - マージンなどを計算して調整 */
+    /* 例えば、画像の幅(180px) * 画像の数(3) + マージン(10px*2*3) = 540 + 60 = 600px */
+    /* この例では、半分だけスライドするのではなく、一度に表示する画像の枚数分だけスライドさせるのが良い */
+    /* 例: 3枚の画像がループする場合、3枚分の幅(3*180 + 3*2*10 = 600px)分移動 */
+    transform: translateX(-600px) rotate(-5deg); /* 左に移動、傾きはそのまま */
+  }
+}
