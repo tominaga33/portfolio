@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tominaga-design</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+    />
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -56,289 +65,963 @@
 <!-- ====================================
 //// ファーストビュー
 //// ==================================== -->
-        <div class="firstView">
-            <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
-            <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
-            <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
-        </div>
-        <div class="pocket"></div>
-        <div class="pocketCircle"></div>
-        <div class="pocketSquare"></div>
-        <div class="logoBox">
-            <p class="logoText">TOMINAGA DESIGN</p>
-        </div>
-        <div class="stitch">
-            <!-- ステッチ模様のsvgファイル -->
-            <svg class="stitch__svg" id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.42 143.91">
-                <defs>
-                    <style>
-                    .cls-1, .cls-2, .cls-3 {
-                        fill: none;
-                        stroke: #333;
-                        stroke-miterlimit: 10;
-                        stroke-width: 6px;
-                    }
-
-                    .cls-2 {
-                        stroke-dasharray: 11.9 11.9;
-                    }
-
-                    .cls-3 {
-                        stroke-dasharray: 11.92 11.92;
-                    }
-                    </style>
-                </defs>
-                <g id="layout">
-                    <g>
-                    <g>
-                        <line class="cls-1" x1="1.91" y1="18.45" x2="6.54" y2="22.27"/>
-                        <line class="cls-3" x1="15.72" y1="29.87" x2="139.69" y2="132.39"/>
-                        <polyline class="cls-1" points="144.28 136.19 148.9 140.01 153.52 136.18"/>
-                        <line class="cls-2" x1="162.68" y1="128.59" x2="286.3" y2="26.07"/>
-                        <line class="cls-1" x1="290.88" y1="22.28" x2="295.5" y2="18.45"/>
-                    </g>
-                    <g>
-                        <line class="cls-1" x1="1.91" y1="2.31" x2="6.54" y2="6.14"/>
-                        <line class="cls-3" x1="15.72" y1="13.73" x2="139.69" y2="116.26"/>
-                        <polyline class="cls-1" points="144.28 120.06 148.9 123.88 153.52 120.05"/>
-                        <line class="cls-2" x1="162.68" y1="112.46" x2="286.3" y2="9.94"/>
-                        <line class="cls-1" x1="290.88" y1="6.14" x2="295.5" y2="2.31"/>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-        </div>
-        <!-- ポケットから出てくるカード -->
-        <div class="cardOuterBox">
-            <div class="cardInnererBox">
-                <p class="concept__heading">concept</p>
+        <section class="firstView">
+            <div class="firstView__back">
+                <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
+                <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
+                <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
             </div>
-        </div>
-        <!-- コンセプト内容 -->
-        <div class="concept">
-            <p class="concept__title">POCKET CURIO</p>
-            <p class="concept__subTitle">"身近で、つい相談したくなる存在に"</p>
-            <p class="concept__contentTitle">
-                Pocket：いつもそばにあるもの<br>
-                Curio：好奇心をそそるもの
-            </p>
-            <p class="concept__contentText">
-                「今度はどんな提案を出してくれるんだろう？」<br>
-                あなたが困った時に、一番最初に思い出して、<br>
-                話したいと思ってもらえる存在になります。
-            </p>
-            <p class="concept__contentTextEnd">
-                どこまでも探究心を持って、<br>
-                人が集まるデザインを創り上げます。
-            </p>
-            <a href="./concept.html">
-                <div class="conceptBtn">
-                    <p class="conceptBtn__text">続きを見る</p>
-                    <!-- ボタン上の右向き三角形 -->
-                    <div class="triangle-right"></div>
+            <div class="pocket"></div>
+            <div class="pocketCircle"></div>
+            <div class="pocketSquare"></div>
+            <div class="logoBox">
+                <p class="logoText">TOMINAGA DESIGN</p>
+            </div>
+            <div class="stitch">
+                <!-- ステッチ模様のsvgファイル -->
+                <svg class="stitch__svg" id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.42 143.91">
+                    <defs>
+                        <style>
+                        .cls-1, .cls-2, .cls-3 {
+                            fill: none;
+                            stroke: #333;
+                            stroke-miterlimit: 10;
+                            stroke-width: 6px;
+                        }
+
+                        .cls-2 {
+                            stroke-dasharray: 11.9 11.9;
+                        }
+
+                        .cls-3 {
+                            stroke-dasharray: 11.92 11.92;
+                        }
+                        </style>
+                    </defs>
+                    <g id="layout">
+                        <g>
+                        <g>
+                            <line class="cls-1" x1="1.91" y1="18.45" x2="6.54" y2="22.27"/>
+                            <line class="cls-3" x1="15.72" y1="29.87" x2="139.69" y2="132.39"/>
+                            <polyline class="cls-1" points="144.28 136.19 148.9 140.01 153.52 136.18"/>
+                            <line class="cls-2" x1="162.68" y1="128.59" x2="286.3" y2="26.07"/>
+                            <line class="cls-1" x1="290.88" y1="22.28" x2="295.5" y2="18.45"/>
+                        </g>
+                        <g>
+                            <line class="cls-1" x1="1.91" y1="2.31" x2="6.54" y2="6.14"/>
+                            <line class="cls-3" x1="15.72" y1="13.73" x2="139.69" y2="116.26"/>
+                            <polyline class="cls-1" points="144.28 120.06 148.9 123.88 153.52 120.05"/>
+                            <line class="cls-2" x1="162.68" y1="112.46" x2="286.3" y2="9.94"/>
+                            <line class="cls-1" x1="290.88" y1="6.14" x2="295.5" y2="2.31"/>
+                        </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <!-- ポケットから出てくるカード -->
+            <div class="cardOuterBox">
+                <div class="cardInnererBox">
+                    <p class="concept__heading">concept</p>
                 </div>
-            </a>
-        </div>
+            </div>
+            <!-- コンセプト内容 -->
+            <div class="concept">
+                <p class="concept__title">POCKET CURIO</p>
+                <p class="concept__subTitle">"身近で、つい相談したくなる存在に"</p>
+                <p class="concept__contentTitle">
+                    Pocket：いつもそばにあるもの<br>
+                    Curio：好奇心をそそるもの
+                </p>
+                <p class="concept__contentText">
+                    「今度はどんな提案を出してくれるんだろう？」<br>
+                    あなたが困った時に、一番最初に思い出して、<br>
+                    話したいと思ってもらえる存在になります。
+                </p>
+                <p class="concept__contentTextEnd">
+                    どこまでも探究心を持って、<br>
+                    人が集まるデザインを創り上げます。
+                </p>
+                <a href="./concept.html">
+                    <div class="conceptBtn">
+                        <p class="conceptBtn__text">続きを見る</p>
+                        <!-- ボタン上の右向き三角形 -->
+                        <div class="triangle-right"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
 
 <!-- ====================================
 //// WORKS
 //// ==================================== -->
-        <div class="film">
-            <img class="film__img" src="./images/film@2x.png" alt="">
-        </div>
-        <div class="scroll-infinity">
-            <div class="scroll-infinity__wrap">
-                <ul class="scroll-infinity__list scroll-infinity__list--right">
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>                        
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
+        <section class="works">
+            <!-- 無限ループの左端をフィルムからスタートさせたいため、フィルムコンテナの中にulを配置（position:relativeを使いたい） -->
+            <div class="film">
+                <img class="film__img" src="./images/film@2x.png" alt="フィルムのイラスト">
+                <div class="negaFilmSmall">
+                    <img class="negaFilmSmall__img" src="./images/negaFilm__small@2x.png" alt="">
+                </div>
+                <!-- <img class="negaFilmBig__img--back" src="./images/negaFilm__big@2x.png" alt=""> -->
+                <!-- 左から右へ要素を流す場合は属性dir="rtl"の設定 (Right-to-Leftモード)がいることに注意！ -->
+                <ul class="scroll-infinity__list scroll-infinity__list--right" dir="rtl">
+                <!-- <ul class="scroll-infinity__list scroll-infinity__list--right"> -->
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/life-hair-design__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>                        
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/design-cafe__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/workers__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/portfolio__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right--landscape">
+                                <img src="./images/banner__icecream.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right--landscape">
+                                <img src="./images/banner__mobile.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/banner__hamburger-kokyu1.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/banner__hamburger-kokyu2.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right">
+                                <img src="./images/banner__hamburger-kokyu3.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right--landscape">
+                                <img src="./images/banner__hamburger-pop1.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right--landscape">
+                                <img src="./images/banner__hamburger-pop2.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--right">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--right--landscape">
+                                <img src="./images/banner__hamburger-pop3.jpg" />
+                            </div>
+                        </a>
+                    </li>
                 </ul>
-                <ul class="scroll-infinity__list scroll-infinity__list--right">
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>                        
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
-                    <li class="scroll-infinity__item"><img src="./images/banner__hamburger-kokyu1.jpg" /></li>
+                <div>
+                    <h2 class="heading__works">WORKS</h2>
+                </div>
+                <div class="negaFilm__back--left">
+                    <img class="negaFilm--back__img" src="./images/negaFilm__back@2x.png" alt="">
+                </div>
+                <div class="negaFilm__back--right">
+                    <img class="negaFilm--back__img" src="./images/negaFilm__back@2x.png" alt="">
+                </div>
+                <div class="negaFilmBig">
+                    <img class="negaFilmBig__img" src="./images/negaFilm__big@2x.png" alt="">
+                </div>
+                <!-- <ul class="scroll-infinity__list scroll-infinity__list--left"> -->
+                <ul class="scroll-infinity__list scroll-infinity__list--left"  dir="ltr">
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/life-hair-design__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>                        
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/design-cafe__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/workers__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/portfolio__pc.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/banner__icecream.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left--landscape">
+                                <img src="./images/banner__mobile.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/banner__hamburger-kokyu1.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/banner__hamburger-kokyu2.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left">
+                                <img src="./images/banner__hamburger-kokyu3.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left--landscape">
+                                <img src="./images/banner__hamburger-pop1.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left--landscape">
+                                <img src="./images/banner__hamburger-pop2.jpg" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="scroll-infinity__item--left">
+                        <a href="./works/life-hair-design.html">
+                            <div class="list-item--left--landscape">
+                                <img src="./images/banner__hamburger-pop3.jpg" />
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </div>
+            <a href="./works.html">
+                <div class="worksBtn">
+                    <p class="worksBtn__text">もっと見る</p>
+                    <!-- ボタン上の左向き三角形 -->
+                    <div class="works__triangle-right"></div>
+                </div>
+            </a>
+            
+        </section>
 
-
-        <!-- <div class="container">
-            <div class="sliding-wrapper">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像1" class="item">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像2" class="item">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像3" class="item">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像1" class="item">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像2" class="item">
-                <img src="./images/banner__hamburger-kokyu1.jpg" alt="画像3" class="item">
+<!-- ====================================
+//// ABOUT
+//// ==================================== -->
+        <section class="about">
+            <div class="aboutContainer">
+                <div class="about__stickyBox">
+                    <div class="about__relativeContainer">
+                        <h2 class="heading__about">ABOUT</h2>
+                        <div class="profileIllust--shadow">
+                            <img class="profileIllust--shadow__img" src="./images/profile__Illust--shadow@2x.png" alt="プロフィールイラストの影">
+                        </div>
+                    <!-- <div class="textLineBox"> -->
+                        <div class="textLine"></div>
+                        <div class="textLine"></div>
+                        <div class="textLine"></div>
+                    <!-- </div> -->
+                        <div class="backsquare"></div>
+                    </div>
+                </div>
+            
+                <div class="sticky-trigger-marker"></div>
+                <div class="loupe">
+                    <div class="loupe__relativeContainer">
+                        <div class="loupeBox">
+                            <img class="loupeBox__img" src="./images/loupe__Illust@2x.png" alt="虫眼鏡のイラスト">
+                        </div>
+                        <div class="profileContainer">
+                            <div class="profileIllust">
+                                <img class="profileIllust__img" src="./images/profileIllust@2x.png" alt="">
+                            </div>
+                            <p class="profile__text">
+                                福岡出身、東京在住。<br>
+                                約７年間培ったマーケティング経験を活かし、
+                                お客様が集まるという視点からデザインを構築できます。
+                                デザイン、コーディング、イラスト制作の対応が可能です。
+                            </p>
+                            <div class="aboutBtnContainer">
+                                <a href="./about.html">
+                                    <div class="aboutBtn">
+                                        <p class="aboutBtn__text">詳しく見る</p>
+                                        <!-- ボタン上の右向き三角形 -->
+                                        <div class="about__triangle-right"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 波線模様のファイル（左側） -->
+                <div class="pattern-wavyLine-container--left">
+                    <div class="pattern-wavyLine">
+                        <span>
+                            <svg  id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.02 78">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <path class="cls-1" d="M8.5,3.5c7.95,3.21,15.36,7.18,15,11-.57,6.05-20.23,8.01-20,12,.23,3.94,19.47,4.3,20,9,.56,4.96-20.36,9.16-20,15,.34,5.54,19.49,6.49,20,12,.26,2.8-4.29,6.64-20,12"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- プラス模様のファイル（左側） -->
+                <div class="pattern-plus-container--left">
+                    <div class="pattern-plus">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <g>
+                                    <line class="cls-1" x1="3.5" y1="22.5" x2="42.5" y2="22.5"/>
+                                    <line class="cls-1" x1="23.5" y1="42.5" x2="23.5" y2="3.5"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 丸模様のファイル（右側） -->
+                <div class="pattern-circle-container--right">
+                    <div class="pattern-circle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <circle class="cls-1" cx="18.5" cy="18.5" r="15"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div> 
+                </div>
+                <!-- 四角模様のファイル（右側） -->
+                <div class="pattern-square-container--right">
+                    <div class="pattern-square">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <rect class="cls-1" x="3.5" y="3.5" width="36" height="36"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 三角模様のファイル（左側） -->
+                <div class="pattern-triangle-container--left">
+                    <div class="pattern-triangle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.94 35.8">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <polygon class="cls-1" points="28.44 17.9 3.5 3.5 3.5 32.3 28.44 17.9"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 波線模様のファイル（右側） -->
+                <div class="pattern-wavyLine-container--right">
+                    <div class="pattern-wavyLine">
+                        <span>
+                            <svg  id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.02 78">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <path class="cls-1" d="M8.5,3.5c7.95,3.21,15.36,7.18,15,11-.57,6.05-20.23,8.01-20,12,.23,3.94,19.47,4.3,20,9,.56,4.96-20.36,9.16-20,15,.34,5.54,19.49,6.49,20,12,.26,2.8-4.29,6.64-20,12"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 丸模様のファイル（左側） -->
+                <div class="pattern-circle-container--left">
+                    <div class="pattern-circle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <circle class="cls-1" cx="18.5" cy="18.5" r="15"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div> 
+                </div>
+                <!-- プラス模様のファイル（右側） -->
+                <div class="pattern-plus-container--right">
+                    <div class="pattern-plus">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <g>
+                                    <line class="cls-1" x1="3.5" y1="22.5" x2="42.5" y2="22.5"/>
+                                    <line class="cls-1" x1="23.5" y1="42.5" x2="23.5" y2="3.5"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 四角模様のファイル（左側） -->
+                <div class="pattern-square-container--left">
+                    <div class="pattern-square">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <rect class="cls-1" x="3.5" y="3.5" width="36" height="36"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 三角模様のファイル（右側） -->
+                <div class="pattern-triangle-container--right">
+                    <div class="pattern-triangle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.94 35.8">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <polygon class="cls-1" points="28.44 17.9 3.5 3.5 3.5 32.3 28.44 17.9"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div> -->
+        </section>
+        
+<!-- ====================================
+//// CONTACT
+//// ==================================== -->
+        <section class="contact">
+            <!-- カードの装飾 -->
+            <div class="contact__outerLine"></div>
+            <div class="contact__innerLine"></div>
+            <form 
+                class="contact__form"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc1DlPfce2EK9vCIAlAqQ0nOw4lMW5Lb0X01zc9V_81vxJkDw/formResponse"
+                method="post"
+                target="hidden__iframe"
+                onsubmit="submitted=true"
+            >
+                <div class="form__title">
+                    <h2 class="heading__contact">CONTACT</h2>
+                    <!-- アンダーライン -->
+                    <div class="underLine"></div>
+                    <!-- ペンの装飾 -->
+                    <div class="penIllust">
+                        <img class="penIllust__img" src="./images/pen_illust.png" alt="ペンのイラスト">
+                    </div>
+                </div>
+                <div class="contact__info">
+                    <p class="contact__text">
+                        各種依頼内容や相談したいこと、料金のご質問など、お気軽にご連絡ください。<br>
+                        ２営業日以内に返信させていただきます。
+                    </p>
+                    <p class="insta__text">インスタグラムからもDMを受け付けておりますので、そちらもご利用ください。<br>
+                        <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">Instagram [@kyohei.tominaga]</a>
+                    </p>
+                </div>
+                <div class="contact__item">
+                    <label class="contact__label" for="name">お名前</label>
+                    <input class="contact__name" id="name" type="text" name="entry.1996875450" placeholder="山田 太郎" required="required" autocomplete="name">
+                        <!-- <input class="contact__name" id="name" type="text" name="name" placeholder="山田 太郎" required="required" autocomplete="name"> -->
+                </div>
+                <div class="contact__item">
+                    <label class="contact__label" for="mail">メールアドレス</label>
+                    <input class="contact__mail" id="mail" type="email" name="entry.458354352" placeholder="aaa@xxx.com" required="required" autocomplete="email">
+                </div>
+                <div class="contact__item">
+                    <label class="contact__label" for="content">お問い合わせ内容</label>
+                    <textarea class="contact__content" id="content" type="text" name="entry.8332858" placeholder="お問い合わせ内容をご入力ください" required="required"></textarea>
+                </div>
+                <div class="contact__item">
+                    <!-- <input class="contact__submit" type="submit" value="送信する"> -->
+                    <button  class="contact__submit">送信する
+                        <!-- ボタン上の右向き三角形 -->
+                        <div class="triangle-right"></div>
+                    </button>
+                    <!-- <div class="triangle-right"></div> -->
+                    <!-- 画面幅を直せば三角形が大きく右にズレる問題は解決する -->
+                </div>
+            </form>
+            <div class="triggerFormEnd"></div>
+        </section>
     </main>
 
 <!-- ====================================
 //// フッター
 //// ==================================== -->
     <footer>
+        <div class="footerContainer">
+            <!-- <div class="footer__stickyBox"> -->
+                <div class="sticky-trigger-yellowCircle"></div>            
+                <div class="yellowCircleContainer">
+                    <div class="yellowCircle"></div>
+                </div>
+                <div class="topCopyright">
+                        <p class="topCopyright__text">©︎TOMINAGA DESIGN.</p>
+                </div>
+                <!-- </div> -->
+                <div class="sticky-trigger-greenSquare"></div>
+                <!-- <div class="greenSquareContainer">
+                    <div class="greenSquare"></div>
+                </div> -->
+                <!-- 波線模様のファイル（左側） -->
+                <div class="pattern-wavyLine-container--left">
+                    <div class="pattern-wavyLine">
+                        <span>
+                            <svg  id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.02 78">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <path class="cls-1" d="M8.5,3.5c7.95,3.21,15.36,7.18,15,11-.57,6.05-20.23,8.01-20,12,.23,3.94,19.47,4.3,20,9,.56,4.96-20.36,9.16-20,15,.34,5.54,19.49,6.49,20,12,.26,2.8-4.29,6.64-20,12"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- プラス模様のファイル（左側） -->
+                <div class="pattern-plus-container--left">
+                    <div class="pattern-plus">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <g>
+                                    <line class="cls-1" x1="3.5" y1="22.5" x2="42.5" y2="22.5"/>
+                                    <line class="cls-1" x1="23.5" y1="42.5" x2="23.5" y2="3.5"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 丸模様のファイル（右側） -->
+                <div class="pattern-circle-container--right">
+                    <div class="pattern-circle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <circle class="cls-1" cx="18.5" cy="18.5" r="15"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div> 
+                </div>
+                <!-- 四角模様のファイル（右側） -->
+                <div class="pattern-square-container--right">
+                    <div class="pattern-square">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <rect class="cls-1" x="3.5" y="3.5" width="36" height="36"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 三角模様のファイル（左側） -->
+                <div class="pattern-triangle-container--left">
+                    <div class="pattern-triangle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.94 35.8">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <polygon class="cls-1" points="28.44 17.9 3.5 3.5 3.5 32.3 28.44 17.9"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 波線模様のファイル（右側） -->
+                <div class="pattern-wavyLine-container--right">
+                    <div class="pattern-wavyLine">
+                        <span>
+                            <svg  id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.02 78">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <path class="cls-1" d="M8.5,3.5c7.95,3.21,15.36,7.18,15,11-.57,6.05-20.23,8.01-20,12,.23,3.94,19.47,4.3,20,9,.56,4.96-20.36,9.16-20,15,.34,5.54,19.49,6.49,20,12,.26,2.8-4.29,6.64-20,12"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 丸模様のファイル（左側） -->
+                <div class="pattern-circle-container--left">
+                    <div class="pattern-circle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <circle class="cls-1" cx="18.5" cy="18.5" r="15"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div> 
+                </div>
+                <!-- プラス模様のファイル（右側） -->
+                <div class="pattern-plus-container--right">
+                    <div class="pattern-plus">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linecap: round;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <g>
+                                    <line class="cls-1" x1="3.5" y1="22.5" x2="42.5" y2="22.5"/>
+                                    <line class="cls-1" x1="23.5" y1="42.5" x2="23.5" y2="3.5"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 四角模様のファイル（左側） -->
+                <div class="pattern-square-container--left">
+                    <div class="pattern-square">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <rect class="cls-1" x="3.5" y="3.5" width="36" height="36"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- 三角模様のファイル（右側） -->
+                <div class="pattern-triangle-container--right">
+                    <div class="pattern-triangle">
+                        <span>
+                            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.94 35.8">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #b5b5b6;
+                                        stroke-linejoin: round;
+                                        stroke-width: 7px;
+                                    }
+                                    </style>
+                                </defs>
+                                <g id="back">
+                                    <polygon class="cls-1" points="28.44 17.9 3.5 3.5 3.5 32.3 28.44 17.9"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- <div class="yellowCircleContainer-small"> -->
+            <!-- <div class="yellowCircle-small"></div> -->
+            <!-- </div> -->
+            <!-- <div class="greenSquareContainer-small"> -->
+                <div class="yellowCircle-small"></div>
+                <!-- <div class="yellowCircle-small"></div> -->
+                <div class="greenSquare-small"></div>
+                <div class="pocket__footer">
+                    <div class="logoBox__footer">
+                    <p class="logoText__footer">TOMINAGA DESIGN</p>
+                    </div>
+                    <div class="stitch__footer">
+                        <!-- ステッチ模様のsvgファイル -->
+                        <svg class="stitch__svg" id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.42 143.91">
+                            <defs>
+                                <style>
+                                .cls-1, .cls-2, .cls-3 {
+                                    fill: none;
+                                    stroke: #333;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 6px;
+                                }
 
+                                .cls-2 {
+                                    stroke-dasharray: 11.9 11.9;
+                                }
+
+                                .cls-3 {
+                                    stroke-dasharray: 11.92 11.92;
+                                }
+                                </style>
+                            </defs>
+                            <g id="layout">
+                                <g>
+                                <g>
+                                    <line class="cls-1" x1="1.91" y1="18.45" x2="6.54" y2="22.27"/>
+                                    <line class="cls-3" x1="15.72" y1="29.87" x2="139.69" y2="132.39"/>
+                                    <polyline class="cls-1" points="144.28 136.19 148.9 140.01 153.52 136.18"/>
+                                    <line class="cls-2" x1="162.68" y1="128.59" x2="286.3" y2="26.07"/>
+                                    <line class="cls-1" x1="290.88" y1="22.28" x2="295.5" y2="18.45"/>
+                                </g>
+                                <g>
+                                    <line class="cls-1" x1="1.91" y1="2.31" x2="6.54" y2="6.14"/>
+                                    <line class="cls-3" x1="15.72" y1="13.73" x2="139.69" y2="116.26"/>
+                                    <polyline class="cls-1" points="144.28 120.06 148.9 123.88 153.52 120.05"/>
+                                    <line class="cls-2" x1="162.68" y1="112.46" x2="286.3" y2="9.94"/>
+                                    <line class="cls-1" x1="290.88" y1="6.14" x2="295.5" y2="2.31"/>
+                                </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="firstView__back">
+                <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
+                <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
+                <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
+                </div>
+            <!-- </div> -->
+            
+            <!-- </div> -->
+            
+        </div>    
     </footer>
 
-<!-- ====================================
-//// Java Svript
-//// ==================================== -->
+    <!-- Javascript読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(function () {
-            // 丸と四角が下がっていく速度の調整用
-            const speedCircle = 0.2;
-            // ポケットが下がっていく速度の調整用
-            const speedPocket = 0.36;
-            // ポケットが拡大する速度の調整用
-            const expandSpeedPocket = 240;
-            // ロゴテキストとステッチのフェードアウトが完了するスクロール位置
-            const fadeOutEnd = 400;
-            // ポケットの拡大が完了するスクロール位置
-            const expandEnd = 640;
-            // カードの出現が完了するスクロール位置
-            const CardEnd = 800; 
-            // カードが出てくる速度の調整用
-            const speedCard = 0.73;
-            //コンセプト内容のフェードインが完了するまでのスクロール位置
-            const fadeInEnd = 1000;
-            // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
-            const maxExpandEnd = 3000;
-            // ポケットが画面いっぱいまで拡大する速度の調整用
-            const maxExpandSpeedPocket = 200;
-            // コンセプトの内容が上がっていく速度の調整用
-            const speedConcept = 0.6;
-
-            // ポケットの大きさ+スクロール量 代入用
-            // let sum;
-            // 現在のスクロール量を取得
-                // let scroll = $(this).scrollTop();
-
-            $(window).scroll(function () {
-                // 現在のスクロール量を取得
-                let scroll = $(this).scrollTop();
-                
-                if (scroll <= fadeOutEnd) {
-                    // 丸の初期位置(250px)にスクロール量 * 速度 を加算
-                    let newTop = 250 + scroll * speedCircle;
-                    // 不透明度 (opacity) の計算
-                    let opacity = 1 - (scroll / fadeOutEnd);
-                    // opacityの値を 0.0 から 1.0 の間に制限する
-                    // スクロール量が多すぎてもマイナスにならないようにする
-                    if (opacity < 0) {
-                        opacity = 0;
-                    } else if (opacity > 1) {
-                        opacity = 1; // スクロール完了位置より後では不透明を維持
-                    }
-                    // ポケットの大きさ+スクロール量 代入用
-                    let sum;
-                    // 四角と丸を下げる
-                    $(".pocketCircle, .pocketSquare").css({
-                        "top": newTop + "px"
-                    });
-                    //ロゴテキストとステッチをフェードアウトする
-                    $(".logoBox, .stitch").css({
-                        "opacity": opacity
-                    });
-                    // コンソールログで確認
-                    // console.log(scroll);
-                    // console.log(opacity);
-                } else if (scroll > fadeOutEnd && scroll <= expandEnd) {
-                    // 初期位置(300px)にスクロール量 * 速度 を加算
-                    let newTopPocket = 300 + (scroll - fadeOutEnd) * speedPocket;
-                    // ポケットの大きさ+スクロール量 代入用
-                    // let sum;
-                    // ポケットの大きさ+スクロール量 / 拡大速度の調整
-                    sum = 1 + (scroll - fadeOutEnd) / expandSpeedPocket;
-                    console.log(sum);
-                    // 丸と四角とロゴテキストとステッチを消す
-                    // $(".pocketCircle, .pocketSquare, .logoBox, .stitch").css(
-                    //     "display", "none"
-                    // );
-                    $(".pocket").css({
-                        // スクロールに合わせてポケットを拡大する
-                        "transform": "scale(" + sum + ")",
-                        // スクロールに合わせてポケットの位置を中央から少し下げていく
-                        "top": newTopPocket + "px"
-                    })
-                    //ロゴテキスト、ステッチをきれいに消す
-                    $(".logoBox, .stitch").css({
-                        "opacity": 0
-                    });
-                    //逆方向スクロール時にコンセプト内容を消す
-                    $(".cardOuterBox").css({
-                        "opacity": 0
-                    })
-                } else if (scroll > expandEnd  && scroll <= CardEnd) {
-                    // 初期位置にスクロール量 * 速度 を加算
-                    let newTopCard = 256 - (scroll - 640) * speedCard;
-                    $(".cardOuterBox").css({
-                        "opacity": 1,
-                        // スクロールに合わせてカードの位置を上げる
-                        "top": newTopCard + "px"
-                    })
-                    //逆方向スクロール時にコンセプト内容を消す
-                    $(".concept").css({
-                        "opacity": 0
-                    });
-                } else if (scroll > CardEnd  && scroll <= fadeInEnd) {
-                    // 不透明度 (opacity) の計算
-                    let opacityConcept = (scroll - CardEnd) / (fadeInEnd - CardEnd);
-                    if (opacityConcept < 0) {
-                        opacityConcept = 0;
-                    } else if (opacityConcept > 1) {
-                        opacityConcept = 1; // スクロール完了位置より後では不透明を維持
-                    }
-                    // スクロールに合わせてコンセプト内容をフェードイン
-                    $(".concept").css({
-                        "opacity": opacityConcept
-                    });
-                    $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox").css(
-                        "display", "block"
-                    );
-                } else if (scroll > fadeInEnd  && scroll <= maxExpandEnd) {
-                    // let sum;
-                    // ポケットの大きさ（2まで拡大済み）+スクロール量 / 拡大速度の調整
-                    sum = 2 + (scroll - fadeInEnd) / maxExpandSpeedPocket;
-                    // console.log(sum);
-                    // 初期位置にスクロール量 * 速度 を加算
-                    let newTopConcept = 272 - (scroll - fadeInEnd) * speedConcept;
-                    $(".pocket").css({
-                        // スクロールに合わせてポケットを拡大する
-                        "transform": "scale(" + sum + ")"
-                    })
-                    $(".concept").css({
-                    // スクロールに合わせてコンセプト内容の位置を上げる
-                        "top": newTopConcept+ "px"
-                    })
-                    //逆スクロール時に表示する
-                    $(".pocket").fadeIn(500)
-                    // 逆スクロール時に丸、四角、ロゴテキスト、ステッチ、カードを出現させる
-                    // $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox").css(
-                    //     "display", "block"
-                    // );
-                } else if (scroll > maxExpandEnd) {
-                    // } else {
-                    //非表示に
-                    // $(".firstView").fadeOut(500)
-                    $(".pocket").fadeOut(500)
-                    // $(".firstView, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox").css(
-                    //     "display", "none"
-                    // );
-                    // 丸、四角、ロゴテキスト、ステッチ、カードを消す
-                    $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox").css(
-                        "display", "none"
-                    );
-                } 
-            });
-        })
-    </script>
+    <!-- slick-->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- GASP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

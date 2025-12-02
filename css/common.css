@@ -1,14 +1,18 @@
 @charset "utf-8";
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 body {
+    /* max-width: 1440px; */
+    /* width: 100%; */
     background-color: #fff;
     /* position: relative; */
-    overflow-x: hidden;
-    
+    /* overflow-x: hidden; */
+    /* overflow-x: visible !important; */
+    /* min-width: 1672px; */
+    /* overflow-x: hidden; */
 }
 
 /* ====================================
@@ -105,11 +109,15 @@ main {
     margin: 0 auto;
     padding: 0 10px;
     /* overflow-x: hidden; */
+    /* 横スクロールの揺らぎをなくす*/
+    /* →stickyが機能しなくなってしまう */
+    /* →conceptページの足跡まで隠れてしまう */
 }
 
 .topPage main {
     max-width: 100vw;
     padding: 0 0;
+    overflow-x: hidden;
 }
 
 /* ====================================
@@ -139,7 +147,12 @@ main {
 // コンタクト
 // ==================================== */
 .contact {
+    /* padding-top: 100px;
+    margin-top: 100px;
+    padding: 0 50px; */
     position: relative;
+    /* z-index: 500; */
+    /* padding-bottom: 1200px; */
     /* conceptページの足跡が途切れてしまうのでbodyにoverflow-x: hidden;は変更 */
     /* overflow-x: hidden; */
 }
@@ -165,6 +178,14 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     padding-top: 296px;
 }
 
+/* .topPage .contactContainer { */
+    /* padding-top: 1400px; */
+    /* margin-top: 400px; */
+    /* padding-bottom: 1200px; */
+    /* margin-top: 150px; */
+    /* padding-bottom: 500px; */
+/* } */
+
 /* .contactPage {
     margin-top: 296px;
 } */
@@ -182,6 +203,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     background-color: #efefef;
     border-radius: 40px;
     z-index: -100;
+    /* z-index: 499; */
     position: absolute;
 }
 
@@ -196,6 +218,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     border-radius: 20px;
     background-color: #fff;
     z-index: -99;
+    /* z-index: 499; */
     position: absolute;
 }
 /* ============================ */
@@ -209,6 +232,11 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     /* z-index: 100; */
     /* position: absolute; */
     margin-bottom: 368px;
+    /* overflow-x: hidden; */
+}
+
+.topPage .contact__form {
+    margin-bottom: -300px
 }
 
 .form__title {
@@ -218,14 +246,59 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 }
 
 .heading__contact {
+    /* width: 100%; */
     padding-top: 104px;
     padding-bottom: 24px;
     font-size: 60px;
     font-weight: bold;
     /* margin: 0 auto; */
     text-align: center;
-    border-bottom: solid 4px #333;
+    /* border-bottom: solid 4px #333; */
     /* position: relative; */
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes animationLine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.underLine {
+    width: 344px;
+    height: 4px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.topPage .underLine.is-visible::before {
+  animation: animationLine 1.2s ease-out forwards;
+  background: #fff;
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.penIllust {
+    /* transform: translateX(-344px); */
+    transition: 
+    transform 1.2s ease-out;
+    position: relative;
+    /* overflow-x: hidden; */
+}
+
+.topPage .penIllust {
+    transform: translateX(-344px);
+}
+
+.penIllust.is-visible {
+  opacity: 1; /* 不透明度を上げる */
+  transform: translateX(0); /* 元の位置に戻すことで左から右への動きを表現 */
 }
 
 /* ============================ */
@@ -233,10 +306,11 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 .penIllust__img {
     width: 288px;
     height: 312px;
-    top: -120px;
+    /* top: -120px; */
+    bottom: 0;
     left: 344px;
     right: 0;
-    z-index: -98;
+    z-index: 100;
     position: absolute;
 }
 /* ============================ */
@@ -262,6 +336,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 }
 
 .contact__item {
+    /* max-width: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -308,6 +383,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     padding: 10px 20px;
     margin: 0 auto;
     cursor: pointer;
+    position: relative;
 }
 
 .triangle-right {
