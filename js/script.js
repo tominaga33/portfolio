@@ -1,160 +1,372 @@
-$(function () {
-    // 丸と四角が下がっていく速度の調整用
-    const speedCircle = 0.2;
-    // ポケットが下がっていく速度の調整用
-    const speedPocket = 0.36;
-    // ポケットが拡大する速度の調整用
-    const expandSpeedPocket = 240;
-    // ロゴテキストとステッチのフェードアウトが完了するスクロール位置
-    const fadeOutEnd = 400;
-    // ポケットの拡大が完了するスクロール位置
-    const expandEnd = 640;
-    // カードの出現が完了するスクロール位置
-    const CardEnd = 800; 
-    // カードが出てくる速度の調整用
-    const speedCard = 0.73;
-    //コンセプト内容のフェードインが完了するまでのスクロール位置
-    const fadeInEnd = 1000;
-    // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
-    const maxExpandEnd = 3000;
-    // ポケットが画面いっぱいまで拡大する速度の調整用
-    const maxExpandSpeedPocket = 200;
-    // コンセプトの内容が上がっていく速度の調整用
-    const speedConcept = 0.6;
-
-    // ★scroll位置からポケットのscaleを毎回一意に決める関数★
-    function getPocketScale(scroll) {
-        if (scroll <= fadeOutEnd) {
-            // 一番上付近は等倍
-            return 1;
-        } else if (scroll <= expandEnd) {
-            // 400〜640 の間で 1 → 2 に
-            return 1 + (scroll - fadeOutEnd) / expandSpeedPocket;
-        } else if (scroll <= fadeInEnd) {
-            // 640〜1000 の間は 2 のまま
-            return 2;
-        } else if (scroll <= maxExpandEnd) {
-            // 1000〜3000 の間で 2 からさらに拡大
-            return 2 + (scroll - fadeInEnd) / maxExpandSpeedPocket;
-        } else {
-            // それ以降は最大値のまま
-            return 2 + (maxExpandEnd - fadeInEnd) / maxExpandSpeedPocket;
+//// ====================================
+//// ローディング画面
+//// ====================================
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('img'); // ページ内の全画像を取得
+        const totalImages = images.length;
+        let loadedImages = 0;
+    
+        const countElement = document.getElementById('count');
+        const loadingWrapper = document.getElementById('loadingWrapper');
+    
+        function updateProgress() {
+            loadedImages++;
+            const percentComplete = Math.round((loadedImages / totalImages) * 100);
+            countElement.textContent = percentComplete;
+    
+            // すべての画像が読み込まれたら
+            if (loadedImages === totalImages) {
+                setTimeout(function() {
+                    loadingWrapper.style.opacity = '0';
+                    setTimeout(function() {
+                        loadingWrapper.style.display = 'none';
+                    }, 300); // フェードアウトのための遅延
+                }, 500); // 少しの遅延を加える
+            }
         }
-    }
-
-    $(window).scroll(function () {
-        // 現在のスクロール量を取得
-        let scroll = $(this).scrollTop();
-        
-        // ★どの条件でも必ずポケットのscaleを更新★
-        const pocketScale = getPocketScale(scroll);
-        $(".pocket").css({
-            transform: "scale(" + pocketScale + ")"
+    
+        // 各画像の読み込み完了を監視
+        images.forEach(function(image) {
+            if (image.complete) {
+                updateProgress(); // 既に読み込まれている場合もカウント
+            } else {
+                image.addEventListener('load', updateProgress);
+                image.addEventListener('error', updateProgress); // エラー時もカウント
+            }
         });
-
-        if (scroll <= fadeOutEnd) {
-            //前回のスクロールで消していたポケット、丸、四角、ロゴ、ステッチ、カードを出現させる
-            $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
-            // $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
-            ).css("display", "block");
-            //透明にしていたポケット、ロゴ、ステッチ、コンセプトの不透明度を最大値にする
-            $(".pocket, .logoBox, .stitch").css({
-                opacity: 1
-            });
-            //前回で出現させたカードの不透明度を0にする
-            $(".cardOuterBox").css({
-                opacity: 0
-            });
-            // $(".cardOuterBox, .concept").css({
-            //     opacity: 0
-            // })
-            //前回移動したポケットの位置を初期位置に戻しておく
-            $(".pocket").css({
-                top: "300px"
-            });
-
-            // 丸の初期位置(250px)にスクロール量 * 速度 を加算
-            let newTop = 250 + scroll * speedCircle;
-            // 不透明度 (opacity) の計算
-            let opacity = 1 - (scroll / fadeOutEnd);
-            // opacityの値を 0.0 から 1.0 の間に制限する
-            // スクロール量が多すぎてもマイナスにならないようにする
-            if (opacity < 0) {
-                opacity = 0;
-            } else if (opacity > 1) {
-                opacity = 1; // スクロール完了位置より後では不透明を維持
-            }
-            // 四角と丸を下げる
-            $(".pocketCircle, .pocketSquare").css({
-                top: newTop + "px"
-            });
-            //ロゴテキストとステッチをフェードアウトする
-            $(".logoBox, .stitch").css({
-                opacity: opacity
-            });
-            } else if (scroll > fadeOutEnd && scroll <= expandEnd) {
-            // 初期位置(300px)にスクロール量 * 速度 を加算
-            let newTopPocket = 300 + (scroll - fadeOutEnd) * speedPocket;
-
-            $(".pocket").css({
-                // スクロールに合わせてポケットの位置を中央から少し下げていく
-                top: newTopPocket + "px"
-            })
-            //ロゴテキスト、ステッチをきれいに消す
-            $(".logoBox, .stitch").css({
-                opacity: 0
-            });
-            //逆方向スクロール時にコンセプト内容を消す
-            $(".cardOuterBox").css({
-                opacity: 0
-            })
-
-        } else if (scroll > expandEnd  && scroll <= CardEnd) {
-            // 初期位置にスクロール量 * 速度 を加算
-            let newTopCard = 256 - (scroll - 640) * speedCard;
-            $(".cardOuterBox").css({
-                opacity: 1,
-                // スクロールに合わせてカードの位置を上げる
-                "top": newTopCard + "px"
-            })
-            //逆方向スクロール時にコンセプト内容を消す
-            $(".concept").css({
-                opacity: 0
-            });
-
-        } else if (scroll > CardEnd  && scroll <= fadeInEnd) {
-            // 不透明度 (opacity) の計算
-            let opacityConcept = (scroll - CardEnd) / (fadeInEnd - CardEnd);
-            if (opacityConcept < 0) {
-                opacityConcept = 0;
-            } else if (opacityConcept > 1) {
-                opacityConcept = 1; // スクロール完了位置より後では不透明を維持
-            }
-            // スクロールに合わせてコンセプト内容をフェードイン
-            $(".concept").css({
-                opacity: opacityConcept
-            });
-            $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox .concept"
-            ).css("display", "block");
-
-        } else if (scroll > fadeInEnd  && scroll <= maxExpandEnd) {
-            // 初期位置にスクロール量 * 速度 を加算
-            let newTopConcept = 272 - (scroll - fadeInEnd) * speedConcept;
-            
-            $(".concept").css({
-            // スクロールに合わせてコンセプト内容の位置を上げる
-                top: newTopConcept+ "px"
-            })
-            //逆スクロール時に表示する
-            $(".pocket").fadeIn(500)
-        } else if (scroll > maxExpandEnd) {
-            //非表示に
-            $(".pocket").fadeOut(500)
-            $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
-            // $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
-            ).css("display", "none");
-        } 
     });
+
+//// ====================================
+//// ポケットのアニメーション
+//// ====================================
+// メディアクエリの定義 (CSSと一致させる)
+const MOBILE_QUERY = window.matchMedia('(max-width: 768px)');
+
+$(function () {
+    if (MOBILE_QUERY.matches) {
+        //// ====================================
+        //// sp版の設定
+        //// ====================================
+        // 丸と四角が下がっていく速度の調整用
+        const speedCircle__sp = 0.2;
+        // ポケットが下がっていく速度の調整用
+        const speedPocket__sp = 0.30;//！！！！！元の値0.36！！！！！
+        // ポケットが拡大する速度の調整用
+        const expandSpeedPocket__sp = 160;//！！！！！元の値240！！！！！
+        // ロゴテキストとステッチのフェードアウトが完了するスクロール位置
+        const fadeOutEnd__sp = 400;
+        // ポケットの拡大が完了するスクロール位置
+        const expandEnd__sp = 640;//！！！！！元の値640！！！！！
+        // カードの出現が完了するスクロール位置
+        const CardEnd__sp = 800; 
+        // カードが出てくる速度の調整用
+        const speedCard__sp = 0.73;//！！！！！元の値0.73！！！！！
+        //コンセプト内容のフェードインが完了するまでのスクロール位置
+        const fadeInEnd__sp = 1000;
+        // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
+        const maxExpandEnd__sp = 3000;
+        // const maxExpandEnd = 2200;
+        // ポケットが画面いっぱいまで拡大する速度の調整用
+        const maxExpandSpeedPocket__sp = 200;
+        // コンセプトの内容が上がっていく速度の調整用
+        const speedConcept__sp = 0.35;
+
+        // ★scroll位置からポケットのscaleを毎回一意に決める関数★
+        function getPocketScale(scroll) {
+            if (scroll <= fadeOutEnd__sp) {
+                // 一番上付近は等倍
+                return 1;
+            } else if (scroll <= expandEnd__sp) {
+                // 400〜640 の間で 1 → 2 に
+                return 1 + (scroll - fadeOutEnd__sp) / expandSpeedPocket__sp;
+            } else if (scroll <= fadeInEnd__sp) {
+                // 640〜1000 の間は 2 のまま
+                return 2.5;
+            } else if (scroll <= maxExpandEnd__sp) {
+                // 1000〜3000 の間で 2 からさらに拡大
+                return 2.5 + (scroll - fadeInEnd__sp) / maxExpandSpeedPocket__sp;
+            } else {
+                // それ以降は最大値のまま
+                return 2.5 + (maxExpandEnd__sp - fadeInEnd__sp) / maxExpandSpeedPocket__sp;
+            }
+        }
+
+        $(window).scroll(function () {
+            // 現在のスクロール量を取得
+            let scroll = $(this).scrollTop();
+            
+            // ★どの条件でも必ずポケットのscaleを更新★
+            const pocketScale__sp = getPocketScale(scroll);
+            $(".pocket").css({
+                transform: "scale(" + pocketScale__sp + ")"
+            });
+
+            if (scroll <= fadeOutEnd__sp) {
+                //前回のスクロールで消していたポケット、丸、四角、ロゴ、ステッチ、カードを出現させる
+                $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
+                // $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
+                ).css("display", "block");
+                //透明にしていたポケット、ロゴ、ステッチ、コンセプトの不透明度を最大値にする
+                $(".pocket, .logoBox, .stitch").css({
+                    opacity: 1
+                });
+                //前回で出現させたカードの不透明度を0にする
+                $(".cardOuterBox").css({
+                    opacity: 0
+                });
+                // $(".cardOuterBox, .concept").css({
+                //     opacity: 0
+                // })
+                //前回移動したポケットの位置を初期位置に戻しておく
+                $(".pocket").css({
+                    top: "300px"
+                });
+
+                // 丸の初期位置にスクロール量 * 速度 を加算
+                let newTop = 275 + scroll * speedCircle__sp;
+                // 不透明度 (opacity) の計算
+                let opacity = 1 - (scroll / fadeOutEnd__sp);
+                // opacityの値を 0.0 から 1.0 の間に制限する
+                // スクロール量が多すぎてもマイナスにならないようにする
+                if (opacity < 0) {
+                    opacity = 0;
+                } else if (opacity > 1) {
+                    opacity = 1; // スクロール完了位置より後では不透明を維持
+                }
+                // 四角と丸を下げる
+                $(".pocketCircle, .pocketSquare").css({
+                    top: newTop + "px"
+                });
+                //ロゴテキストとステッチをフェードアウトする
+                $(".logoBox, .stitch").css({
+                    opacity: opacity
+                });
+                } else if (scroll > fadeOutEnd__sp && scroll <= expandEnd__sp) {
+                // 初期位置にスクロール量 * 速度 を加算
+                let newTopPocket = 300 + (scroll - fadeOutEnd__sp) * speedPocket__sp;
+
+                $(".pocket").css({
+                    // スクロールに合わせてポケットの位置を中央から少し下げていく
+                    top: newTopPocket + "px"
+                })
+                //ロゴテキスト、ステッチをきれいに消す
+                $(".logoBox, .stitch").css({
+                    opacity: 0
+                });
+                //逆方向スクロール時にコンセプト内容を消す
+                $(".cardOuterBox").css({
+                    opacity: 0
+                })
+
+            } else if (scroll > expandEnd__sp  && scroll <= CardEnd__sp) {
+                // 初期位置にスクロール量 * 速度 を加算
+                let newTopCard = 280 - (scroll - 640) * speedCard__sp;
+                $(".cardOuterBox").css({
+                    opacity: 1,
+                    // スクロールに合わせてカードの位置を上げる
+                    "top": newTopCard + "px"
+                })
+                //逆方向スクロール時にコンセプト内容を消す
+                $(".concept").css({
+                    opacity: 0
+                });
+
+            } else if (scroll > CardEnd__sp  && scroll <= fadeInEnd__sp) {
+                // 不透明度 (opacity) の計算
+                let opacityConcept = (scroll - CardEnd__sp) / (fadeInEnd__sp - CardEnd__sp);
+                if (opacityConcept < 0) {
+                    opacityConcept = 0;
+                } else if (opacityConcept > 1) {
+                    opacityConcept = 1; // スクロール完了位置より後では不透明を維持
+                }
+                // スクロールに合わせてコンセプト内容をフェードイン
+                $(".concept").css({
+                    opacity: opacityConcept
+                });
+                $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox .concept"
+                ).css("display", "block");
+
+            } else if (scroll > fadeInEnd__sp  && scroll <= maxExpandEnd__sp) {
+                // 初期位置にスクロール量 * 速度 を加算
+                let newTopConcept = 272 - (scroll - fadeInEnd__sp) * speedConcept__sp;
+                
+                $(".concept").css({
+                // スクロールに合わせてコンセプト内容の位置を上げる
+                    top: newTopConcept+ "px"
+                })
+                //逆スクロール時に表示する
+                $(".pocket").fadeIn(500)
+            } else if (scroll > maxExpandEnd__sp) {
+                //非表示に
+                $(".pocket").fadeOut(500)
+                $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
+                // $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
+                ).css("display", "none");
+            } 
+        });
+    } else {
+        //// ====================================
+        //// pc版の設定
+        //// ====================================
+        // 丸と四角が下がっていく速度の調整用
+        const speedCircle = 0.2;
+        // ポケットが下がっていく速度の調整用
+        const speedPocket = 0.36;
+        // ポケットが拡大する速度の調整用
+        const expandSpeedPocket = 240;
+        // ロゴテキストとステッチのフェードアウトが完了するスクロール位置
+        const fadeOutEnd = 400;
+        // ポケットの拡大が完了するスクロール位置
+        const expandEnd = 640;
+        // カードの出現が完了するスクロール位置
+        const CardEnd = 800; 
+        // カードが出てくる速度の調整用
+        const speedCard = 0.73;
+        //コンセプト内容のフェードインが完了するまでのスクロール位置
+        const fadeInEnd = 1000;
+        // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
+        const maxExpandEnd = 3000;
+        // const maxExpandEnd = 2200;
+        // ポケットが画面いっぱいまで拡大する速度の調整用
+        const maxExpandSpeedPocket = 200;
+        // コンセプトの内容が上がっていく速度の調整用
+        const speedConcept = 0.6;
+
+        // ★scroll位置からポケットのscaleを毎回一意に決める関数★
+        function getPocketScale(scroll) {
+            if (scroll <= fadeOutEnd) {
+                // 一番上付近は等倍
+                return 1;
+            } else if (scroll <= expandEnd) {
+                // 400〜640 の間で 1 → 2 に
+                return 1 + (scroll - fadeOutEnd) / expandSpeedPocket;
+            } else if (scroll <= fadeInEnd) {
+                // 640〜1000 の間は 2 のまま
+                return 2;
+            } else if (scroll <= maxExpandEnd) {
+                // 1000〜3000 の間で 2 からさらに拡大
+                return 2 + (scroll - fadeInEnd) / maxExpandSpeedPocket;
+            } else {
+                // それ以降は最大値のまま
+                return 2 + (maxExpandEnd - fadeInEnd) / maxExpandSpeedPocket;
+            }
+        }
+
+        $(window).scroll(function () {
+            // 現在のスクロール量を取得
+            let scroll = $(this).scrollTop();
+            
+            // ★どの条件でも必ずポケットのscaleを更新★
+            const pocketScale = getPocketScale(scroll);
+            $(".pocket").css({
+                transform: "scale(" + pocketScale + ")"
+            });
+            
+
+            if (scroll <= fadeOutEnd) {
+                //前回のスクロールで消していたポケット、丸、四角、ロゴ、ステッチ、カードを出現させる
+                $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
+                // $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
+                ).css("display", "block");
+                //透明にしていたポケット、ロゴ、ステッチ、コンセプトの不透明度を最大値にする
+                $(".pocket, .logoBox, .stitch").css({
+                    opacity: 1
+                });
+                //前回で出現させたカードの不透明度を0にする
+                $(".cardOuterBox").css({
+                    opacity: 0
+                });
+                // $(".cardOuterBox, .concept").css({
+                //     opacity: 0
+                // })
+                //前回移動したポケットの位置を初期位置に戻しておく
+                $(".pocket").css({
+                    top: "300px"
+                });
+
+                // 丸の初期位置(250px)にスクロール量 * 速度 を加算
+                let newTop = 250 + scroll * speedCircle;
+                // 不透明度 (opacity) の計算
+                let opacity = 1 - (scroll / fadeOutEnd);
+                // opacityの値を 0.0 から 1.0 の間に制限する
+                // スクロール量が多すぎてもマイナスにならないようにする
+                if (opacity < 0) {
+                    opacity = 0;
+                } else if (opacity > 1) {
+                    opacity = 1; // スクロール完了位置より後では不透明を維持
+                }
+                // 四角と丸を下げる
+                $(".pocketCircle, .pocketSquare").css({
+                    top: newTop + "px"
+                });
+                //ロゴテキストとステッチをフェードアウトする
+                $(".logoBox, .stitch").css({
+                    opacity: opacity
+                });
+                } else if (scroll > fadeOutEnd && scroll <= expandEnd) {
+                // 初期位置(300px)にスクロール量 * 速度 を加算
+                let newTopPocket = 300 + (scroll - fadeOutEnd) * speedPocket;
+
+                $(".pocket").css({
+                    // スクロールに合わせてポケットの位置を中央から少し下げていく
+                    top: newTopPocket + "px"
+                })
+                //ロゴテキスト、ステッチをきれいに消す
+                $(".logoBox, .stitch").css({
+                    opacity: 0
+                });
+                //逆方向スクロール時にコンセプト内容を消す
+                $(".cardOuterBox").css({
+                    opacity: 0
+                })
+
+            } else if (scroll > expandEnd  && scroll <= CardEnd) {
+                // 初期位置にスクロール量 * 速度 を加算
+                let newTopCard = 256 - (scroll - 640) * speedCard;
+                $(".cardOuterBox").css({
+                    opacity: 1,
+                    // スクロールに合わせてカードの位置を上げる
+                    "top": newTopCard + "px"
+                })
+                //逆方向スクロール時にコンセプト内容を消す
+                $(".concept").css({
+                    opacity: 0
+                });
+
+            } else if (scroll > CardEnd  && scroll <= fadeInEnd) {
+                // 不透明度 (opacity) の計算
+                let opacityConcept = (scroll - CardEnd) / (fadeInEnd - CardEnd);
+                if (opacityConcept < 0) {
+                    opacityConcept = 0;
+                } else if (opacityConcept > 1) {
+                    opacityConcept = 1; // スクロール完了位置より後では不透明を維持
+                }
+                // スクロールに合わせてコンセプト内容をフェードイン
+                $(".concept").css({
+                    opacity: opacityConcept
+                });
+                $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox .concept"
+                ).css("display", "block");
+
+            } else if (scroll > fadeInEnd  && scroll <= maxExpandEnd) {
+                // 初期位置にスクロール量 * 速度 を加算
+                let newTopConcept = 272 - (scroll - fadeInEnd) * speedConcept;
+                
+                $(".concept").css({
+                // スクロールに合わせてコンセプト内容の位置を上げる
+                    top: newTopConcept+ "px"
+                })
+                //逆スクロール時に表示する
+                $(".pocket").fadeIn(500)
+            } else if (scroll > maxExpandEnd) {
+                //非表示に
+                $(".pocket").fadeOut(500)
+                $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
+                // $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
+                ).css("display", "none");
+            } 
+        });
+    }
 })
 
 //// ====================================
@@ -714,5 +926,58 @@ window.addEventListener("scroll", () => {
     // }, 300);
     });
   }
+});
 
+//// ====================================
+//// ハンバーガーメニュー
+//// ====================================
+$(function() {
+    $(".hamburger__back").click(function() {
+        $(".hamburger").toggleClass("open");
+        // $(".header__nav--sp").fadeToggle({
+        //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+        //     complete: function() {
+        //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+        //         $(this).toggleClass('is-active'); 
+        //     }
+        // });
+
+        var $nav = $(".header__nav--sp");
+
+        if ($nav.hasClass('is-active')) {
+            // --- 閉じる時 ---
+            
+            // 1. is-closing を付けて、上に消えるアニメーションを開始させる
+            $nav.addClass('is-closing'); 
+            
+            // 2. アニメーション完了を待ってから非表示にし、is-active/is-closingを外す
+            setTimeout(function() {
+                $nav.removeClass('is-active is-closing').hide();
+            }, 500); // アニメーション時間 (0.5s + 0.2s) に合わせる
+
+        } else {
+            // --- 開く時 ---
+            
+            // 1. is-closing が残っている場合は念のため削除
+            $nav.removeClass('is-closing'); 
+            
+            // 2. 表示し、斜め出現アニメーションを開始させる（display: block;）
+            $nav.show();
+            // $nav.addClass('is-active');
+            // 3. ブラウザが show() を描画するのを待つ (リフローを強制)
+            setTimeout(function() {
+                // 4. アニメーションを開始
+                $nav.addClass('is-active');
+            }, 10); // 10ms程度の短い遅延を入れる
+        
+        //上記の３の代わりに、下記を挟んでもうまくいった
+        //     $(".header__nav--sp").fadeToggle({
+        //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+        //     complete: function() {
+        //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+        //         $(this).toggleClass('is-active'); 
+        //     }
+        // });
+        }
+    });
 });

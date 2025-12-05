@@ -21,13 +21,13 @@
 //// ヘッダー
 //// ==================================== -->
     <header id="header">
+         <h1 class="header__logoItem">
+            <a href="./index.html">
+                <img class="header__logo" src="./images/pc__tominaga-design-logo__header@2x.png"
+                    alt="トミナガデザイン">
+            </a>
+        </h1>
         <div class="header__inner">
-            <h1 class="header__logoItem">
-                <a href="./index.html">
-                    <img class="header__logo" src="./images/pc__tominaga-design-logo__header@2x.png"
-                        alt="トミナガデザイン">
-                </a>
-            </h1>
             <nav class="header__nav">
                 <ul class="header__navList">
                     <li class="header__navItem"><a href="./index.html">TOP</a></li>
@@ -55,6 +55,38 @@
                 </li>
             </ul>
         </a>
+        <!-- 以下、ハンバーガーメニュー -->
+        <div class="hamburger__back">
+            <div class="hamburger">
+                <span></span>
+            </div>
+        </div>
+        <nav class="header__nav--sp">
+            <div class="navBackCircle"></div>
+            <div class="navBackSquare"></div>
+            <ul class="header__navList--sp">
+                <li class="header__navItem"><a href="./index.html">TOP</a></li>
+                <li class="header__navItem"><a href="./concept.html">CONCEPT</a></li>
+                <li class="header__navItem"><a href="./works.html">WORKS</a></li>
+                <li class="header__navItem"><a href="./about.html">ABOUT</a></li>
+                <li class="header__navItem">
+                    <a href="./contact.html">
+                        <div class="header__contactBtn">
+                            <!-- <span></span> -->
+                            <p class="header__contactBtnText">CONTACT</p>
+                        </div>
+                    </a>
+                </li>
+                <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">
+                    <ul class="header__snsList--sp">
+                        <li class="header__navItem--sp">Instagram</li>
+                        <li class="header__snsItem--sp">
+                            <img class="header__snsLogo--sp" src="./images/Insta-logo--333@2x.png" alt="Instagram">
+                        </li>
+                    </ul>
+                </a>
+            </ul>
+        </nav>
     </header>
 <!-- ====================================
 //// メイン
@@ -207,9 +239,10 @@
                 </div>
                 <div class="contact__item">
                     <!-- <input class="contact__submit" type="submit" value="送信する"> -->
-                    <button  class="contact__submit">送信する</button>
-                    <!-- ボタン上の右向き三角形 -->
-                    <div class="triangle-right"></div>
+                    <button  class="contact__submit">送信する
+                        <!-- ボタン上の右向き三角形 -->
+                        <div class="triangle-right"></div>
+                    </button>
                 </div>
             </form>
         </div>
@@ -246,6 +279,8 @@
 <!-- ====================================
 //// Java Svript
 //// ==================================== -->
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript">
         let submitted = false;
     </script>
@@ -321,6 +356,60 @@
         // 4. すべての要素の監視を開始
         elements.forEach(element => {
             observer.observe(element);
+        });
+    });
+
+    //// ====================================
+    //// ハンバーガーメニュー
+    //// ====================================
+    $(function() {
+        $(".hamburger__back").click(function() {
+            $(".hamburger").toggleClass("open");
+            // $(".header__nav--sp").fadeToggle({
+            //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+            //     complete: function() {
+            //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+            //         $(this).toggleClass('is-active'); 
+            //     }
+            // });
+
+            var $nav = $(".header__nav--sp");
+
+            if ($nav.hasClass('is-active')) {
+                // --- 閉じる時 ---
+                
+                // 1. is-closing を付けて、上に消えるアニメーションを開始させる
+                $nav.addClass('is-closing'); 
+                
+                // 2. アニメーション完了を待ってから非表示にし、is-active/is-closingを外す
+                setTimeout(function() {
+                    $nav.removeClass('is-active is-closing').hide();
+                }, 500); // アニメーション時間 (0.5s + 0.2s) に合わせる
+
+            } else {
+                // --- 開く時 ---
+                
+                // 1. is-closing が残っている場合は念のため削除
+                $nav.removeClass('is-closing'); 
+                
+                // 2. 表示し、斜め出現アニメーションを開始させる（display: block;）
+                $nav.show();
+                // $nav.addClass('is-active');
+                // 3. ブラウザが show() を描画するのを待つ (リフローを強制)
+                setTimeout(function() {
+                    // 4. アニメーションを開始
+                    $nav.addClass('is-active');
+                }, 10); // 10ms程度の短い遅延を入れる
+            
+            //上記の３の代わりに、下記を挟んでもうまくいった
+            //     $(".header__nav--sp").fadeToggle({
+            //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+            //     complete: function() {
+            //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+            //         $(this).toggleClass('is-active'); 
+            //     }
+            // });
+            }
         });
     });
     </script>

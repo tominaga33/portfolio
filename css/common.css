@@ -8,6 +8,7 @@ body {
     /* max-width: 1440px; */
     /* width: 100%; */
     background-color: #fff;
+    overflow-x: hidden;
     /* position: relative; */
     /* overflow-x: hidden; */
     /* overflow-x: visible !important; */
@@ -20,20 +21,15 @@ body {
 // ==================================== */
 .header__inner {
     display: flex;
-    /* justify-content: space-between; */
     justify-content: flex-end;
-    /* align-items: center; */
     position: fixed;
-    /* position: absolute; */
     padding-top: 40px;
     padding-bottom: 40px;
     padding-right: 3.1%;
-    /* padding-left: 3.7%; */
     padding-left: auto;
     width: 100%;
     z-index: 9999;
     background-color: #ffffffb6;
-    /* background-color: #fff; */
 }
 
 .header__nav {
@@ -43,8 +39,10 @@ body {
 
 .header__logoItem {
     width: 90px;
-    position: absolute;
+    position: fixed;
+    top: 40px;
     left: 3.7%;
+    z-index: 11000;
 }
 
 .header__navList {
@@ -101,6 +99,240 @@ body {
     font-weight: bold;
 }
 
+.hamburger,
+.header__nav--sp {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .header__logoItem {
+        top: 20px;
+        left: 20px;
+    }
+
+    .header__inner {
+        display: none;
+    }
+
+    .fixMenu__list {
+        display: none;
+    }
+
+    .hamburger__back {
+        display: block;
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        background-color: #333;
+        position: fixed;
+        /* top: 40px; */
+        top: 20px;
+        /* right: 3.1%; */
+        right: 20px;
+        z-index: 11000;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: block;
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        z-index: 11000;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 10px;
+        transition: 0.2s;
+    }
+
+    .hamburger span::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: -10px;
+        /* バツ印になって元に戻る時用に定義 */
+        transform: rotate(0deg);
+        transition: 0.2s;
+        /* それぞれの動きの時間を設定するためにプロパティ名を定義 */
+        transition-property: top, transform;
+        /* 定義したtop、transformの順に遅延時間を設定 */
+        transition-delay: 0.2s, 0s;
+    }
+
+    .hamburger span::after {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -10px;
+        transition: 0.2s;
+        transition-property: bottom, transform;
+        transition-delay: 0.2s, 0s;
+    }
+
+    .open span {
+        background-color: transparent;/* 中央の線を透明にして消す */
+    }
+
+    .open span::before {
+        /* それぞれの動きの時間を設定するためにプロパティ名を定義 */
+        transition-property: top, transform;
+        top: 0;
+        transform: rotate(45deg);
+        /* 定義したtop、transformの順に遅延時間を設定 */
+        transition-delay:0s, 0.2s;
+    }
+
+    .open span::after {
+        transition-property: bottom, transform;
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition-delay:0s, 0.2s;
+    }
+
+    .navBackCircle {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 350px;
+        width: 350px;
+        /* transform: translate(-50%, -50%); */
+        border-radius: 200px;
+        background-color: #fbff6c;
+        border: solid 3px #333;
+        z-index: 8000;
+
+        opacity: 0;
+        /* 画面外に移動させておく (例: X軸-100% Y軸+100% からスタート) */
+        transform: translate(-150%, 50%); 
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* CSSアニメーションの準備 */
+    }
+
+    .navBackSquare {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 400px;
+        width: 400px;
+        /* transform: translate(-50%, -50%) rotate(45deg); */
+        background-color: #27c1ae;
+        border: solid 3px #333;
+        z-index: 7000;
+    
+        opacity: 0;
+        /* 画面外に移動させておく (例: X軸+100% Y軸-100% からスタート) */
+        transform: translate(50%, -150%) rotate(45deg); 
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* CSSアニメーションの準備 */
+    }
+
+    /* 黄色い円：中央へ移動し、不透明にする */
+    .header__nav--sp.is-active .navBackCircle {
+        opacity: 1;
+        transform: translate(-50%, -50%); 
+        /* transition: transform 0.5s ease-out, opacity 0.5s ease-out; */
+    }
+
+    /* 緑の四角：中央へ移動し、不透明にする */
+    .header__nav--sp.is-active .navBackSquare {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg);
+        /* transition: transform 0.5s ease-out, opacity 0.5s ease-out; */
+    }
+
+    /* 閉じる時（上へ消える）の動きを上書き */
+    .header__nav--sp.is-closing .navBackCircle {
+        /* 閉じる時のゴール位置：上へ消える */
+        transform: translate(-50%, -770px);/* ここで上に上がる速度を他と合わせて微調整 */
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+
+    .header__nav--sp.is-closing .navBackSquare {
+        /* 閉じる時のゴール位置：上へ消える */
+        transform: translate(-50%, -800px) rotate(45deg);/* ここで上に上がる速度を他と合わせて微調整 */
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+
+    .header__navList--sp {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 100%;
+        margin: 0 auto;
+        /* padding-top: 100px; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-start; */
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        z-index: 9000;
+        opacity: 0;
+        /* transition: opacity 0.5s ease-out; */
+        transition: opacity 0.5s ease-in-out;/* 丸と四角が中央に寄るのを待つためにこれにする */
+    }
+
+    /* .header__nav--sp.is-active {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+    } */
+
+    .header__nav--sp.is-active .header__navList--sp {
+        opacity: 1;
+        /* transition: transform 0.5s ease-out, opacity 0.5s ease-out; */
+    }
+
+    .header__nav--sp.is-closing .header__navList--sp {
+        transform: translate(-50%, -1040px);/* ここで上に上がる速度を他と合わせて微調整 */
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+
+    /* .header__navList--sp .header__contactBtn {
+        transform: translateX(-33px);
+    } */
+
+    .header__snsList--sp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        /* transform: translateX(-12px); */
+    }
+
+    .header__snsLogo--sp {
+        width: 24px;
+        height: 24px;
+    }
+
+    .header__navItem--sp {
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__logoItem {
+        width: 64px;
+        top: 20px;
+        left: 20px;
+    }
+}
+
 /* ====================================
 // メイン
 // ==================================== */
@@ -117,7 +349,7 @@ main {
 .topPage main {
     max-width: 100vw;
     padding: 0 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* ====================================
@@ -143,6 +375,18 @@ main {
     margin-bottom: 104px;
 }
 
+@media screen and (max-width: 768px) {
+    .title {
+        padding-top: 144px;
+    }
+
+    .heading__h1 {
+        font-size: 30px;
+        padding-bottom: 10px;
+        margin-bottom: 64px;
+    }
+}
+
 /* ====================================
 // コンタクト
 // ==================================== */
@@ -155,6 +399,7 @@ main {
     /* padding-bottom: 1200px; */
     /* conceptページの足跡が途切れてしまうのでbodyにoverflow-x: hidden;は変更 */
     /* overflow-x: hidden; */
+    z-index: 3;
 }
 
 /* .contactPage { */
@@ -194,6 +439,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 /* カードの装飾 */
 .contact__outerLine {
     max-width: 856px;
+    /* max-width: 85.6%; */
     height: 1184px;
     left: 10px;
     right: 10px;
@@ -209,6 +455,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 
 .contact__innerLine {
     max-width: 776px;
+    /* max-width: 77.6%; */
     height: 1104px;
     top: 40px;
     left: 50px;
@@ -236,7 +483,10 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 }
 
 .topPage .contact__form {
-    margin-bottom: -300px
+    /* -300pxを入れると送信ボタンが押せなくなってしまう*/
+    /* →.contactにz-index:3を入れて回避 */
+    margin-bottom: -300px;
+    /* margin-bottom: 0; */
 }
 
 .form__title {
@@ -296,7 +546,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     transform: translateX(-344px);
 }
 
-.penIllust.is-visible {
+.topPage .penIllust.is-visible {
   opacity: 1; /* 不透明度を上げる */
   transform: translateX(0); /* 元の位置に戻すことで左から右への動きを表現 */
 }
@@ -318,7 +568,9 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 .contact__info {
     padding-top: 54px;
     padding-bottom: 54px;
+    /* padding-left: 20%; */
     width: 54.8%;
+    /* width: 100%; */
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.75;
@@ -394,7 +646,94 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     position: absolute;
     top: 32px;
-    right: 30%;
+    right: 10%;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .contactContainer {
+        padding-top: 296px;
+    }
+
+    .contact__outerLine {
+        /* max-width: 350px; */
+        height: 984px;
+        border-radius: 24px;
+    }
+
+    .contact__innerLine {
+        /* max-width: 320px; */
+        height: 954px;
+        top: 15px;
+        left: 25px;
+        right: 25px;
+        border-radius: 12px;
+    }
+
+    .contact__form {
+        margin-bottom: 0;
+    }
+
+    .form__title {
+        width: 140px;
+    }
+
+    .heading__contact {
+        font-size: 24px;
+        padding-top: 44px;
+        padding-bottom: 8px;
+    }
+
+    .underLine {
+        width: 140px;
+        height: 2px;
+    }
+
+    .topPage .penIllust {
+        transform: translateX(-140px);
+    }   
+
+    .penIllust__img {
+        width: 160px;
+        height: auto;
+        left: 140px;
+    }
+
+    .contact__info {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .contact__text {
+        font-size: 14px;
+        padding-bottom: 16px;
+    }
+
+    .insta__text {
+        font-size: 14px;
+    }
+
+    .contact__label {
+        font-size: 12px;
+        width: 80%;
+    }
+
+    .contact__submit {
+        height: 56px;
+        font-size: 16px;
+        padding: 4px 20px;
+    }
+
+    .contact__name, .contact__mail, .contact__content {
+        font-size: 14px;
+        width: 80%;
+    }
+
+    .triangle-right {
+        top: 24px;
+    }
+
+
 }
 
 /* ====================================
@@ -453,4 +792,36 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     font-size: 12px;
     color: white;
     font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+    .backcolor {
+        height: 312px;
+    }
+
+    .footer__navList {
+        padding-top: 36px;
+        padding-bottom: 24px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer__navItem {
+        font-size: 12px;
+    }
+
+    .footer__snsList {
+        gap: 12px;
+        padding-bottom: 44px;
+    }
+
+    .footer__snsLogo {
+        width: 18px;
+        height: 18px;
+    }
+
+    .copyright__text {
+        font-size: 10px;
+    }
 }

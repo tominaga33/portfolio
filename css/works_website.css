@@ -88,10 +88,19 @@
     /* 親要素内のスペースを無効化 */
 }
 
+.workIntent__targetTitleContainer {
+    display: flex;
+    flex-direction: row;
+    /* width: 140px; */
+    width: 24.5%; /* 140 / (828 - 256)*/ 
+}
+
 .workIntent__targetTitle {
     /* width: 24.6%; */
     /* 140 / 570 */
-    width: 12.3%; /* 70 / 570 */
+    width: 70px;
+    /* width: 12.3%;  */
+    /* 70 / 570 */
     font-size: 16px;
     /* letter-spacing: 28px; */
     text-align: justify;
@@ -111,7 +120,9 @@
 } */
 
 .workIntent__afterTargetTitle {
-    width: 12.3%; /* 70 / 570 */
+    /* width: 70px; */
+    /* width: 12.3%; */
+    /* 70 / 570 */
     font-size: 16px;
 }
 
@@ -126,6 +137,7 @@
 }
 
 .workIntent__contentText {
+    font-size: 16px;
     padding-top: 64px;
     line-height: 1.75;
     text-align: justify;
@@ -192,4 +204,60 @@
     position: absolute;
     top: 32px;
     left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .mockup {
+        margin-bottom: 64px;
+    }
+
+    .workInfo__textTitle, .workInfo__textContent,
+    .workIntent__targetTitle, .workIntent__afterTargetTitle,
+    .workIntent__targetText, .workIntent__contentText {
+        font-size: 14px;
+    }
+
+    .workIntent {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 120px;
+    }
+
+    .workIntent__listItem {
+        width: 100%;
+    }
+
+    /* .workIntent__targetTitle {
+        width: 16.3%;
+    } */
+
+    .workIntent__targetTitleContainer {
+        width: 30.9%;
+    }
+
+    .workIntent__afterTargetTitle {
+    /* width: 6.3%; */
+    width: 30.9%;/* (256  / 828) - 70 */
+    /* padding-right: 70px; */
+    }
+
+    .workImg {
+        padding-bottom: 152px;
+    }
+
+    .backBtn {
+        width: 168px;
+        height: 44px;
+        border-radius: 22px;
+        margin-bottom: 152px;
+    }
+
+    .backBtn__text {
+        font-size: 14px;
+    }
+
+    .triangle-left {
+        top: 18px;
+        left: 8%;
+    }
 }

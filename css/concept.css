@@ -43,6 +43,32 @@
     padding-bottom: 134px;
 }
 
+@media screen and (max-width: 768px) {
+    .concept__title {
+        font-size: 38px;
+        padding-bottom: 16px;
+    }
+
+    .concept__subTitle {
+        font-size: 16px;
+        padding-bottom: 50px;
+    }
+
+    .concept__contentTitle {
+        font-size: 20px;
+        padding-bottom: 44px;
+    }
+
+    .concept__contentText {
+        font-size: 14px;
+    }
+
+    .concept__contentTextEnd {
+        font-size: 14px;
+        padding-bottom: 130px;
+    }
+}
+
 /* ====================================
 // ポートフォリオができるまで
 // ==================================== */
@@ -78,7 +104,8 @@
 }
 
 .step__number {
-    width: 118px;
+    /* width: 118px; */
+    width: 30.4%; /* 118 / 388 */
     height: 59px;
     border-right: solid 2px #333;
     display: flex;
@@ -91,7 +118,8 @@
 }
 
 .step__title {
-    width: 270px;
+    /* width: 270px; */
+    width: 69.6%; /* 270 / 388 */
     height: 59px;
     display: flex;
     justify-content: center;
@@ -251,3 +279,112 @@
     width: 38.8%; /* 388 / 1000 */
 }
 
+@media screen and (max-width: 768px) {
+    .headingConcept {
+        font-size: 24px;
+        padding-bottom: 64px;
+    }
+
+    .step__numberText {
+        font-size: 16px;
+    }
+
+    .step__titleText {
+        font-size: 20px;
+    }
+
+    .step__Text {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .step__numberText {
+        font-size: 14px;
+    }
+
+    .step__titleText {
+        font-size: 18px;
+    }
+}
+
+.portfolioStory--sp {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .stepContainer {
+        display: none;
+    }
+
+    .portfolioStory--sp {
+        display: block;
+    }
+
+    .step__unit {
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+
+    .headingConcept {
+        font-size: 24px;
+        padding-bottom: 64px;
+    }
+
+    .step__numberText {
+        font-size: 16px;
+    }
+
+    .step__titleText {
+        font-size: 20px;
+    }
+
+    .step__Text {
+        font-size: 14px;
+    }
+
+    .step__content--sp {
+        padding-bottom: 64px;
+        position: relative;
+    }
+
+    .step__contentEnd--sp {
+        padding-bottom: 180px;
+    }
+    
+    .arrowDown {
+        width: 9px;
+        height: auto;
+        /* margin-bottom: 40px; */
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .footprints__step1--sp {
+        width: 83px;
+        height: 149px;
+        bottom: -70px;
+        right: -50px;
+        transform: rotate(10deg);
+        position: absolute;
+    }
+
+    .footprints__step4--sp {
+        width: 83px;
+        height: 149px;
+        transform: scaleX(-1)  rotate(20deg);
+        bottom: -80px;
+        left: -70px;
+        position: absolute;
+    }
+
+    .footprints__step6--sp {
+        width: 83px;
+        height: 149px;
+        transform: rotate(30deg);
+        bottom: -70px;
+        right: -30px;
+        position: absolute;
+    }
+}

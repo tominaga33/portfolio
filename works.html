@@ -13,13 +13,13 @@
 //// ヘッダー
 //// ==================================== -->
     <header id="header">
-        <div class="header__inner">
-            <h1 class="header__logoItem">
+        <h1 class="header__logoItem">
                 <a href="./index.html">
                     <img class="header__logo" src="./images/pc__tominaga-design-logo__header@2x.png"
                         alt="トミナガデザイン">
                 </a>
             </h1>
+        <div class="header__inner">
             <nav class="header__nav">
                 <ul class="header__navList">
                     <li class="header__navItem"><a href="./index.html">TOP</a></li>
@@ -47,6 +47,38 @@
                 </li>
             </ul>
         </a>
+        <!-- 以下、ハンバーガーメニュー -->
+        <div class="hamburger__back">
+            <div class="hamburger">
+                <span></span>
+            </div>
+        </div>
+        <nav class="header__nav--sp">
+            <div class="navBackCircle"></div>
+            <div class="navBackSquare"></div>
+            <ul class="header__navList--sp">
+                <li class="header__navItem"><a href="./index.html">TOP</a></li>
+                <li class="header__navItem"><a href="./concept.html">CONCEPT</a></li>
+                <li class="header__navItem"><a href="./works.html">WORKS</a></li>
+                <li class="header__navItem"><a href="./about.html">ABOUT</a></li>
+                <li class="header__navItem">
+                    <a href="./contact.html">
+                        <div class="header__contactBtn">
+                            <!-- <span></span> -->
+                            <p class="header__contactBtnText">CONTACT</p>
+                        </div>
+                    </a>
+                </li>
+                <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">
+                    <ul class="header__snsList--sp">
+                        <li class="header__navItem--sp">Instagram</li>
+                        <li class="header__snsItem--sp">
+                            <img class="header__snsLogo--sp" src="./images/Insta-logo--333@2x.png" alt="Instagram">
+                        </li>
+                    </ul>
+                </a>
+            </ul>
+        </nav>
     </header>
 <!-- ====================================
 //// メイン
@@ -65,37 +97,51 @@
 //// ==================================== -->
         <div class="category">
             <ul class="category__list">
-                <!-- <a href="./works_all.html"> -->
-                    <!-- <li class="category__item--selected"> -->
                     <li class="category__item">
                         <input id="all" type="radio" name="tab__item" checked>
                         <label class="category__btn" for="all">ALL</label>
                     </li>
-                <!-- </a> -->
-                <!-- <a href="./works_website.html"> -->
                     <li class="category__item">
                         <input id="website" type="radio" name="tab__item">
                         <label class="category__btn" for="website">WEB SITE</label>
                     </li>
-                <!-- </a> -->
-                <!-- <a href="./works_banner.html"> -->
                     <li class="category__item">
                         <input id="banner" type="radio" name="tab__item">
                         <label class="category__btn" for="banner">BANNER</label>
                     </li>
-                <!-- </a> -->
-                <!-- <a href="./works_graphic.html"> -->
                     <li class="category__item">
                         <input id="graphic" type="radio" name="tab__item">
                         <label class="category__btn" for="graphic">GRAPHIC</label>
                     </li>
-                <!-- </a> -->
-                <!-- <a href="./works_lllust.html"> -->
                     <li class="category__item">
                         <input id="illust" type="radio" name="tab__item">
                         <label class="category__btn" for="illust">ILLUST</label>
                     </li>
-                <!-- </a> -->
+            </ul>
+            <ul class="category__list--sp">
+                <li class="category__item">
+                    <input id="all--sp" type="radio" name="tab__item--sp" checked>
+                    <!-- <input id="all--sp" type="radio" name="tab__item--sp"> -->
+                    <label class="category__btn" for="all--sp">ALL</label>
+                </li>
+                <li class="category__item">
+                    <input id="website--sp" type="radio" name="tab__item--sp">
+                    <label class="category__btn" for="website--sp">WEB SITE</label>
+                </li>
+                <li class="category__item">
+                    <input id="banner--sp" type="radio" name="tab__item--sp">
+                    <label class="category__btn" for="banner--sp">BANNER</label>
+                </li>
+            </ul>
+            <ul class="category__listLast--sp">
+                <li class="category__item">
+                    <input id="graphic--sp" type="radio" name="tab__item--sp">
+                    <label class="category__btn" for="graphic--sp">GRAPHIC</label>
+                </li>
+                <li class="category__item">
+                    <input id="illust--sp" type="radio" name="tab__item--sp">
+                    <label class="category__btn" for="illust--sp">ILLUST</label>
+                </li>
             </ul>
         </div>
 
@@ -108,72 +154,180 @@
                     <div class="grid__item">
                         <img src="./images/life-hair-design__pc.jpg"
                             alt="ライフヘアデザインのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>美容室</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/design-cafe.html">
                     <div class="grid__item">
                         <img src="./images/design-cafe__pc.jpg"
-                        alt="デザインカフェのウェブサイト">
+                            alt="デザインカフェのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>カフェ</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/workers.html">
                     <div class="grid__item">
                         <img src="./images/workers__pc.jpg"
-                        alt="ワーカーズのウェブサイト">
+                            alt="ワーカーズのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>コワーキングスペース</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/portfolio.html">
                     <div class="grid__item">
                         <img src="./images/portfolio__pc.jpg"
-                        alt="ポートフォリオサイト">
+                            alt="ポートフォリオサイト">
+                        <div class="grid__text-content">
+                            <p>ポートフォリオ</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/icecream.html">
                     <div class="grid__item">
                         <img src="./images/banner__icecream.jpg"
-                        alt="アイスクリームのバナー">
+                            alt="アイスクリームのバナー">
+                        <div class="grid__text-content">
+                            <p>アイスクリーム</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/mobile.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__mobile.jpg"
-                        alt="モバイルのバナー">
+                            alt="モバイルのバナー">
+                        <div class="grid__text-content">
+                            <p>モバイル</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>         
                 </a>
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
                         <img src="./images/banner__hamburger-kokyu1.jpg"
-                        alt="ハンバーガーのバナー高級バージョン１">
+                            alt="ハンバーガーのバナー高級バージョン１">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.1）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
                         <img src="./images/banner__hamburger-kokyu2.jpg"
-                        alt="ハンバーガーのバナー高級バージョン２">
+                            alt="ハンバーガーのバナー高級バージョン２">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.2）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
-                            <img src="./images/banner__hamburger-kokyu3.jpg"
-                        alt="ハンバーガーのバナー高級バージョン３">
+                        <img src="./images/banner__hamburger-kokyu3.jpg"
+                            alt="ハンバーガーのバナー高級バージョン３">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.3）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__hamburger-pop1.jpg"
-                        alt="ハンバーガーのバナーポップバージョン１">
+                            alt="ハンバーガーのバナーポップバージョン１">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.1）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__hamburger-pop2.jpg"
-                        alt="ハンバーガーのバナーポップバージョン２">
+                            alt="ハンバーガーのバナーポップバージョン２">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.2）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">                        
                         <img src="./images/banner__hamburger-pop3.jpg"
-                        alt="ハンバーガーのバナーポップバージョン３">
+                            alt="ハンバーガーのバナーポップバージョン３">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.3）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -188,24 +342,60 @@
                     <div class="grid__item">
                         <img src="./images/life-hair-design__pc.jpg"
                             alt="ライフヘアデザインのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>美容室</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/design-cafe.html">
                     <div class="grid__item">
                         <img src="./images/design-cafe__pc.jpg"
-                        alt="デザインカフェのウェブサイト">
+                            alt="デザインカフェのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>カフェ</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/workers.html">
                     <div class="grid__item">
                         <img src="./images/workers__pc.jpg"
-                        alt="ワーカーズのウェブサイト">
+                            alt="ワーカーズのウェブサイト">
+                        <div class="grid__text-content">
+                            <p>コワーキングスペース</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/portfolio.html">
                     <div class="grid__item">
                         <img src="./images/portfolio__pc.jpg"
-                        alt="ポートフォリオサイト">
+                            alt="ポートフォリオサイト">
+                        <div class="grid__text-content">
+                            <p>ポートフォリオ</p>
+                            <p class="underBlank">Web site</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -219,49 +409,121 @@
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
                         <img src="./images/banner__hamburger-kokyu1.jpg"
-                        alt="ハンバーガーのバナー高級バージョン１">
+                            alt="ハンバーガーのバナー高級バージョン１">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.1）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
                         <img src="./images/banner__hamburger-kokyu2.jpg"
-                        alt="ハンバーガーのバナー高級バージョン２">
+                            alt="ハンバーガーのバナー高級バージョン２">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.2）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-kokyu.html">
                     <div class="grid__item">
                             <img src="./images/banner__hamburger-kokyu3.jpg"
                         alt="ハンバーガーのバナー高級バージョン３">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（高級ver.3）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__hamburger-pop1.jpg"
-                        alt="ハンバーガーのバナーポップバージョン１">
+                            alt="ハンバーガーのバナーポップバージョン１">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.1）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__hamburger-pop2.jpg"
-                        alt="ハンバーガーのバナーポップバージョン２">
+                            alt="ハンバーガーのバナーポップバージョン２">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.2）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/hamburger-pop.html">
                     <div class="grid__item--landscape">                        
                         <img src="./images/banner__hamburger-pop3.jpg"
-                        alt="ハンバーガーのバナーポップバージョン３">
+                            alt="ハンバーガーのバナーポップバージョン３">
+                        <div class="grid__text-content">
+                            <p>ハンバーガー（Pop ver.3）</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/icecream.html">
                     <div class="grid__item">
                         <img src="./images/banner__icecream.jpg"
-                        alt="アイスクリームのバナー">
+                            alt="アイスクリームのバナー">
+                        <div class="grid__text-content">
+                            <p>アイスクリーム</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>
                 </a>
                 <a href="./works/mobile.html">
                     <div class="grid__item--landscape">
                         <img src="./images/banner__mobile.jpg"
-                        alt="モバイルのバナー">
+                            alt="モバイルのバナー">
+                        <div class="grid__text-content">
+                            <p>モバイル</p>
+                            <p class="underBlank">Banner</p>
+                            <p>詳しく見る →</p>
+                        </div>
+                        <div class="bottomLabel">
+                            <p class="bottomLabel__text">詳しく見る</p>
+                            <div class="bottomLabel__triangle-right"></div>
+                        </div>
                     </div>         
                 </a>
             </div>
@@ -327,9 +589,10 @@
                 </div>
                 <div class="contact__item">
                     <!-- <input class="contact__submit" type="submit" value="送信する"> -->
-                    <button  class="contact__submit">送信する</button>
-                    <!-- ボタン上の右向き三角形 -->
-                    <div class="triangle-right"></div>
+                    <button  class="contact__submit">送信する
+                        <!-- ボタン上の右向き三角形 -->
+                        <div class="triangle-right"></div>
+                    </button>
                 </div>
             </form>
         </div>
@@ -365,6 +628,8 @@
 <!-- ====================================
 //// Java Svript
 //// ==================================== -->
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         const all = document.getElementById('all');
         const website = document.getElementById('website');
@@ -429,6 +694,81 @@
 
         // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
         illust.addEventListener('change', function() {
+            // チェックされたのでクラスを追加
+            illust__content.classList.add('is-active');
+            // チェックが外れたのでクラスを削除
+            all__content.classList.remove('is-active');
+            website__content.classList.remove('is-active');
+            banner__content.classList.remove('is-active');
+            graphic__content.classList.remove('is-active');
+        });
+
+<!-- ====================================
+//// チェックボックスのSP版用
+//// ==================================== -->
+        const all__sp = document.getElementById('all--sp');
+        const website__sp = document.getElementById('website--sp');
+        const banner__sp = document.getElementById('banner--sp');
+        const graphic__sp = document.getElementById('graphic--sp');
+        const illust__sp = document.getElementById('illust--sp');
+        
+        // const all__content = document.getElementById('all__content');
+        // const website__content = document.getElementById('website__content');
+        // const banner__content = document.getElementById('banner__content');
+        // const graphic__content = document.getElementById('graphic__content');
+        // const illust__content = document.getElementById('illust__content');
+
+        /// チェックされたのでクラスを追加
+        all__content.classList.add('is-active');
+
+        // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
+        all__sp.addEventListener('change', function() {
+            // チェックされたのでクラスを追加
+            all__content.classList.add('is-active');
+            // チェックが外れたのでクラスを削除
+            website__content.classList.remove('is-active');
+            banner__content.classList.remove('is-active');
+            graphic__content.classList.remove('is-active');
+            illust__content.classList.remove('is-active');
+        });
+
+        // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
+        website__sp.addEventListener('change', function() {
+            // チェックされていたら、クラスを追加
+            website__content.classList.add('is-active');
+            // チェックが外れたのでクラスを削除
+            all__content.classList.remove('is-active');
+            banner__content.classList.remove('is-active');
+            graphic__content.classList.remove('is-active');
+            illust__content.classList.remove('is-active');
+        });
+
+        // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
+        banner__sp.addEventListener('change', function() {
+        if (this.checked) {
+            // チェックされたのでクラスを追加
+            banner__content.classList.add('is-active');
+            // チェックが外れたのでクラスを削除
+            all__content.classList.remove('is-active');
+            website__content.classList.remove('is-active');
+            graphic__content.classList.remove('is-active');
+            illust__content.classList.remove('is-active');
+        }
+        });
+
+        // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
+        graphic__sp.addEventListener('change', function() {
+            // チェックされたのでクラスを追加
+            graphic__content.classList.add('is-active');
+            // チェックが外れたのでクラスを削除
+            all__content.classList.remove('is-active');
+            website__content.classList.remove('is-active');
+            banner__content.classList.remove('is-active');
+            illust__content.classList.remove('is-active');
+        });
+
+        // チェックボックスの状態が変化したとき（ラジオボタンはONのみ反応）
+        illust__sp.addEventListener('change', function() {
             // チェックされたのでクラスを追加
             illust__content.classList.add('is-active');
             // チェックが外れたのでクラスを削除
@@ -513,6 +853,60 @@
         // 4. すべての要素の監視を開始
         elements.forEach(element => {
             observer.observe(element);
+        });
+    });
+
+    //// ====================================
+    //// ハンバーガーメニュー
+    //// ====================================
+    $(function() {
+        $(".hamburger__back").click(function() {
+            $(".hamburger").toggleClass("open");
+            // $(".header__nav--sp").fadeToggle({
+            //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+            //     complete: function() {
+            //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+            //         $(this).toggleClass('is-active'); 
+            //     }
+            // });
+
+            var $nav = $(".header__nav--sp");
+
+            if ($nav.hasClass('is-active')) {
+                // --- 閉じる時 ---
+                
+                // 1. is-closing を付けて、上に消えるアニメーションを開始させる
+                $nav.addClass('is-closing'); 
+                
+                // 2. アニメーション完了を待ってから非表示にし、is-active/is-closingを外す
+                setTimeout(function() {
+                    $nav.removeClass('is-active is-closing').hide();
+                }, 500); // アニメーション時間 (0.5s + 0.2s) に合わせる
+
+            } else {
+                // --- 開く時 ---
+                
+                // 1. is-closing が残っている場合は念のため削除
+                $nav.removeClass('is-closing'); 
+                
+                // 2. 表示し、斜め出現アニメーションを開始させる（display: block;）
+                $nav.show();
+                // $nav.addClass('is-active');
+                // 3. ブラウザが show() を描画するのを待つ (リフローを強制)
+                setTimeout(function() {
+                    // 4. アニメーションを開始
+                    $nav.addClass('is-active');
+                }, 10); // 10ms程度の短い遅延を入れる
+            
+            //上記の３の代わりに、下記を挟んでもうまくいった
+            //     $(".header__nav--sp").fadeToggle({
+            //     duration: 1, // 瞬時に表示/非表示を切り替え（アニメーションはCSSに任せるため）
+            //     complete: function() {
+            //         // 2. fadeToggleが完了したら、アニメーションクラスを切り替える
+            //         $(this).toggleClass('is-active'); 
+            //     }
+            // });
+            }
         });
     });
     </script>

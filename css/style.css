@@ -1,9 +1,167 @@
 @charset "utf-8";
 
-/* body { */
-  /* overflow-x: hidden; */
-  /* height: 5000px; */
-/* } */
+body {
+    overflow-x: hidden;
+    /* height: 5000px; */
+}
+
+/* ====================================
+// ローディング画面
+// ==================================== */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    transition: opacity 0.3s ease;
+    z-index: 30000;
+}
+
+.loading__pocket {
+    width: 294px;
+    height: 308px;
+    transform: scale(1);
+    border: solid 6px #333;
+    border-radius: 0 0 147px 147px;
+    background-color: #fff;
+    position: fixed;
+    left: calc(50% - 147px);
+    top: 300px;
+    z-index: 100;
+}
+
+@keyframes bounceCircle {
+    /* 0% はアニメーションの開始時 */
+    0% {
+        /* オブジェクトをY軸方向に移動させない（元の位置） */
+        transform: translateY(0);
+    }
+    
+    /* 100% はアニメーションの終了時 */
+    100% {
+        /* オブジェクトを下に20px移動させる */
+        transform: translateY(20px);
+    }
+}
+
+@keyframes bounceSquare {
+    /* 0% はアニメーションの開始時 */
+    0% {
+        /* オブジェクトをY軸方向に移動させない（元の位置） */
+        transform: translateY(0) rotate(45deg);
+        /* transform: translateY(0); */
+    }
+    
+    /* 100% はアニメーションの終了時 */
+    100% {
+        /* オブジェクトを下に20px移動させる */
+        transform: translateY(20px) rotate(45deg);
+        /* transform: translateY(20px); */
+    }
+}
+
+.loading__pocketCircle {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: solid 6px #333;
+    position: fixed;
+    left: calc(50% - 147px + 40px);
+    top: 250px;
+    z-index: 50;
+    background-color: #fbff6c;
+    animation: bounceCircle 0.2s infinite alternate ease-in-out;
+}
+
+.loading__pocketSquare {
+    width: 138px;
+    height: 138px;
+    /* rotate: 45deg; */
+    border: solid 6px #333;
+    position: fixed;
+    left: calc(50% - 147px + 110px);
+    top: 250px;
+    z-index: 40;
+    background-color: #27c1ae;
+    animation: bounceSquare 0.3s infinite alternate ease-in-out;
+}
+
+.loadingText {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-43%);
+}
+
+.count_wrap {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    z-index: 32000;
+    position: absolute;
+}
+    
+
+.progressText {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .loading {
+        font-size: 16px;
+    }
+
+    .loading__pocket {
+        width: 158px;
+        height: 166px;
+        border: solid 3px #333;
+        left: calc(50% - 79px);
+    }
+
+    .loading__pocketCircle {
+        width: 65px;
+        height: 65px;
+        border-radius: 32.5px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 20px);
+        top: 275px;
+    }
+
+    .loading__pocketSquare {
+        width: 74px;
+        height: 74px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 55px);
+        top: 275px;
+    }
+
+    .loadingText {
+        top: 16px;
+    }
+
+    .progressText {
+        top: 0;
+    }
+}
+
+/* ====================================
+// ファーストビュー
+// ==================================== */
 
 .firstView__back {
     /* max-width: 100vw; */
@@ -11,7 +169,11 @@
     padding-top: 144px;
 }
 
-.fv__img--2nd {
+/* .fv__img--2nd { */
+.firstView__back--2nd {
+    /* height: 80%; */
+    /* height: 720px; */
+    /* overflow-y: hidden; */
     padding-top: 60px;
 }
 
@@ -78,6 +240,8 @@
     z-index: 200;
 }
 
+
+
 /* ====================================
 // ポケットから出てくるカード
 // ==================================== */
@@ -110,6 +274,87 @@
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+}
+
+.firstView__back--sp {
+    display: none;
+}
+
+.firstView__back--sp--2nd {
+    display: none;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .firstView__back {
+        display: none;
+    }
+
+    .firstView__back--2nd {
+        display: none;
+    }
+
+    .firstView__back--sp {
+        display: block;
+        padding-top: 72px;
+    }
+
+    .firstView__back--sp--2nd {
+        display: block;
+        padding-top: 60px;
+    }
+
+    .pocket {
+        width: 158px;
+        height: 166px;
+        border: solid 3px #333;
+        left: calc(50% - 79px);
+    }
+
+    .pocketCircle {
+        width: 65px;
+        height: 65px;
+        border-radius: 32.5px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 20px);
+        top: 275px;
+    }
+
+    .pocketSquare {
+        width: 74px;
+        height: 74px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 55px);
+        top: 275px;
+    }
+
+    .logoBox {
+        width: 158px;
+        left: calc(50% - 79px);
+        top: 315px;
+    }
+
+    .logoText {
+        font-size: 13px;
+    }
+
+    .stitch {
+        width: 158px;
+        left: calc(50% - 79px);
+        top: 360px;
+    }
+
+    .cardOuterBox {
+        width: 300px;
+        top: 280px;
+        padding-top: 12px; /* 15 - 3（border分も引く） */
+        border-radius: 24px;
+    }
+
+    .cardInnererBox {
+        width: 270px;
+        border-radius: 12px;
+    }
 }
 
 /* ====================================
@@ -180,7 +425,7 @@
     color: #fff;
 }
 
-.triangle-right {
+.concept__triangle-right {
     background-color: white;
     height: 8px;
     width: calc(8px / 2 * tan(60deg));
@@ -191,25 +436,76 @@
     z-index: 400;
 }
 
+@media screen and (max-width: 900px) {
+    .concept__title {
+        font-size: 44px;
+    }
+
+    .concept__subTitle {
+      font-size: 22px;
+    }
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .concept__title {
+        font-size: 32px;
+    }
+
+    .concept__subTitle {
+        font-size: 15px;
+    }
+
+    .concept__contentTitle {
+        font-size: 12px;
+    }
+
+    .concept__contentText {
+        font-size: 12px;
+    }
+
+    .concept__contentTextEnd {
+        font-size: 12px;
+    }
+
+    .conceptBtn {
+        width: 136px;
+        height: 36px;
+        border-radius: 18px;
+    }
+
+    .conceptBtn__text {
+        font-size: 12px;
+    }
+
+    .concept__triangle-right {
+        height: 6px;
+        width: calc(6px / 2 * tan(60deg));
+        top: 14px;
+    }
+}
+
 /* ====================================
 // WORKS
 // ==================================== */
 .works {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* .works__container {
-  width: 100%;
-  height: 3000px;
-  padding-top: 1200px;
-  position: relative;
+    width: 100%;
+    height: 3000px;
+    padding-top: 1200px;
+    position: relative;
 } */
 
 .film {
     width: 120px;
     height: 170px;
     margin: 0 auto;
-    padding-top: 1200px;
+    padding-top: 1200px;/* 初期値 */
+    /* margin-top: 600px; */
+    /* padding-top: 600px; */
     padding-bottom: 1200px;
     position: relative;
     z-index: 10;
@@ -217,248 +513,277 @@
 }
 
 .negaFilmSmall {
-  width: 894px;
-  height: auto;
-  position: absolute;
-  top: 1332px;
-  left: 92px;
-  /* left: 50%; */
-  transform: rotate(13deg);
+    width: 1777px;
+    height: auto;
+    position: absolute;
+    /* top: 1332px; */
+    top: 1431px;
+    /* left: 92px; */
+    left: 81px;
+    /* left: 50%; */
+    transform: rotate(13deg);
 }
 
 /* .negaFilmSmall__img {
-  width: 894px;
-  height: auto;
-  position: absolute;
-  top: 1332px;
-  left: 92px;
-  transform: rotate(13deg);
+    width: 894px;
+    height: auto;
+    position: absolute;
+    top: 1332px;
+    left: 92px;
+    transform: rotate(13deg);
 } */
 
 .negaFilmBig {
-  width: 1735px;
-  height: auto;
-  position: absolute;
-  top: 1782px;
-  left: -800px;
-  transform: rotate(-5deg);
-  z-index: -900;
+    width: 3463px;
+    height: auto;
+    position: absolute;
+    top: 1743px;
+    left: -1200px;
+    transform: rotate(-5deg);
+    z-index: -900;
 }
 
 /* .negaFilmBig__img {
-  width: 1735px;
-  height: auto;
-  position: absolute;
-  top: 1632px;
-  left: -800px;
-  transform: rotate(-5deg);
-  z-index: -900;
+    width: 1735px;
+    height: auto;
+    position: absolute;
+    top: 1632px;
+    left: -800px;
+    transform: rotate(-5deg);
+    z-index: -900;
 } */
 
 .heading__works {
-  font-size: 40px;
-  color: #333;
-  text-align: center;
-  z-index: 100;
-  padding-top: 300px;
-  padding-bottom: 72px;
+    font-size: 40px;
+    color: #333;
+    text-align: center;
+    z-index: 100;
+    padding-top: 300px;
+    padding-bottom: 72px;
 }
 
 .negaFilm__back--left {
-  width: 1735px;
-  width: 1200px;
-  height: auto;
-  position: absolute;
-  top: 1432px;
-  /* left: -1400px; */
-  left: -900px;
-  /* transform: rotate(5deg) translateY(-10px) scale(0.8); */
-  transform: rotate(5deg) translateY(-100px);
-  z-index: -1200;
-  /* opacity: 0.3; */
-  opacity: 0;
+    width: 1735px;
+    width: 1200px;
+    height: auto;
+    position: absolute;
+    top: 1432px;
+    /* left: -1400px; */
+    left: -900px;
+    /* transform: rotate(5deg) translateY(-10px) scale(0.8); */
+    transform: rotate(5deg) translateY(-100px);
+    z-index: -1200;
+    /* opacity: 0.3; */
+    opacity: 0;
 }
 
 .negaFilm__back--right {
-  width: 1735px;
-  width: 1200px;
-  height: auto;
-  position: absolute;
-  /* top: 2312px; */
-  top: 2300px;
-  /* left: -200px; */
-  left: -180px;
-  transform: rotate(5deg) translateY(100px);
-  z-index: -1200;
-  opacity: 0.3;
+    width: 1735px;
+    width: 1200px;
+    height: auto;
+    position: absolute;
+    /* top: 2312px; */
+    top: 2300px;
+    /* left: -200px; */
+    left: -180px;
+    transform: rotate(5deg) translateY(100px);
+    z-index: -1200;
+    opacity: 0.3;
 }
 
 .animationFilmBackLeft {
-  opacity: 0.3;
-  transform: rotate(5deg) translateY(0);
-  transition: 2s;
+    opacity: 0.3;
+    transform: rotate(5deg) translateY(0);
+    transition: 2s;
 }
 
 .animationFilmBackRight {
-  opacity: 0.3;
-  transform: rotate(5deg) translateY(0);
-  transition: 2s;
+    opacity: 0.3;
+    transform: rotate(5deg) translateY(0);
+    transition: 2s;
 }
 
 /* ====================================
 // 右に流れるフィルム
 // ==================================== */
 @keyframes img-animationDirection--right {
-  100% {
-    transform: translateX(100%);
-  }
+    100% {
+      transform: translateX(100%);
+    }
 }
 
 .scroll-infinity__list {
-  display: flex;
-  /* padding: 0; */
+    display: flex;
+    /* padding: 0; */
 }
 
 .scroll-infinity__list--right .slick-list {
-  width: 50vw;
+    width: 50vw;
 }
 
 .scroll-infinity__list--right {
-  /* transform: translateX(30px) rotate(13deg); */
-  transform: rotate(13deg);
-  position: absolute;
-  left: 94px;
-  /* left: 50%; */
-  top: 1345px;
-  height: 90px;
-  width: auto;
+    /* transform: translateX(30px) rotate(13deg); */
+    transform: rotate(13deg);
+    position: absolute;
+    left: 94px;
+    /* left: 50%; */
+    top: 1345px;
+    height: 90px;
+    width: auto;
 }
 
 .scroll-infinity__item--right {
-  /* 画像間に隙間を空けたい */
-  padding-left: 5px;
-  padding-right: 5px;
+    /* 画像間に隙間を空けたい */
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .list-item--right {
-  height: 90px;
-  width: auto;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 5px;
+    height: 90px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .list-item--right--landscape {
-  height: 90px;
-  width: auto;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
+    height: 90px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .list-item--right--landscape img {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 /* このクラス名はJavescriptで新しく付与する */
-.img-animation--right {
-  overflow: hidden;
-  /* position: relative; */
-}
+/* .img-animation--right { */
+    /* overflow: hidden; */
+    /* position: relative; */
+/* } */
 
 .img-animation--right::before {
-  animation: img-animationDirection--right 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  background: #fff;
-  content: '';
-  inset: 0;
-  position: absolute;
-  z-index: 1;
+    animation: img-animationDirection--right 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: #fff;
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/* slickを使うと自動的に設定されるクラスの初期値を変更 */
+.scroll-infinity__list--right.slick-initialized .slick-slide {
+    width: 90px !important;
+    margin: 0 10px;
+}
+
+/* 黒い点線が出てしまうのを防ぐために親要素のベースラインに綺麗に合わせる */
+.negaFilmSmall__img {
+    vertical-align: baseline;
 }
 
 /* ====================================
 // 左に流れるフィルム
 // ==================================== */
 @keyframes img-animationDirection--left {
-  100% {
-    transform: translateX(-100%);
-  }
+    100% {
+      transform: translateX(-100%);
+    }
 }
 
 .scroll-infinity__list--left {
-  /* display: flex; */
-  transform: rotate(-5deg);
-  position: absolute;
-  /* transform: translateX(28px) rotate(-5deg); */
-  /* padding-top: 296px;
-  padding-bottom: 592px; */
-  left: -800px;
-  top: 1820px;
-  height: 360px;
-  width: auto;
+    /* display: flex; */
+    transform: rotate(-5deg);
+    position: absolute;
+    /* transform: translateX(28px) rotate(-5deg); */
+    /* padding-top: 296px;
+    padding-bottom: 592px; */
+    left: -800px;
+    top: 1820px;
+    height: 360px;
+    width: auto;
 }
 
 /* .scroll-infinity__list--right {
-  transform: rotate(13deg);
-  position: absolute;
-  top: 1340px;
-  height: 100px;
-  width: auto;
+    transform: rotate(13deg);
+    position: absolute;
+    top: 1340px;
+    height: 100px;
+    width: auto;
 } */
 
 /* これが原因！！上で50vwの設定が残っていた？？ */
 /* 120vwで画面幅が100%を超えるので、斜めにしても画面幅いっぱいに表示されるように！ */
 .scroll-infinity__list--left .slick-list {
-  width: 120vw;
+    width: 120vw;
 }
 
 .scroll-infinity__item--left {
-  /* height: 400px; */
-  /* width: auto; */
-  /* height: 340px !important;
-  width: 230px !important; */
-  padding-left: 10px;
-  padding-right: 10px;
+    /* height: 400px; */
+    /* width: auto; */
+    /* height: 340px !important;
+    width: 230px !important; */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .list-item--left {
-  height: 360px;
-  width: auto;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 10px;
+    height: 360px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .list-item--left--landscape {
-  height: 360px;
-  width: auto;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
+    height: 360px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .list-item--left--landscape img {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
-.img-animation--left {
-  overflow: hidden;
-  /* position: relative; */
-}
+/* .img-animation--left { */
+    /* overflow: hidden; */
+    /* position: relative; */
+/* } */
 
 .img-animation--left::before {
-  animation: img-animationDirection--left 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  background: #fff;
-  content: '';
-  inset: 0;
-  position: absolute;
-  z-index: 1;
+    animation: img-animationDirection--left 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: #fff;
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+    /* 以下のheightとtopの設定は、黒い点線が出てくるのを消すため（綺麗に元の画像と重なり切ってない分生じるもの）  */
+    /* topの修正だけで良さそう */
+    /* height: 110%; */
+    top: -3px;
+}
+/* slickを使うと自動的に設定されるクラスの初期値を変更 */
+.scroll-infinity__list--left.slick-initialized .slick-slide {
+    width: 360px !important;
+    margin: 0 10px;
 }
 
-/* 「もっと見る」ボタン */
+/* 黒い点線が出てしまうのを防ぐために親要素のベースラインに綺麗に合わせる */
+.negaFilmBig__img {
+    vertical-align: baseline;
+}
+
+/* ====================================
+// もっと見るボタン
+// ==================================== */
 .worksBtn {
     display: flex;
     justify-content: center;
@@ -478,11 +803,21 @@
     z-index: 1500;
 }
 
-.worksBtn__text {
+.worksBtn a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* .worksBtn__text {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-}
+} */
 
 .works__triangle-right {
     background-color: #333;
@@ -496,197 +831,528 @@
 
 }
 
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .heading__works {
+        font-size: 30px;
+    }
+
+    .negaFilm__back--right {
+      display: none;
+    }
+
+    .worksBtn {
+        width: 196px;
+        height: 56px;
+
+    }
+
+    .worksBtn a {
+        font-size: 18px;
+        line-height: 54px;
+    }
+
+    .works__triangle-right {
+        top: 23px;
+    }
+
+    .film {
+        /* width: 55px;
+        height: auto; */
+        padding-bottom: 1120px;
+    }
+
+    /* .negaFilmSmall {
+        width: 220px;
+        height: auto;
+        top: 1332px;
+        left: 92px;
+        transform: rotate(13deg);
+    } */
+
+    
+}
+
+@media screen and (max-width: 2560px) {
+    .scroll-infinity__list--right {
+        left: 85px;
+        top: 1398px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1816px;
+    }
+}
+
+@media screen and (max-width: 2400px) {
+    .scroll-infinity__list--right {
+        left: 85px;
+        top: 1390px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1824px;
+    }
+}
+
+@media screen and (max-width: 2300px) {
+    .scroll-infinity__list--right {
+        left: 86px;
+        top: 1384px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1830px;
+    }
+}
+
+@media screen and (max-width: 2200px) {
+    .scroll-infinity__list--right {
+        left: 86px;
+        top: 1379px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1834px;
+    }
+}
+
+@media screen and (max-width: 2100px) {
+    .scroll-infinity__list--right {
+        left: 86px;
+        top: 1372px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1840px;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .scroll-infinity__list--right {
+        left: 87px;
+        top: 1367px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1300px;
+        top: 1845px;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .scroll-infinity__list--right {
+        left: 89px;
+        top: 1363px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1000px;
+        top: 1823px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .scroll-infinity__list--right {
+        left: 89px;
+        top: 1356px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1000px;
+        top: 1829px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .scroll-infinity__list--right {
+        left: 89px;
+        top: 1350px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -1000px;
+        top: 1835px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .scroll-infinity__list--right {
+        left: 92px;
+        top: 1345px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -700px;
+        top: 1816px;
+    }
+}
+
+@media screen and (max-width: 1536px) {
+    .scroll-infinity__list--right {
+        left: 92px;
+        top: 1341px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -700px;
+        top: 1816px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .scroll-infinity__list--right {
+        left: 92px;
+        top: 1336px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -700px;
+        top: 1820px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .scroll-infinity__list--right {
+        left: 93px;
+        top: 1327px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -600px;
+        top: 1820px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .scroll-infinity__list--right {
+        left: 93px;
+        top: 1322px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -600px;
+        top: 1823px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .scroll-infinity__list--right {
+        left: 94px;
+        top: 1317px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -600px;
+        top: 1828px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .scroll-infinity__list--right {
+        left: 95px;
+        top: 1313px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -400px;
+        top: 1816px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .scroll-infinity__list--right {
+        left: 95px;
+        top: 1306px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -400px;
+        top: 1822px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .scroll-infinity__list--right {
+        left: 96px;
+        top: 1300px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -400px;
+        top: 1828px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-infinity__list--right {
+        left: 96px;
+        top: 1298px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -400px;
+        top: 1832px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .scroll-infinity__list--right {
+        left: 97px;
+        top: 1295px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -400px;
+        top: 1832px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .scroll-infinity__list--right {
+        left: 97px;
+        top: 1289px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -250px;
+        top: 1825px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .scroll-infinity__list--right {
+        left: 98px;
+        top: 1283px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -250px;
+        top: 1830px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .scroll-infinity__list--right {
+        left: 98px;
+        top: 1281px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -170px;
+        top: 1826px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .scroll-infinity__list--right {
+        left: 98px;
+        top: 1277px;
+    }
+
+    .scroll-infinity__list--left {
+        left: -170px;
+        top: 1828px;
+    }
+}
+
 /* ====================================
 // ABOUT
 // ==================================== */
 /* .about { */
-  /* overflow-x: hidden; */
-  /* padding-bottom: 296px; */
+    /* overflow-x: hidden; */
+    /* padding-bottom: 296px; */
 /* } */
 
 .aboutContainer {
-  /* overflow-x: hidden; */
-  /* position: relative; */
-  /* height: 3000px; */
-  height: 3000px;
-  /* height: 1000px; */
-  /* テスト用の着色 */
-  /* background-color: antiquewhite; */
-  padding-bottom: 296px;
-  position: relative;
-  /* min-height: 2500px; */
+    /* overflow-x: hidden; */
+    /* position: relative; */
+    /* height: 3000px; */
+    height: 3000px;
+    /* height: 1000px; */
+    /* テスト用の着色 */
+    /* background-color: antiquewhite; */
+    padding-bottom: 296px;
+    position: relative;
+    /* min-height: 2500px; */
 }
 /* ====================================
 // sticky
 // ==================================== */
 .about__stickyBox {
-  position: sticky;
-  top: 160px;
-  padding-bottom: 500px;
+    position: sticky;
+    top: 160px;
+    /* padding-bottom: 500px; */
+    padding-bottom: 550px;
 }
 
 .about__relativeContainer {
-  padding-top: 80px;
-  position: relative;
+    padding-top: 80px;
+    position: relative;
 }
 
 .backsquare {
-  width: 500px;
-  height: 500px;
-  border: solid 3px #333;
-  background-color: #27c1ae;
-  position: absolute;
-  /* position: sticky; */
+    width: 500px;
+    height: 500px;
+    border: solid 3px #333;
+    background-color: #27c1ae;
+    position: absolute;
+    /* position: sticky; */
 
-  left: 50%;
-  /* top: -32px; */
-  /* top: 160px; */
-  top: 80px;
-  transform: translate(-50%, 0) rotate(45deg);
-  z-index: -100;
+    left: 50%;
+    /* top: -32px; */
+    /* top: 160px; */
+    top: 80px;
+    transform: translate(-50%, 0) rotate(45deg);
+    z-index: -100;
 }
 
 .heading__about {
-  font-size: 40px;
-  color: #fff;
-  /* color: #333; */
-  text-align: center;
-  z-index: 100;
-  padding-bottom: 72px;
-  /* position: sticky;
-  top: 240px; */
-  /* position: absolute;
-  top: 200px; */
+    font-size: 40px;
+    color: #fff;
+    /* color: #333; */
+    text-align: center;
+    z-index: 100;
+    padding-bottom: 72px;
+    /* position: sticky;
+    top: 240px; */
+    /* position: absolute;
+    top: 200px; */
 }
 
 .profileIllust--shadow {
-  width: 82px;
-  /* height: 110px; */
-  height: auto;
-  margin: 0 auto;
-  padding-bottom: 32px;
-  /* position: sticky;
-  top: 240px; */
-    /* position: absolute;
-  top: 200px; */
+    width: 82px;
+    /* height: 110px; */
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 32px;
+    /* position: sticky;
+    top: 240px; */
+      /* position: absolute;
+    top: 200px; */
 }
 
 /* .textLineBox {
-  padding-bottom: 500px;
+    padding-bottom: 500px;
 } */
 
 .textLine {
-  width: 152px;
-  height: 4px;
-  background-color: #000;
-  margin:0 auto;
-  margin-bottom: 24px;
-  z-index: 100;
-    /* position: absolute;
-  top: 200px; */
+    width: 152px;
+    height: 4px;
+    background-color: #000;
+    margin:0 auto;
+    margin-bottom: 24px;
+    z-index: 100;
+      /* position: absolute;
+    top: 200px; */
 }
 
 /* ====================================
 // sticky
 // ==================================== */
 .loupe {
-  top: 296px;
-  position: sticky;
-  /* padding-bottom: 296px; */
+    top: 296px;
+    position: sticky;
+    /* padding-bottom: 296px; */
 }
 
 .loupe__relativeContainer {
-  position: relative;
-  /* 横スクロール揺れ防止用 ※mainにつけるとstickyが機能しなくなってしまう */
-  /* →画面幅小さくするとABOUT部分の右端が途切れてしまう */
-  /* overflow-x: hidden; */
+    position: relative;
+    /* 横スクロール揺れ防止用 ※mainにつけるとstickyが機能しなくなってしまう */
+    /* →画面幅小さくするとABOUT部分の右端が途切れてしまう */
+    /* overflow-x: hidden; */
 }
 
 .loupeBox {
-  width: 800px;
-  height: auto;
-  margin: 0 auto;
-  z-index: 200;
-  /* transform: translateX(124px); */
-  transform: translateX(15.5%);
-  /* top: 296px;
-  position: sticky; */
-  /* position: absolute; */
-  /* position: relative; */
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    z-index: 200;
+    /* transform: translateX(124px); */
+    transform: translateX(15.5%);
+    /* top: 296px;
+    position: sticky; */
+    /* position: absolute; */
+    /* position: relative; */
 }
 
 .profileContainer {
-  opacity: 0;
-  /* visibility: hidden; */
-  /* transition: opacity 0.7s ease-in-out; */
-  /* display: none; */
+    opacity: 0;
+    /* visibility: hidden; */
+    /* transition: opacity 0.7s ease-in-out; */
+    /* display: none; */
 }
 
 .profileContainer.is-stuck {
-  /* visibility: visible; */
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  /* display: block; */
+    /* visibility: visible; */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    /* display: block; */
 }
 
 .profileIllust {
-  width: 160px;
-  height: auto;
-  position: absolute;
-  top: 56px;
-  left: 0;
-  right: 0;
-  margin: auto;
+    width: 160px;
+    height: auto;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .profile__text {
-  /* width: 100%; */
-  font-size: 16px;
-  line-height: 1.75;
-  text-align: justify;
-  width: 300px;
-  position: absolute;
-  top: 288px;
-  left: 0;
-  right: 0;
-  margin: auto;
+    /* width: 100%; */
+    font-size: 16px;
+    line-height: 1.75;
+    text-align: justify;
+    width: 300px;
+    position: absolute;
+    top: 288px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .aboutBtnContainer {
-  width: 400px;
-  height: 120px;
-  position: absolute;
-  top: 184px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  display: flex;
-  justify-content: flex-end;
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    top: 184px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .aboutBtn {
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  border: solid 2px #333;
-  background-color: #27c1ae;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 14px;
-  padding-right: 14px;
-  /* z-index: 500; */
-  /* position: absolute; */
-  /* top:200px;
-  left: 0;
-  right: 0;
-  margin: auto; */
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: solid 2px #333;
+    background-color: #27c1ae;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 14px;
+    /* z-index: 500; */
+    /* position: absolute; */
+    /* top:200px;
+    left: 0;
+    right: 0;
+    margin: auto; */
 }
 
 .aboutBtn__text {
-  color: #fff;
-  /* color: #333; */
-  font-weight: bold;
+    color: #fff;
+    /* color: #333; */
+    font-weight: bold;
 }
 
 .about__triangle-right {
@@ -697,8 +1363,73 @@
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     /* position: absolute; */
     /* top: 32px; */
-    /* right: 20%; */
-    
+    /* right: 20%; */  
+}
+
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .about__relativeContainer {
+      padding-top: 88px;
+    }
+
+    .heading__about {
+        font-size: 30px;
+    }
+
+    .backsquare {
+        width: 255px;
+        height: 255px;
+    }
+
+    .profileIllust--shadow {
+        width: 40px;
+
+    }
+
+    .textLine {
+        display: none;
+    }
+
+    /* 下記のレスポンシブ対応をしないと、虫眼鏡が右側にずれてしまう */
+    /* .loupeBox {
+        position: relative;
+        z-index: 0;
+        left: 50%; */
+        /* transform: translateX(-35%); */
+        /* transform: translateX(-34.7%);
+    } */
+
+    .loupeBox {
+      width: 344px;
+        /* position: relative; */
+        z-index: 0;
+        /* left: 50%; */
+        /* transform: translateX(-35%); */
+        /* transform: translateX(-58%); */
+        transform: translateX(15.5%);
+    }
+
+    .profileIllust {
+        width: 110px;
+        top: 48px;
+    }
+
+    .profile__text {
+        font-size: 14px;
+    }
+
+    .aboutBtnContainer {
+        top: 410px;
+    }
+
+    .about__stickyBox {
+      padding-bottom: 200px;
+    }
+
+    .aboutContainer {
+      padding-bottom: 392px;
+    }
 }
 
 /* ====================================
@@ -707,292 +1438,302 @@
 
 /* 波線模様 */
 .pattern-wavyLine-container--left {
-  top: 450px;
-  left: 10vw;
-  position: absolute;
-  z-index: -1000;
+    top: 450px;
+    left: 10vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-wavyLine-container--right {
-  top: 1550px;
-  right: 8vw;
-  position: absolute;
-  z-index: -1000;
+    top: 1550px;
+    right: 8vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-wavyLine {
-  width: 2vw;
-  height: auto;
-  animation: 3.5s roll ease-in-out infinite;
+    width: 2vw;
+    height: auto;
+    animation: 3.5s roll ease-in-out infinite;
 }
 
 .pattern-wavyLine span {
-  display: block;
-  animation: floatHorizontal 7.0s ease-in-out infinite alternate;
+    display: block;
+    animation: floatHorizontal 7.0s ease-in-out infinite alternate;
 }
 
 .pattern-wavyLine svg {
-  animation: floatVertical 6.0s ease-in-out infinite alternate;
+    animation: floatVertical 6.0s ease-in-out infinite alternate;
 }
 
 /* プラス模様 */
 .pattern-plus-container--left {
-  top: 800px;
-  left: 20vw;
-  position: absolute;
-  z-index: -1000;
+    top: 800px;
+    left: 20vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-plus-container--right {
-  top: 1950px;
-  right: 20vw;
-  position: absolute;
-  z-index: -1000;
+    top: 1950px;
+    right: 20vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-plus {
-  width: 3vw;
-  height: auto;
-  animation: 2.5s roll ease-in-out infinite;
+    width: 3vw;
+    height: auto;
+    animation: 2.5s roll ease-in-out infinite;
 }
 
 .pattern-plus span {
-  display: block;
-  animation: floatHorizontal 5.0s ease-in-out infinite alternate;
+    display: block;
+    animation: floatHorizontal 5.0s ease-in-out infinite alternate;
 }
 
 .pattern-plus svg {
-  animation: floatVertical 5.0s ease-in-out infinite alternate;
+    animation: floatVertical 5.0s ease-in-out infinite alternate;
 }
 
 /* 丸模様 */
 .pattern-circle-container--right {
-  top: 650px;
-  right: 5vw;
-  position: absolute;
-  z-index: -1000;
+    top: 650px;
+    right: 5vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-circle-container--left {
-  top: 1750px;
-  left: 25vw;
-  position: absolute;
-  z-index: -1000;
+    top: 1750px;
+    left: 25vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-circle {
-  width: 2.5vw;
-  height: auto;
-  animation: 3.0s roll ease-in-out infinite;
+    width: 2.5vw;
+    height: auto;
+    animation: 3.0s roll ease-in-out infinite;
 }
 
 .pattern-circle span {
-  display: block;
-  animation: floatHorizontal 5.5s ease-in-out infinite alternate;
+    display: block;
+    animation: floatHorizontal 5.5s ease-in-out infinite alternate;
 }
 
 .pattern-circle svg {
-  animation: floatVertical 6.0s ease-in-out infinite alternate;
+    animation: floatVertical 6.0s ease-in-out infinite alternate;
 }
 
 /* 四角模様 */
 .pattern-square-container--right {
-  top: 1050px;
-  right: 15vw;
-  position: absolute;
-  z-index: -1000;
+    top: 1050px;
+    right: 15vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-square-container--left {
-  top: 2250px;
-  left: 15vw;
-  position: absolute;
-  z-index: -1000;
+    top: 2250px;
+    left: 15vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-square {
-  width: 3vw;
-  height: auto;
-  animation: 4.0s roll ease-in-out infinite;
+    width: 3vw;
+    height: auto;
+    animation: 4.0s roll ease-in-out infinite;
 }
 
 .pattern-square span {
-  display: block;
-  animation: floatHorizontal 6.5s ease-in-out infinite alternate;
+    display: block;
+    animation: floatHorizontal 6.5s ease-in-out infinite alternate;
 }
 
 .pattern-square svg {
-  animation: floatVertical 7.0s ease-in-out infinite alternate;
+    animation: floatVertical 7.0s ease-in-out infinite alternate;
 }
 
 /* 三角模様 */
 .pattern-triangle-container--left {
-  top: 1350px;
-  left: 15vw;
-  position: absolute;
-  z-index: -1000;
+    top: 1350px;
+    left: 15vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-triangle-container--right {
-  top: 2350px;
-  right: 7vw;
-  position: absolute;
-  z-index: -1000;
+    top: 2350px;
+    right: 7vw;
+    position: absolute;
+    z-index: -1000;
 }
 
 .pattern-triangle {
-  width: 2.5vw;
-  height: auto;
-  animation: 4.0s roll ease-in-out infinite;
+    width: 2.5vw;
+    height: auto;
+    animation: 4.5s roll ease-in-out infinite;
 }
 
 .pattern-triangle span {
-  display: block;
-  animation: floatHorizontal 6.5s ease-in-out infinite alternate;
+    display: block;
+    animation: floatHorizontal 7.5s ease-in-out infinite alternate;
 }
 
 .pattern-triangle svg {
-  animation: floatVertical 7.0s ease-in-out infinite alternate;
+    animation: floatVertical 6.0s ease-in-out infinite alternate;
 }
 
 @keyframes roll {
-  0% {transform: rotateZ(15deg) scale(0.9); }
-  50% {transform: rotateZ(-15deg) scale(1.0); }
-  100% {transform: rotateZ(15deg) scale(0.9); }
+    0% {transform: rotateZ(15deg) scale(0.9); }
+    50% {transform: rotateZ(-15deg) scale(1.0); }
+    100% {transform: rotateZ(15deg) scale(0.9); }
 }
 
 @keyframes floatHorizontal {
-  0% {transform: translate3d(2.5vw,0,0); }
-  50% {transform: translate3d(-2.5vw,0,0); }
-  100% {transform: translate3d(2.5vw,0,0); }
+    0% {transform: translate3d(2.5vw,0,0); }
+    50% {transform: translate3d(-2.5vw,0,0); }
+    100% {transform: translate3d(2.5vw,0,0); }
 }
 
 @keyframes floatVertical {
-  0% {transform: translate3d(0,2.5vw,0); }
-  50% {transform: translate3d(0,-2.5vw,0); }
-  100% {transform: translate3d(0,2.5vw,0); }
+    0% {transform: translate3d(0,2.5vw,0); }
+    50% {transform: translate3d(0,-2.5vw,0); }
+    100% {transform: translate3d(0,2.5vw,0); }
 }
 
 /* ====================================
 // フッター
 // ==================================== */
 /* .footer { */
-  /* overflow-x: hidden; */
-  /* overflow: visible; */
+    /* overflow-x: hidden; */
+    /* overflow: visible; */
 /* } */
 
 .footerContainer {
-  width: 100%;
-  /* width: 1672px; */
-  height: 2000px;
-  margin: 0 auto;
-  position: relative;
+    width: 100%;
+    /* width: 1672px; */
+    height: 2000px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .yellowCircleContainer {
-  position: sticky;
-  /* position: fixed; */
-  /* width: 100%; */
-  /* width: 1672px; */
-  /* height: 1672px; */
-  /* width: 1672px; */
-  top: 396px;
-  /* left: calc(50% - 836px); */
-  /* z-index: -1000; */
-  /* position: relative; */
+    position: sticky;
+    /* position: fixed; */
+    /* width: 100%; */
+    /* width: 1672px; */
+    /* height: 1672px; */
+    /* width: 1672px; */
+    top: 396px;
+    /* left: calc(50% - 836px); */
+    /* z-index: -1000; */
+    /* position: relative; */
 }
 
 .yellowCircleContainer.is-stuck {
-  display: none;
+    display: none;
 }
 
 .greenSquareContainer.is-stuck {
-  display: none;
+    display: none;
 }
 
 /* .yellowCircle {
-  width: 1672px;
-  height: 1672px;
-  border-radius: 836px;
-  border: solid 3px #333;
-  background-color: #faff6c;
-  position: absolute;
-  transform: translateX(-50%) scale(1);
-  opacity: 0.5;
-  z-index: -1000;
+    width: 1672px;
+    height: 1672px;
+    border-radius: 836px;
+    border: solid 3px #333;
+    background-color: #faff6c;
+    position: absolute;
+    transform: translateX(-50%) scale(1);
+    opacity: 0.5;
+    z-index: -1000;
 } */
 
 .topCopyright {
-  position: sticky;
-  top: 288px;
+    position: sticky;
+    /* top: 288px; */
+    /* top: 800px; */
+    margin-bottom: 500px;
+    /* padding-bottom: 288px; */
+    /* background-color: #333;
+    width: 300px;
+    height: 300px; */
 }
 
 .topCopyright__text {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  position: absolute;
-  top: 500px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    /* top: 500px; */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    /* position: sticky;
+    top: 500px;
+    margin-bottom: 1500px; */
 }
 
 
 .yellowCircle-small {
-  /* margin-top: 100px; */
-  position: sticky;
-  top: 250px;
-  width: 120px;
-  height: 120px;
-  top: 250px;
-  border: solid 6px #333;
-  background-color: #faff6c;
-  border-radius: 60px;
-  margin-bottom: 500px;
-  left: calc(50% - 147px + 40px);
-  z-index: 100;
+    /* margin-top: 100px; */
+    position: sticky;
+    top: 250px;
+    width: 120px;
+    height: 120px;
+    top: 250px;
+    border: solid 6px #333;
+    background-color: #faff6c;
+    border-radius: 60px;
+    margin-bottom: 500px;
+    left: calc(50% - 147px + 40px);
+    z-index: 100;
 }
 
 .greenSquare-small {
-  position: sticky; 
-  top: 250px;
-  width: 138px;
-  height: 138px;
-  border: solid 6px #333;
-  background-color: #27c1ae;
-  left: calc(50% - 147px + 110px);
-  rotate: 45deg;
-  margin-bottom: 500px;
+    position: sticky; 
+    top: 250px;
+    width: 138px;
+    height: 138px;
+    border: solid 6px #333;
+    background-color: #27c1ae;
+    left: calc(50% - 147px + 110px);
+    rotate: 45deg;
+    margin-bottom: 500px;
 }
 
 /* .greenSquare.triggerOnSquare {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 } */
 
 .pocket__footer {
-  width: 294px;
-  height: 308px;
-  transform: scale(1);
-  border: solid 6px #333;
-  border-radius: 0 0 147px 147px;
-  background-color: #fff;
-  position: sticky;
-  left: calc(50% - 147px);
-  top: 300px;
-  z-index: 100;
+    width: 294px;
+    height: 308px;
+    transform: scale(1);
+    border: solid 6px #333;
+    border-radius: 0 0 147px 147px;
+    background-color: #fff;
+    position: sticky;
+    left: calc(50% - 147px);
+    top: 300px;
+    z-index: 100;
 }
 
 .stitch__footer {
-  width: 294px;
-  height: auto;
-  margin: 0 auto;
-  position: absolute;
-  left: calc(50% - 147px);
-  /* top: 408px; */
-  top: 102px;
-  z-index: 200;
+    width: 294px;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    left: calc(50% - 147px);
+    /* top: 408px; */
+    top: 102px;
+    z-index: 200;
 }
 
 .logoBox__footer {
@@ -1008,4 +1749,62 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 700px) {
+    .pocket__footer {
+        width: 158px;
+        height: 166px;
+        border: solid 3px #333;
+        left: calc(50% - 79px);
+    }
+
+    .stitch__footer {
+        width: 158px;
+        left: calc(50% - 79px);
+        /* top: 360px; */
+        top: 56px;
+    }
+
+    .logoBox__footer {
+        width: 158px;
+        left: calc(50% - 79px);
+        /* top: 315px; */
+        top: 12px;
+    }
+
+    .logoText__footer  {
+        font-size: 13px;
+    }
+
+    .yellowCircle-small {
+        width: 65px;
+        height: 65px;
+        border-radius: 32.5px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 20px);
+        top: 275px;
+    }
+
+    .greenSquare-small {
+        width: 74px;
+        height: 74px;
+        border: solid 3px #333;
+        left: calc(50% - 79px + 55px);
+        top: 275px;
+    }
+
+    .topCopyright__text {
+        font-size: 12px;
+    }
+
+    /* .topCopyright { */
+        /* margin-bottom: 1500px; */
+    /* } */
+
+    .footerContainer {
+        height: 1600px;
+        /* position: relative; */
+    }
 }

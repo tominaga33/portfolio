@@ -63,6 +63,49 @@
     line-height: 1.75;
 }
 
+@media screen and (max-width: 1000px) {
+        .profile__nameEn {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 73px; /* 80 - 7 */
+        padding-bottom: 113px; /* 120 - 7 */
+    }
+
+    .profile__text {
+        width: 300px;
+    }
+
+    .profile__image {
+        width: 254px;
+    }
+
+    .profile__nameEn {
+        font-size: 24px;
+        padding-top: 0;
+        padding-bottom: 12px;
+    }
+
+    .profile__nameJa {
+        font-size: 18px;
+        padding-bottom: 17px; /* 24 - (14 / 2) */
+    }
+
+    .profile__basicInfo {
+        font-size: 14px;
+        padding-bottom: 14px;
+    }
+
+    .profile__career {
+        font-size: 14px;
+    }
+} 
+
 /* ====================================
 // FAVORITE
 // ==================================== */
@@ -99,6 +142,31 @@
     padding-bottom: 144px;
 }
 
+@media screen and (max-width: 768px) {
+    .headingAbout {
+        width: 130px;
+    }
+    .headingAbout__text {
+        font-size: 24px;
+        padding-bottom: 12px;
+        margin-bottom: 32px;
+    }
+
+    .favorite__image {
+        max-width: 600px;
+        margin: 0 auto;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .favorite__img {
+        width: 28.3%; /* 170 / 600 */
+        height: auto;
+        aspect-ratio: 1 / 1;
+        padding-bottom: 120px;
+    }
+}
+
 /* ====================================
 // SKILLS
 // ==================================== */
@@ -116,12 +184,26 @@
 
 .skills__item {
     display: flex;
-    gap: 56px;
+    /* gap: 56px; */
+    gap: 6.1%; /* 56 / 920 */
 }
 
+.test {
+    display: flex;
+    gap: 6.1%;
+}
+
+.skills__image {
+    width: 37.0%;
+}
+
+.skills__text {
+    /* width: 63.0%; */
+    width: 56.9%; /* 63.0 - 6.1 */
+}
 
 .skills__img {
-    width: 340px;
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 34px;
@@ -149,4 +231,36 @@
 
 .skills__toolContent {
     font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .skills {
+        padding-bottom: 144px;
+    }
+
+    .skills__list {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .skills__item {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .skills__image {
+        width: 300px;
+    }
+
+    .skills__text {
+        width: 300px;   
+    }
+
+    .skills__title {
+        font-size: 24px;
+    }
+
+    .skills__content {
+        font-size: 14px;
+    }
 }

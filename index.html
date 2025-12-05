@@ -19,16 +19,26 @@
 </head>
 <body class="topPage">
 <!-- ====================================
+//// ローディング画面
+//// ==================================== -->
+    <div class="loading" id="loadingWrapper">
+        <div class="loading__pocket">
+            <p class="loadingText">Loading...</p>
+        </div>
+        <div class="loading__pocketCircle"></div>
+        <div class="loading__pocketSquare"></div>
+        <div class="count_wrap" id="countWrap">
+            <p class="progressText">
+                <span id="count">0</span>%  <!-- 初期値0% -->
+            </p>
+        </div>
+    </div>
+
+<!-- ====================================
 //// ヘッダー
 //// ==================================== -->
     <header id="header">
         <div class="header__inner">
-            <!-- <h1 class="header__logoItem">
-                <a href="./index.html">
-                    <img class="header__logo" src="./images/pc__tominaga-design-logo__header@2x.png"
-                        alt="トミナガデザイン">
-                </a>
-            </h1> -->
             <nav class="header__nav">
                 <ul class="header__navList">
                     <li class="header__navItem"><a href="./index.html">TOP</a></li>
@@ -46,16 +56,53 @@
                 </ul>
             </nav>
         </div>
-        <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">
+        
             <ul class="fixMenu__list">
+                
                 <li class="fixMenu__item">
-                    <p class="fixMenu__text">Instagram</p>
+                    <p class="fixMenu__text">
+                        <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">Instagram</a>
+                    </p>
                 </li>
                 <li class="fixMenu__item">
-                    <img class="fixMenu__logo" src="./images/Insta-logo--333@2x.png" alt="Instagram">
+                    <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">
+                        <img class="fixMenu__logo" src="./images/Insta-logo--333@2x.png" alt="Instagram">
+                    </a>
                 </li>
+                </a>
             </ul>
-        </a>
+        <!-- 以下、ハンバーガーメニュー -->
+        <div class="hamburger__back">
+            <div class="hamburger">
+                <span></span>
+            </div>
+        </div>
+        <nav class="header__nav--sp">
+            <div class="navBackCircle"></div>
+            <div class="navBackSquare"></div>
+            <ul class="header__navList--sp">
+                <li class="header__navItem"><a href="./index.html">TOP</a></li>
+                <li class="header__navItem"><a href="./concept.html">CONCEPT</a></li>
+                <li class="header__navItem"><a href="./works.html">WORKS</a></li>
+                <li class="header__navItem"><a href="./about.html">ABOUT</a></li>
+                <li class="header__navItem">
+                    <a href="./contact.html">
+                        <div class="header__contactBtn">
+                            <!-- <span></span> -->
+                            <p class="header__contactBtnText">CONTACT</p>
+                        </div>
+                    </a>
+                </li>
+                <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">
+                    <ul class="header__snsList--sp">
+                        <li class="header__navItem--sp">Instagram</li>
+                        <li class="header__snsItem--sp">
+                            <img class="header__snsLogo--sp" src="./images/Insta-logo--333@2x.png" alt="Instagram">
+                        </li>
+                    </ul>
+                </a>
+            </ul>
+        </nav>
     </header>
 <!-- ====================================
 //// メイン
@@ -68,8 +115,16 @@
         <section class="firstView">
             <div class="firstView__back">
                 <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
+            </div>
+            <div class="firstView__back--2nd">
                 <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
                 <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
+            </div>
+            <div class="firstView__back--sp">
+                <img class="fv__img--sp" src="./images/fv__back--sp@2x.png" alt="デザイン道具が並んだ背景">
+            </div>
+            <div class="firstView__back--sp--2nd">
+                <img class="fv__img--sp--2nd" src="./images/fv__back--sp@2x.png" alt="デザイン道具が並んだ背景">
             </div>
             <div class="pocket"></div>
             <div class="pocketCircle"></div>
@@ -145,7 +200,7 @@
                     <div class="conceptBtn">
                         <p class="conceptBtn__text">続きを見る</p>
                         <!-- ボタン上の右向き三角形 -->
-                        <div class="triangle-right"></div>
+                        <div class="concept__triangle-right"></div>
                     </div>
                 </a>
             </div>
@@ -250,6 +305,7 @@
                         </a>
                     </li>
                 </ul>
+                <!-- WORKSのタイトル -->
                 <div>
                     <h2 class="heading__works">WORKS</h2>
                 </div>
@@ -350,13 +406,16 @@
                     </li>
                 </ul>
             </div>
-            <a href="./works.html">
-                <div class="worksBtn">
-                    <p class="worksBtn__text">もっと見る</p>
-                    <!-- ボタン上の左向き三角形 -->
-                    <div class="works__triangle-right"></div>
-                </div>
-            </a>
+            <!-- 親要素にブロックレベルがない状態でaタグで囲むという使い方はしない
+            ホバー時にカーソルがチラつくバッティングが起こるため回避 -->
+            <!-- <a href="./works.html"> -->
+            <div class="worksBtn">
+                <a href="./works.html">もっと見る</a>
+                <!-- <p class="worksBtn__text">もっと見る</p> -->
+                <!-- ボタン上の左向き三角形 -->
+                <div class="works__triangle-right"></div>
+            </div>
+            <!-- </a> -->
             
         </section>
 
@@ -706,13 +765,18 @@
     <footer>
         <div class="footerContainer">
             <!-- <div class="footer__stickyBox"> -->
+                <div class="topCopyright">
+                        <p class="topCopyright__text">©︎TOMINAGA DESIGN.</p>
+                </div>
+                <!-- <div class="yellowCircle-small"></div>
+                <div class="greenSquare-small"></div> -->
                 <div class="sticky-trigger-yellowCircle"></div>            
                 <div class="yellowCircleContainer">
                     <div class="yellowCircle"></div>
                 </div>
-                <div class="topCopyright">
+                <!-- <div class="topCopyright">
                         <p class="topCopyright__text">©︎TOMINAGA DESIGN.</p>
-                </div>
+                </div> -->
                 <!-- </div> -->
                 <div class="sticky-trigger-greenSquare"></div>
                 <!-- <div class="greenSquareContainer">
@@ -954,12 +1018,14 @@
             <!-- <div class="yellowCircle-small"></div> -->
             <!-- </div> -->
             <!-- <div class="greenSquareContainer-small"> -->
+                <!-- <div class="topCopyright">
+                        <p class="topCopyright__text">©︎TOMINAGA DESIGN.</p>
+                </div> -->
                 <div class="yellowCircle-small"></div>
-                <!-- <div class="yellowCircle-small"></div> -->
                 <div class="greenSquare-small"></div>
                 <div class="pocket__footer">
                     <div class="logoBox__footer">
-                    <p class="logoText__footer">TOMINAGA DESIGN</p>
+                        <p class="logoText__footer">TOMINAGA DESIGN</p>
                     </div>
                     <div class="stitch__footer">
                         <!-- ステッチ模様のsvgファイル -->
@@ -1004,9 +1070,12 @@
                     </div>
                 </div>
                 <div class="firstView__back">
-                <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
+                    <img class="fv__img" src="./images/fv__back.png" alt="デザイン道具が並んだ背景">
                 <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
                 <!-- <img class="fv__img--2nd" src="./images/fv__back.png" alt="デザイン道具が並んだ背景"> -->
+                </div>
+                <div class="firstView__back--sp">
+                    <img class="fv__img--sp" src="./images/fv__back--sp@2x.png" alt="デザイン道具が並んだ背景">
                 </div>
             <!-- </div> -->
             
@@ -1015,13 +1084,22 @@
         </div>    
     </footer>
 
-    <!-- Javascript読み込み -->
+    <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- slick-->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- GASP-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script type="text/javascript">
+        let submitted = false;
+    </script>
+    <iframe
+        name="hidden__iframe"
+        id="hidden__iframe"
+        style="display: none"
+        onload="if(submitted){window.location='thanks.html';}"
+    ></iframe>
     <script src="./js/script.js"></script>
 </body>
 </html>
