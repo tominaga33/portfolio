@@ -1377,7 +1377,8 @@
 .profileContainer.is-stuck {
     /* visibility: visible; */
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    /* transition: opacity 0.3s ease-in-out; */
+    transition: opacity 0.1s ease-in-out;
     /* display: block; */
 }
 
@@ -1484,9 +1485,9 @@
 
 @media screen and (max-width: 700px) {
 /* @media screen and (max-width: 820px) { */
-    .about__stickyBox {
+    /* .about__stickyBox {
         top: 80px;
-    }
+    } */
 
     .about__relativeContainer {
       /* padding-top: 88px; */
@@ -1520,9 +1521,9 @@
         /* transform: translateX(-34.7%);
     } */
 
-    .loupe {
+    /* .loupe {
         top: 216px;
-    }
+    } */
 
     .loupeBox {
       width: 344px;

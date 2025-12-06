@@ -611,7 +611,8 @@ $(function () {
             // rootMargin: '0px' はビューポートの端を基準にする
             // top: [sticky: 0] と同じ位置で交差を検出
             // rootMargin: '-1px 0px 0px 0px',
-            rootMargin: '-216px 0px 0px 0px',
+            // rootMargin: '-216px 0px 0px 0px',
+            rootMargin: '-296px 0px 0px 0px',
             threshold: 0 // 監視ターゲットの0%が見えたらトリガー
         }
         const observer = new IntersectionObserver((entries) => {
