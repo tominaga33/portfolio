@@ -69,7 +69,7 @@ $(function () {
         // ポケットが画面いっぱいまで拡大する速度の調整用
         const maxExpandSpeedPocket__sp = 200;
         // コンセプトの内容が上がっていく速度の調整用
-        const speedConcept__sp = 0.35;
+        const speedConcept__sp = 0.40;
 
         // ★scroll位置からポケットのscaleを毎回一意に決める関数★
         function getPocketScale(scroll) {

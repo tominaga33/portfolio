@@ -154,6 +154,10 @@
         margin-bottom: 32px;
     }
 
+    .favorite__text {
+        font-size: 14px;
+    }
+
     .favorite__image {
         max-width: 600px;
         margin: 0 auto;

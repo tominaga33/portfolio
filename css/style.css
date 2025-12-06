@@ -485,6 +485,29 @@ body {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .concept__heading {
+        padding-top: 15px;
+        font-size: 32px;
+    }
+
+        .concept__title {
+        font-size: 24px;
+    }
+
+    .concept__subTitle {
+        font-size: 12px;
+    }
+
+    .concept__contentText {
+        font-size: 10px;
+    }
+
+    .concept__contentTextEnd {
+        font-size: 10px;
+    }
+}
+
 /* ====================================
 // WORKS
 // ==================================== */
