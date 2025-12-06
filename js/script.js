@@ -212,6 +212,10 @@ $(function () {
                 })
                 //逆スクロール時に表示する
                 $(".pocket").fadeIn(500)
+                //逆スクロール時に表示する
+                $(".fv__img--sp, .fv__img--sp--2nd").css({
+                    opacity: 1
+                });
             } else if (scroll > maxExpandEnd__sp) {
                 //非表示に
                 $(".pocket").fadeOut(500)
@@ -243,12 +247,12 @@ $(function () {
         //コンセプト内容のフェードインが完了するまでのスクロール位置
         const fadeInEnd = 1000;
         // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
-        const maxExpandEnd = 3000;
+        const maxExpandEnd = 2000;
         // const maxExpandEnd = 2200;
         // ポケットが画面いっぱいまで拡大する速度の調整用
-        const maxExpandSpeedPocket = 200;
+        const maxExpandSpeedPocket = 150;
         // コンセプトの内容が上がっていく速度の調整用
-        const speedConcept = 0.6;
+        const speedConcept = 1.0;
 
         // ★scroll位置からポケットのscaleを毎回一意に決める関数★
         function getPocketScale(scroll) {
@@ -287,7 +291,7 @@ $(function () {
                 // $(".pocket, .pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
                 ).css("display", "block");
                 //透明にしていたポケット、ロゴ、ステッチ、コンセプトの不透明度を最大値にする
-                $(".pocket, .logoBox, .stitch").css({
+                $(".pocket, .logoBox, .stitch, .fv__img, .fv__img--2nd").css({
                     opacity: 1
                 });
                 //前回で出現させたカードの不透明度を0にする
@@ -382,12 +386,19 @@ $(function () {
                 })
                 //逆スクロール時に表示する
                 $(".pocket").fadeIn(500)
+                //逆スクロール時に表示する
+                $(".fv__img, .fv__img--2nd").css({
+                    opacity: 1
+                });
+
             } else if (scroll > maxExpandEnd) {
                 //非表示に
                 $(".pocket").fadeOut(500)
                 $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox, .concept"
                 // $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox"
                 ).css("display", "none");
+                $(".fv__img, .fv__img--2nd"
+                ).css("opacity", 0)
             } 
         });
     }

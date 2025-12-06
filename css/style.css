@@ -175,8 +175,8 @@
 /* .fv__img--2nd { */
 .firstView__back--2nd {
     /* height: 80%; */
-    /* height: 720px; */
-    /* overflow-y: hidden; */
+    /* height: 720px;
+    overflow-y: hidden; */
     padding-top: 60px;
 }
 
@@ -535,8 +535,9 @@
     width: 120px;
     height: 170px;
     margin: 0 auto;
-    padding-top: 1200px;/* 初期値 */
-    /* margin-top: 600px; */
+    /* 初期値 */
+    padding-top: 1200px;
+    margin-top: -750px; /* ここで他に影響与えずにフィルムの高さ調節できる！ */
     /* padding-top: 600px; */
     padding-bottom: 1200px;
     position: relative;
@@ -1876,6 +1877,10 @@
 
 /* @media screen and (max-width: 768px) { */
 @media screen and (max-width: 700px) {
+    .footerView__back {
+        display: none;
+    }
+
     .footerView__back--sp {
         display: block;
         /* height: 700px;
