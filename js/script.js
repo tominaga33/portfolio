@@ -21,7 +21,8 @@
                     setTimeout(function() {
                         loadingWrapper.style.display = 'none';
                     }, 300); // フェードアウトのための遅延
-                }, 500); // 少しの遅延を加える
+                // }, 500); // 少しの遅延を加える
+                }, 2000); // 少しの遅延を加える
             }
         }
     
@@ -293,9 +294,9 @@ $(function () {
                 $(".cardOuterBox").css({
                     opacity: 0
                 });
-                // $(".cardOuterBox, .concept").css({
-                //     opacity: 0
-                // })
+                $(".cardOuterBox, .concept").css({
+                    opacity: 0
+                })
                 //前回移動したポケットの位置を初期位置に戻しておく
                 $(".pocket").css({
                     top: "300px"

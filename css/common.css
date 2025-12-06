@@ -352,6 +352,11 @@ main {
     /* overflow-x: hidden; */
 }
 
+.conceptPage main {
+    max-width: 1940px;
+    overflow-x: hidden;
+}
+
 /* ====================================
 // タイトル
 // ==================================== */
@@ -390,17 +395,68 @@ main {
 /* ====================================
 // コンタクト
 // ==================================== */
+.contactPage main {
+    overflow-x: hidden;
+}
+
+.aboutPage main {
+    overflow-x: hidden;
+}
+
+.worksPage main {
+    overflow-x: hidden;
+}
+
+.worksPage main {
+    overflow-x: hidden;
+}
+
+.worksWebsitePage main {
+    overflow-x: hidden;
+}
+
 .contact {
     /* padding-top: 100px;
     margin-top: 100px;
     padding: 0 50px; */
-    position: relative;
+    /* position: relative; */
     /* z-index: 500; */
     /* padding-bottom: 1200px; */
     /* conceptページの足跡が途切れてしまうのでbodyにoverflow-x: hidden;は変更 */
     /* overflow-x: hidden; */
+    /* padding-top: 296px; */
+    /* overflow-x: hidden; */
     z-index: 3;
 }
+
+
+
+.contact__container {
+    /* padding-top: 296px; */
+    /* margin-top: 296px; */
+    /* overflow-x: hidden; */
+    position: relative;
+    z-index: 3;
+}
+
+.contactPage .contact__container {
+    /* padding-top: 296px; */
+    margin-top: 296px;
+}
+
+.topPage .contact {
+    /* overflow-x: visible; */
+    overflow-x: clip;/* clipはstickyと両立できる！！！ */
+    /* padding-top: 392px; */
+}
+
+/* .topPage .contact {
+    overflow-x: visible;
+} */
+
+/* main {
+    overflow-x: hidden;
+} */
 
 /* .contactPage { */
     /* overflow: auto; */
@@ -419,9 +475,20 @@ main {
 .contactPage .contactでmarging-top: 296px;と設定すると
 CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてしまうため、断念 */
 
-.contactContainer {
+/* .contactPage .contactContainer {
     padding-top: 296px;
-}
+    overflow-x: hidden;
+} */
+
+
+
+/* .conceptPage  .contactContainer {
+    overflow-x: hidden;
+} */
+
+/* .conceptPage main {
+    overflow-x: hidden;
+} */
 
 /* .topPage .contactContainer { */
     /* padding-top: 1400px; */

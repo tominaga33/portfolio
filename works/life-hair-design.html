@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/works_website.css">
 </head>
-<body>
+<body class="worksWebsitePage">
 <!-- ====================================
 //// ヘッダー
 //// ==================================== -->
@@ -245,52 +245,56 @@
 //// CONTACT
 //// ==================================== -->
         <div class="contact">
-            <!-- カードの装飾 -->
-            <div class="contact__outerLine"></div>
-            <div class="contact__innerLine"></div>
-            <form 
-                class="contact__form" 
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc1DlPfce2EK9vCIAlAqQ0nOw4lMW5Lb0X01zc9V_81vxJkDw/formResponse"
-                method="post"
-                target="hidden__iframe"
-                onsubmit="submitted=true"
-            >
-                <div class="form__title">
-                    <h2 class="heading__contact">CONTACT</h2>
-                    <!-- ペンの装飾 -->
-                    <div class="penIllust">
-                        <img class="penIllust__img" src="../images/pen_illust.png" alt="ペンのイラスト">
+            <div class="contact__container">
+                <!-- カードの装飾 -->
+                <div class="contact__outerLine"></div>
+                <div class="contact__innerLine"></div>
+                <form 
+                    class="contact__form" 
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc1DlPfce2EK9vCIAlAqQ0nOw4lMW5Lb0X01zc9V_81vxJkDw/formResponse"
+                    method="post"
+                    target="hidden__iframe"
+                    onsubmit="submitted=true"
+                >
+                    <div class="form__title">
+                        <h2 class="heading__contact">CONTACT</h2>
+                        <!-- アンダーライン -->
+                        <div class="underLine"></div>
+                        <!-- ペンの装飾 -->
+                        <div class="penIllust">
+                            <img class="penIllust__img" src="../images/pen_illust.png" alt="ペンのイラスト">
+                        </div>
                     </div>
-                </div>
-                <div class="contact__info">
-                    <p class="contact__text">
-                        各種依頼内容や相談したいこと、料金のご質問など、お気軽にご連絡ください。<br>
-                        ２営業日以内に返信させていただきます。
-                    </p>
-                    <p class="insta__text">インスタグラムからもDMを受け付けておりますので、そちらもご利用ください。<br>
-                        <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">Instagram [@kyohei.tominaga]</a>
-                    </p>
-                </div>
-                <div class="contact__item">
-                    <label class="contact__label" for="name">お名前</label>
-                    <input class="contact__name" id="name" type="text" name="entry.1996875450" placeholder="山田 太郎" required="required">
-                </div>
-                <div class="contact__item">
-                    <label class="contact__label" for="mail">メールアドレス</label>
-                    <input class="contact__mail" id="mail" type="email" name="entry.458354352" placeholder="aaa@xxx.com" required="required">
-                </div>
-                <div class="contact__item">
-                    <label class="contact__label" for="content">お問い合わせ内容</label>
-                    <textarea class="contact__content" id="content" type="text" name="entry.8332858" placeholder="お問い合わせ内容をご入力ください" required="required"></textarea>
-                </div>
-                <div class="contact__item">
-                    <!-- <input class="contact__submit" type="submit" value="送信する"> -->
-                    <button  class="contact__submit">送信する
-                        <!-- ボタン上の右向き三角形 -->
-                    <div class="triangle-right"></div>
-                    </button>
-                </div>
-            </form>
+                    <div class="contact__info">
+                        <p class="contact__text">
+                            各種依頼内容や相談したいこと、料金のご質問など、お気軽にご連絡ください。<br>
+                            ２営業日以内に返信させていただきます。
+                        </p>
+                        <p class="insta__text">インスタグラムからもDMを受け付けておりますので、そちらもご利用ください。<br>
+                            <a href="https://www.instagram.com/kyohei.tominaga/" target="_blank">Instagram [@kyohei.tominaga]</a>
+                        </p>
+                    </div>
+                    <div class="contact__item">
+                        <label class="contact__label" for="name">お名前</label>
+                        <input class="contact__name" id="name" type="text" name="entry.1996875450" placeholder="山田 太郎" required="required">
+                    </div>
+                    <div class="contact__item">
+                        <label class="contact__label" for="mail">メールアドレス</label>
+                        <input class="contact__mail" id="mail" type="email" name="entry.458354352" placeholder="aaa@xxx.com" required="required">
+                    </div>
+                    <div class="contact__item">
+                        <label class="contact__label" for="content">お問い合わせ内容</label>
+                        <textarea class="contact__content" id="content" type="text" name="entry.8332858" placeholder="お問い合わせ内容をご入力ください" required="required"></textarea>
+                    </div>
+                    <div class="contact__item">
+                        <!-- <input class="contact__submit" type="submit" value="送信する"> -->
+                        <button  class="contact__submit">送信する
+                            <!-- ボタン上の右向き三角形 -->
+                            <div class="triangle-right"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 <!-- ====================================

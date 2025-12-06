@@ -72,6 +72,13 @@
 /* ====================================
 // ポートフォリオができるまで
 // ==================================== */
+.portfolioStory {
+    max-width: 1020px;
+    margin: 0 auto;
+    /* padding: 0 10px; */
+    /* overflow-x: hidden; */
+}
+
 .headingConcept {
     font-size: 40px;
     font-weight: bold;
@@ -81,6 +88,7 @@
 
 .stepContainer {
     display: flex;
+    /* overflow-x: hidden; */
 }
 
 .stepContainer__left {
@@ -166,6 +174,10 @@
     position: relative;
 }
 
+/* .footprints {
+    overflow-x: hidden;
+} */
+
 .footprints__step2 {
     width: 210px;
     height: 380px;
@@ -221,10 +233,10 @@
     padding-bottom: 248px;
 } */
 
-.step7__content {
-    padding-bottom: 368px;
+/* .step7__content { */
+    /* padding-bottom: 368px; */
     /* position: relative; */
-}
+/* } */
 
 .stepContainer__center {
     width: 22.4%; /* 224 / 1000 */
@@ -279,7 +291,7 @@
     width: 38.8%; /* 388 / 1000 */
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .headingConcept {
         font-size: 24px;
         padding-bottom: 64px;
@@ -296,9 +308,9 @@
     .step__Text {
         font-size: 14px;
     }
-}
+} */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .step__numberText {
         font-size: 14px;
     }
@@ -306,13 +318,14 @@
     .step__titleText {
         font-size: 18px;
     }
-}
+} */
 
 .portfolioStory--sp {
     display: none;
 }
 
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) { */
+@media screen and (max-width: 768px) {
     .stepContainer {
         display: none;
     }
@@ -347,11 +360,12 @@
     .step__content--sp {
         padding-bottom: 64px;
         position: relative;
+        /* overflow-x: hidden; */
     }
 
-    .step__contentEnd--sp {
+    /* .step__contentEnd--sp {
         padding-bottom: 180px;
-    }
+    } */
     
     .arrowDown {
         width: 9px;
