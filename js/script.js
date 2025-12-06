@@ -600,6 +600,8 @@ observerFilmBackRight.observe(image);
 //// 虫眼鏡のアニメーション
 //// ====================================
 const profileContainerElement = document.querySelector('.profileContainer');
+const profileTextSpElement = document.querySelector('.profile__text--sp');
+const aboutBtnContainerSpElement = document.querySelector('.aboutBtnContainer--sp');
 const triggerElement = document.querySelector('.sticky-trigger-marker');
 const MOBILE_QUERY_loupe = window.matchMedia('(max-width: 700px)');
 // Intersection Observer のオプション設定
@@ -618,9 +620,14 @@ $(function () {
                 if (!entry.isIntersecting) {
                     // sticky 要素にクラスを追加 (固定開始)
                     profileContainerElement.classList.add('is-stuck');
+                    profileTextSpElement.classList.add('is-stuck');
+                    aboutBtnContainerSpElement.classList.add('is-stuck');
                 } else {
                     // 監視ターゲットが再び画面内 (下) に入った時
                     profileContainerElement.classList.remove('is-stuck');
+                    profileTextSpElement.classList.remove('is-stuck');
+                    aboutBtnContainerSpElement.classList.remove('is-stuck');
+                    
                 }
             });
         }, options);
