@@ -1334,7 +1334,7 @@
 // ==================================== */
 .loupe {
     top: 296px;
-    /* position: sticky; */
+    position: sticky;
     /* position: absolute; */
     /* overflow-x: hidden; */
     overflow-x: clip;
@@ -1521,9 +1521,10 @@
         /* transform: translateX(-34.7%);
     } */
 
-    /* .loupe {
-        top: 216px;
-    } */
+    .loupe {
+        position: static;
+        /* top: 216px; */
+    }
 
     .loupeBox {
       width: 344px;
