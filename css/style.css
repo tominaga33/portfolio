@@ -1378,7 +1378,7 @@
     /* visibility: visible; */
     opacity: 1;
     /* transition: opacity 0.3s ease-in-out; */
-    transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     /* display: block; */
 }
 
@@ -1534,6 +1534,10 @@
         /* transform: translateX(-35%); */
         /* transform: translateX(-58%); */
         transform: translateX(15.5%);
+    }
+
+    .profileContainer.is-stuck {
+        transition: opacity 0.1s ease-in-out;
     }
 
     .profileIllust {
