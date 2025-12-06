@@ -346,4 +346,8 @@ input[name="tab__item--sp"] {
     .noImg__text {
         font-size: 36px;
     }
+
+    .grid__container {
+        padding-bottom: 180px;
+    }
 }

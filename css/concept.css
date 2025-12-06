@@ -233,10 +233,11 @@
     padding-bottom: 248px;
 } */
 
-/* .step7__content { */
-    /* padding-bottom: 368px; */
+.step7__content {
+    padding-bottom: 368px;
+    /* padding-bottom: 296px; */
     /* position: relative; */
-/* } */
+}
 
 .stepContainer__center {
     width: 22.4%; /* 224 / 1000 */
@@ -363,9 +364,9 @@
         /* overflow-x: hidden; */
     }
 
-    /* .step__contentEnd--sp {
+    .step__contentEnd--sp {
         padding-bottom: 180px;
-    } */
+    }
     
     .arrowDown {
         width: 9px;
