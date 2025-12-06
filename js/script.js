@@ -110,8 +110,8 @@ $(function () {
                 $(".pocket, .logoBox, .stitch, .fv__img--sp, .fv__img--sp--2nd").css({
                     opacity: 1
                 });
-                //前回で出現させたカードの不透明度を0にする
-                $(".cardOuterBox").css({
+                //前回で出現させたカード、コンセプトの不透明度を0にする
+                $(".cardOuterBox, .concept").css({
                     opacity: 0
                 });
                 // $(".cardOuterBox, .concept").css({
@@ -141,7 +141,7 @@ $(function () {
                 $(".logoBox, .stitch").css({
                     opacity: opacity
                 });
-                } else if (scroll > fadeOutEnd__sp && scroll <= expandEnd__sp) {
+            } else if (scroll > fadeOutEnd__sp && scroll <= expandEnd__sp) {
                 // 初期位置にスクロール量 * 速度 を加算
                 let newTopPocket = 300 + (scroll - fadeOutEnd__sp) * speedPocket__sp;
 
@@ -153,7 +153,7 @@ $(function () {
                 $(".logoBox, .stitch").css({
                     opacity: 0
                 });
-                //逆方向スクロール時にコンセプト内容を消す
+                //逆方向スクロール時にカードを消す
                 $(".cardOuterBox").css({
                     opacity: 0
                 })
@@ -174,20 +174,29 @@ $(function () {
             } else if (scroll > CardEnd__sp  && scroll <= fadeInEnd__sp) {
                 // 不透明度 (opacity) の計算
                 let opacityConcept = (scroll - CardEnd__sp) / (fadeInEnd__sp - CardEnd__sp);
+                // $(".concept").css("display", "block");
+                console.log(opacityConcept);
                 if (opacityConcept < 0) {
                     opacityConcept = 0;
                 } else if (opacityConcept > 1) {
                     opacityConcept = 1; // スクロール完了位置より後では不透明を維持
                 }
+                const elements = document.querySelectorAll('.concept');
+                elements.forEach((element) => {
+                const computedStyle = window.getComputedStyle(element);
+                console.log(`Opacity:`, computedStyle.opacity);
+                })
                 // スクロールに合わせてコンセプト内容をフェードイン
                 $(".concept").css({
                     opacity: opacityConcept
                 });
+                // console.log(12);
                 $(".pocketCircle, .pocketSquare, .logoBox, .stitch, .cardOuterBox .concept"
                 ).css("display", "block");
 
             } else if (scroll > fadeInEnd__sp  && scroll <= maxExpandEnd__sp) {
-                // 初期位置にスクロール量 * 速度 を加算
+                // 初期位置にスクロール量 * 速度 を加算 
+                // opacityConcept = 0;
                 let newTopConcept = 286 - (scroll - fadeInEnd__sp) * speedConcept__sp;
                 
                 $(".concept").css({

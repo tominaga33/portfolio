@@ -1410,6 +1410,10 @@ body {
 
 /* @media screen and (max-width: 768px) { */
 @media screen and (max-width: 700px) {
+    .about__stickyBox {
+        top: 80px;
+    }
+
     .about__relativeContainer {
       padding-top: 88px;
     }
@@ -1441,6 +1445,10 @@ body {
         /* transform: translateX(-34.7%);
     } */
 
+    .loupe {
+        top: 216px;
+    }
+
     .loupeBox {
       width: 344px;
         /* position: relative; */
@@ -1469,6 +1477,7 @@ body {
     }
 
     .aboutContainer {
+    height: 2400px;
       padding-bottom: 392px;
     }
 }
@@ -1643,6 +1652,18 @@ body {
     0% {transform: translate3d(0,2.5vw,0); }
     50% {transform: translate3d(0,-2.5vw,0); }
     100% {transform: translate3d(0,2.5vw,0); }
+}
+
+@media screen and (max-width: 700px) {
+    .pattern-plus-container--right {
+        display: none;
+    }
+    .pattern-square-container--left {
+        display: none;
+    }
+    .pattern-triangle-container--right {
+        display: none;
+    }
 }
 
 /* ====================================
