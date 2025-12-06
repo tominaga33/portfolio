@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-body {
+/* body { */
     /* overflow-x: hidden; */
     /* height: 5000px; */
-}
+/* } */
 
 /* ====================================
 // ローディング画面
@@ -1914,6 +1914,7 @@ body {
         border: solid 3px #333;
         left: calc(50% - 79px + 20px);
         top: 275px;
+        margin-bottom: 400px;
     }
 
     .greenSquare-small {
@@ -1922,17 +1923,18 @@ body {
         border: solid 3px #333;
         left: calc(50% - 79px + 55px);
         top: 275px;
+        margin-bottom: 400px;
     }
 
     .topCopyright__text {
         font-size: 12px;
     }
 
-    .topCopyright {
+    /* .topCopyright { */
         /* margin-bottom: 1500px; */
         /* padding-bottom: 1500px; */
         /* margin-bottom: -500px; */
-    }
+    /* } */
 
     .footerContainer {
         height: 1600px;
