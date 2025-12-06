@@ -1415,7 +1415,8 @@ body {
     }
 
     .about__relativeContainer {
-      padding-top: 88px;
+      /* padding-top: 88px; */
+      padding-top: 96px;
     }
 
     .heading__about {
