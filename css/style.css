@@ -740,9 +740,9 @@ body {
 } */
 
 /* これが原因！！上で50vwの設定が残っていた？？ */
-/* 120vwで画面幅が100%を超えるので、斜めにしても画面幅いっぱいに表示されるように！ */
+/* 130vwで画面幅が100%を超えるので、斜めにしても画面幅いっぱいに表示されるように！ */
 .scroll-infinity__list--left .slick-list {
-    width: 120vw;
+    width: 130vw;
 }
 
 .scroll-infinity__item--left {
@@ -1143,8 +1143,8 @@ body {
     }
 
     .scroll-infinity__list--left {
-        left: -250px;
-        top: 1825px;
+        left: -300px;
+        top: 1830px;
     }
 }
 
