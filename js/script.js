@@ -580,31 +580,57 @@ observerFilmBackRight.observe(image);
 //// ====================================
 const profileContainerElement = document.querySelector('.profileContainer');
 const triggerElement = document.querySelector('.sticky-trigger-marker');
-
+const MOBILE_QUERY_loupe = window.matchMedia('(max-width: 700px)');
 // Intersection Observer のオプション設定
-const options = {
-// rootMargin: '0px' はビューポートの端を基準にする
-// top: [sticky: 0] と同じ位置で交差を検出
-// rootMargin: '-1px 0px 0px 0px',
-rootMargin: '-296px 0px 0px 0px',
-threshold: 0 // 監視ターゲットの0%が見えたらトリガー
-};
+$(function () {
+    if (MOBILE_QUERY_loupe.matches) {
+        const options = {
+            // rootMargin: '0px' はビューポートの端を基準にする
+            // top: [sticky: 0] と同じ位置で交差を検出
+            // rootMargin: '-1px 0px 0px 0px',
+            rootMargin: '-216px 0px 0px 0px',
+            threshold: 0 // 監視ターゲットの0%が見えたらトリガー
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            // isIntersecting が false になった時 = 監視ターゲットが画面外 (上) に出た時
+                if (!entry.isIntersecting) {
+                    // sticky 要素にクラスを追加 (固定開始)
+                    profileContainerElement.classList.add('is-stuck');
+                } else {
+                    // 監視ターゲットが再び画面内 (下) に入った時
+                    profileContainerElement.classList.remove('is-stuck');
+                }
+            });
+        }, options);
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-    // isIntersecting が false になった時 = 監視ターゲットが画面外 (上) に出た時
-    if (!entry.isIntersecting) {
-    // sticky 要素にクラスを追加 (固定開始)
-    profileContainerElement.classList.add('is-stuck');
+        // 監視ターゲットの監視を開始
+        observer.observe(triggerElement);
+
     } else {
-    // 監視ターゲットが再び画面内 (下) に入った時
-    profileContainerElement.classList.remove('is-stuck');
+        const options = {
+            rootMargin: '-296px 0px 0px 0px',
+            threshold: 0 // 監視ターゲットの0%が見えたらトリガー
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // isIntersecting が false になった時 = 監視ターゲットが画面外 (上) に出た時
+                if (!entry.isIntersecting) {
+                    // sticky 要素にクラスを追加 (固定開始)
+                    profileContainerElement.classList.add('is-stuck');
+                } else {
+                    // 監視ターゲットが再び画面内 (下) に入った時
+                    profileContainerElement.classList.remove('is-stuck');
+                }
+            });
+        }, options);
+
+        // 監視ターゲットの監視を開始
+        observer.observe(triggerElement);
     }
 });
-}, options);
 
-// 監視ターゲットの監視を開始
-observer.observe(triggerElement);
+
 
 //// ====================================
 //// ペンのアクション
