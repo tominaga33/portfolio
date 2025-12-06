@@ -471,14 +471,14 @@ $(function () {
 // 以下、スクロールしてネガフィルムが現れたらアニメーション用のクラスを付与する
 // const imagesRight = document.querySelectorAll('.scroll-infinity__list--right');
 const imagesNegaFilmRight = document.querySelectorAll('.negaFilmSmall');
-const animationClassNameRight = 'img-animation--right';
+const animationClassNameFilmRight = 'img-animation-film--right';
 
 const observerNegaFilmRight = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add(animationClassNameRight);
+            entry.target.classList.add(animationClassNameFilmRight);
         } else {
-            entry.target.classList.remove(animationClassNameRight);
+            entry.target.classList.remove(animationClassNameFilmRight);
         }
     });
 });
@@ -488,7 +488,7 @@ observerNegaFilmRight.observe(image);
 });
 
 const imagesRight = document.querySelectorAll('.scroll-infinity__list--right');
-// const animationClassNameRight = 'img-animation--right';
+const animationClassNameRight = 'img-animation--right';
 
 const observerRight = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -505,14 +505,14 @@ observerRight.observe(image);
 });
 
 const imagesNegaFilmLeft = document.querySelectorAll('.negaFilmBig');
-const animationClassNameLeft = 'img-animation--left';
+const animationClassNameFilmLeft = 'img-animation-film--left';
 
 const observerNegaFilmLeft = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add(animationClassNameLeft);
+            entry.target.classList.add(animationClassNameFilmLeft);
         } else {
-            entry.target.classList.remove(animationClassNameLeft);
+            entry.target.classList.remove(animationClassNameFilmLeft);
         }
     });
 });
@@ -523,7 +523,7 @@ observerNegaFilmLeft.observe(image);
 
 // 以下、スクロールしてネガフィルムが現れたらアニメーション用のクラスを付与する
 const imagesLeft = document.querySelectorAll('.scroll-infinity__list--left');
-// const animationClassNameLeft = 'img-animation--left';
+const animationClassNameLeft = 'img-animation--left';
 
 const observerLeft = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

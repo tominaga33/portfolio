@@ -551,6 +551,7 @@ body {
     left: 81px;
     /* left: 50%; */
     transform: rotate(13deg);
+    /* z-index: 1000; */
 }
 
 /* .negaFilmSmall__img {
@@ -659,6 +660,7 @@ body {
     top: 1345px;
     height: 90px;
     width: auto;
+    z-index: 0;
 }
 
 .scroll-infinity__item--right {
@@ -695,13 +697,24 @@ body {
     /* position: relative; */
 /* } */
 
-.img-animation--right::before {
-    animation: img-animationDirection--right 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.img-animation-film--right::before {
+    animation: img-animationDirection--right 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* animation: img-animationDirection--right 3s linear forwards; */
     background: #fff;
     content: '';
     inset: 0;
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
+}
+
+.img-animation--right::before {
+    animation: img-animationDirection--right 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* animation: img-animationDirection--right 1s linear forwards; */
+    background: #fff;
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: 1000;
 }
 
 /* slickを使うと自動的に設定されるクラスの初期値を変更 */
@@ -735,6 +748,7 @@ body {
     top: 1820px;
     height: 360px;
     width: auto;
+    z-index: 0;
 }
 
 /* .scroll-infinity__list--right {
@@ -787,18 +801,36 @@ body {
     /* position: relative; */
 /* } */
 
-.img-animation--left::before {
+.img-animation-film--left::before {
     animation: img-animationDirection--left 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* animation: img-animationDirection--left 4s linear forwards; */
     background: #fff;
     content: '';
     inset: 0;
     position: absolute;
-    z-index: 1;
+    /* transform: scaleY(1.5); */
+    z-index: 1000;
     /* 以下のheightとtopの設定は、黒い点線が出てくるのを消すため（綺麗に元の画像と重なり切ってない分生じるもの）  */
     /* topの修正だけで良さそう */
     /* height: 110%; */
     top: -3px;
 }
+
+.img-animation--left::before {
+    animation: img-animationDirection--left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* animation: img-animationDirection--left 2s linear forwards; */
+    background: #fff;
+    content: '';
+    inset: 0;
+    position: absolute;
+    /* transform: scaleY(1.5); */
+    z-index: 1000;
+    /* 以下のheightとtopの設定は、黒い点線が出てくるのを消すため（綺麗に元の画像と重なり切ってない分生じるもの）  */
+    /* topの修正だけで良さそう */
+    /* height: 110%; */
+    top: -3px;
+}
+
 /* slickを使うと自動的に設定されるクラスの初期値を変更 */
 .scroll-infinity__list--left.slick-initialized .slick-slide {
     width: 360px !important;
@@ -1180,7 +1212,7 @@ body {
 
 @media screen and (max-width: 440px) {
     .scroll-infinity__list--right {
-        left: 98px;
+        left: 99px;
         top: 1279px;
     }
 
