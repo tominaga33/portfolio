@@ -294,6 +294,9 @@ $(function () {
                 $(".pocket").css({
                     top: "300px"
                 });
+                 $(".profileContainer").css({
+                    opacity: 0
+                 })
 
                 // 丸の初期位置(250px)にスクロール量 * 速度 を加算
                 let newTop = 250 + scroll * speedCircle;
@@ -749,7 +752,7 @@ $(function () {
             //     transform: "scale(" + pocketScale + ")"
             // });
             // console.log(`Scroll: ${scroll}, Limit: ${limit}, Target: ${limit - threshold}`);
-            console.log(`sumCircle: ${sumCircle}`);
+            // console.log(`sumCircle: ${sumCircle}`);
             $(".yellowCircle").css({
                 // スクロールに合わせて黄色の丸を小さくしていく
                 transform: "scale(" + sumCircle + ")"
