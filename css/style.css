@@ -1728,13 +1728,13 @@ body {
     /* position: relative; */
 }
 
-.yellowCircleContainer.is-stuck {
+/* .yellowCircleContainer.is-stuck {
     display: none;
-}
+} */
 
-.greenSquareContainer.is-stuck {
+/* .greenSquareContainer.is-stuck {
     display: none;
-}
+} */
 
 /* .yellowCircle {
     width: 1672px;
@@ -1846,8 +1846,16 @@ body {
     text-align: center;
 }
 
+.footerView__back--sp {
+    display: none;
+}
+
 /* @media screen and (max-width: 768px) { */
 @media screen and (max-width: 700px) {
+    .footerView__back--sp {
+        display: block;
+    }
+
     .pocket__footer {
         width: 158px;
         height: 166px;

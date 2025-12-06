@@ -114,6 +114,12 @@ $(function () {
                 $(".cardOuterBox, .concept").css({
                     opacity: 0
                 });
+                $(".cardOuterBox").css({
+                    opacity: 0
+                });
+                $(".concept").css({
+                    top: "286px"    
+                });
                 // $(".cardOuterBox, .concept").css({
                 //     opacity: 0
                 // })
@@ -294,9 +300,12 @@ $(function () {
                 $(".pocket").css({
                     top: "300px"
                 });
-                 $(".profileContainer").css({
-                    opacity: 0
-                 })
+                $(".concept").css({
+                    top: "272px"    
+                });
+                //  $(".profileContainer").css({
+                //     opacity: 0
+                //  })
 
                 // 丸の初期位置(250px)にスクロール量 * 速度 を加算
                 let newTop = 250 + scroll * speedCircle;
@@ -618,6 +627,7 @@ $(function () {
                 if (!entry.isIntersecting) {
                     // sticky 要素にクラスを追加 (固定開始)
                     profileContainerElement.classList.add('is-stuck');
+                    console.log(1);
                 } else {
                     // 監視ターゲットが再び画面内 (下) に入った時
                     profileContainerElement.classList.remove('is-stuck');
