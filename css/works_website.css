@@ -147,36 +147,6 @@
     padding-top: 0;
 }
 
-.workImg {
-    max-width: 828px;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: flex-start; /* 内部の画像 (<img>) を上端に揃える */
-    padding-top: 172px;
-    padding-bottom: 336px;
-    /* gap: 80px; */
-    gap: 9.7%;
-}
-
-.workImg__pc {
-    /* width: 516px; */
-    width: 62.3%;/* 516 / 828 */
-    /* height: 2150px; */
-    height: auto;
-    /* aspect-ratio: 516 / 2150; */
-    /* padding-bottom: auto; */
-    object-fit: contain;
-}
-
-.workImg__sp {
-    /* width: 226px; */
-    width: 27.3%;/* 226 / 828 */ 
-    /* height: 3339px; */
-    height: auto;
-    /* aspect-ratio: 226 / 3339; */
-}
-
 .yellowBtn {
     display: flex;
     justify-content: center;
@@ -187,6 +157,7 @@
     border-radius: 36px;
     background-color: #faff6c;
     margin: 0 auto;
+    margin-top: 172px;
     margin-bottom: 336px;
     /* top: 40px; */
     /* right: 50px; */
@@ -216,6 +187,36 @@
     top: 32px;
     right: 10%;
 
+}
+
+.workImg {
+    max-width: 828px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start; /* 内部の画像 (<img>) を上端に揃える */
+    /* padding-top: 172px; */
+    padding-bottom: 336px;
+    /* gap: 80px; */
+    gap: 9.7%;
+}
+
+.workImg__pc {
+    /* width: 516px; */
+    width: 62.3%;/* 516 / 828 */
+    /* height: 2150px; */
+    height: auto;
+    /* aspect-ratio: 516 / 2150; */
+    /* padding-bottom: auto; */
+    object-fit: contain;
+}
+
+.workImg__sp {
+    /* width: 226px; */
+    width: 27.3%;/* 226 / 828 */ 
+    /* height: 3339px; */
+    height: auto;
+    /* aspect-ratio: 226 / 3339; */
 }
 
 .backBtn {
@@ -295,6 +296,7 @@
     .yellowBtn {
         width: 196px;
         height: 56px;
+        margin-top: 152px;
         margin-bottom: 152px;
     }
 
