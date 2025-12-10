@@ -415,6 +415,10 @@ main {
     overflow-x: hidden;
 }
 
+.worksbannerPage main {
+    overflow-x: hidden;
+}
+
 .contact {
     /* padding-top: 100px;
     margin-top: 100px;
@@ -636,6 +640,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     padding-top: 54px;
     padding-bottom: 54px;
     /* padding-left: 20%; */
+    /* width: 70.0%; */
     width: 54.8%;
     /* width: 100%; */
     margin: 0 auto;
@@ -767,6 +772,7 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
     }
 
     .contact__info {
+        width: 70.0%;
         padding-top: 24px;
         padding-bottom: 24px;
     }
