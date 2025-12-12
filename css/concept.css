@@ -145,7 +145,7 @@
     /* width: 38.8%; */
     /* 388 / 1000 */
     height: auto;
-    aspect-ratio: 388 / 412;
+    /* aspect-ratio: 388 / 412; */
     border: solid 2px #333;
     border-radius: 0 0 16px 0;
     margin-bottom: 24px;

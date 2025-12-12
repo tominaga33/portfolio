@@ -1861,6 +1861,7 @@
     height: 2000px;
     margin: 0 auto;
     position: relative;
+    /* padding-bottom: 200px; */
 }
 
 .yellowCircleContainer {
@@ -1993,6 +1994,11 @@
     font-weight: bold;
     text-align: center;
 }
+
+ /* .footerView__back {
+    padding-top: 200px;
+    padding-bottom: 500px;
+ } */
 
 .footerView__back--sp {
     display: none;
