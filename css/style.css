@@ -1934,7 +1934,7 @@
     border: solid 6px #333;
     background-color: #faff6c;
     border-radius: 60px;
-    margin-bottom: 500px;
+    margin-bottom: 400px;/* ここが原因！ここが500だとポケットから少しはみ出る動作が発生する */
     left: calc(50% - 147px + 40px);
     z-index: 100;
 }
@@ -1948,7 +1948,7 @@
     background-color: #27c1ae;
     left: calc(50% - 147px + 110px);
     rotate: 45deg;
-    margin-bottom: 500px;
+    margin-bottom: 400px;/* ここが原因！ここが500だとポケットから少しはみ出る動作が発生する */
 }
 
 /* .greenSquare.triggerOnSquare {
@@ -1995,10 +1995,11 @@
     text-align: center;
 }
 
- /* .footerView__back {
-    padding-top: 200px;
-    padding-bottom: 500px;
- } */
+ /* .footerView__back { */
+    /* padding-top: 200px;
+    padding-bottom: 500px; */
+    /* margin-bottom: 1000px; */
+ /* } */
 
 .footerView__back--sp {
     display: none;
