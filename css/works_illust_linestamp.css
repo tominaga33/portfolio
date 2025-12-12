@@ -1,0 +1,431 @@
+@charset "utf-8";
+
+.mockup {
+    /* max-width: 828px; */
+    max-width: 82.8%;
+    height: auto;
+    aspect-ratio: 828 / 556;
+    background-color: white;
+    border: solid 2px #333;
+    border-radius: 32px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 104px;
+}
+
+.leftTopImg {
+    width: 30.2%; /* 200 / 828 */
+    height: auto;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    left: 3.0%; /* 60 / 828 */
+}
+
+.rightTopImg {
+    width: 30.2%; /* 200 / 828 */
+    height: auto;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    left: 27.0%; /* 60 + 150 / 828 */
+}
+
+.leftBottomImg {
+    width: 30.2%; /* 200 / 828 */
+    height: auto;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 3.0%; /* 60 / 828 */
+}
+
+.rightBottomImg {
+    width: 30.2%; /* 200 / 828 */
+    height: auto;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 27.0%; /* 60 / 828 */
+}
+
+.mockup__sp {
+    width: 36.2%; /* 300 / 828 */
+    height: auto;
+    /* aspect-ratio: 218 / 403; */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4.6%;
+}
+
+.stampImg--leftTop {
+    width: 14.5%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    right: 20.0%;
+}
+
+.stampImg--rightBottom {
+    width: 14.5%;
+    height: auto;
+    position: absolute;
+    top: 63%;
+    transform: translateY(-50%);
+    right: 10.0%;
+}
+
+.workInfo {
+    /* max-width: 828px; */
+    max-width: 82.8%;
+    margin: 0 auto;
+}
+
+.workInfo__list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.workInfo__textContainer {
+    display: flex;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #333;
+}
+
+.workInfo__textTitle {
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 1.75; */
+    width: 30.9%; /* 256 / 828 */
+    /* max-width: 256px;
+    width: 100%; */
+}
+
+.workInfo__textContent {
+    font-size: 16px;
+    /* margin-left: 30.9%;  */
+    /* 256 / 828 */
+}
+
+.workIntent {
+    padding-top: 56px;
+    /* padding-bottom: 172px; */
+    display: flex;
+}
+
+.workIntent__listItem {
+    width: 69.1%;/* 100% - 30.9% */
+}
+
+.workIntent__targetList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.workIntent__targetContainer {
+    /* width: 68.8%; */
+    /* 570 / 828 */
+    height: 16px; /* display: inline-block;の関係で下に空白の行が生まれるため16pxに設定 */
+    display: flex;
+    /* font-size: 0; */
+    /* 親要素内のスペースを無効化 */
+}
+
+.workIntent__targetTitleContainer {
+    display: flex;
+    flex-direction: row;
+    /* width: 140px; */
+    width: 24.5%; /* 140 / (828 - 256)*/ 
+}
+
+.workIntent__targetTitle {
+    /* width: 24.6%; */
+    /* 140 / 570 */
+    width: 70px;
+    /* width: 12.3%;  */
+    /* 70 / 570 */
+    font-size: 16px;
+    /* letter-spacing: 28px; */
+    text-align: justify;
+    /* text-justify: inter-character; */
+}
+
+.force-justify {
+    display: inline-block;
+    /* 垂直方向の配置をベースラインではなく、要素の底（bottom）に合わせる */
+    /* vertical-align: middle; */
+    width: 100%;
+}
+
+/* .workIntent__targetTitle p {
+    text-align: justify;
+    text-justify: inter-character;
+} */
+
+.workIntent__afterTargetTitle {
+    /* width: 70px; */
+    /* width: 12.3%; */
+    /* 70 / 570 */
+    font-size: 16px;
+}
+
+.workIntent__targetText {
+    font-size: 16px;
+    /* padding-bottom: 12px; */
+    /* line-height: 1.75; */
+}
+
+.workIntent__targetTextInner {
+    padding-bottom: 12px;
+}
+
+.workIntent__contentText {
+    font-size: 16px;
+    /* padding-top: 64px; */
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.workIntent__contentText::before {
+    content: "";
+    display: block;
+    /* 上部余白を打ち消すためのネガティブマージンを計算して適用 */
+    margin-top: -0.375em; /* (1.75 - 1) * 0.5em（上半分なので0.5） */
+    height: 0;
+}
+
+.portfolioPage .workIntent__contentText {
+    padding-top: 0;
+}
+
+.yellowBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 72px;
+    border: solid 1px #333;
+    border-radius: 36px;
+    background-color: #faff6c;
+    margin: 0 auto;
+    margin-top: 172px;
+    margin-bottom: 336px;
+    /* top: 40px; */
+    /* right: 50px; */
+    position: relative;
+    /* z-index: 9998; */
+    /* cursor: pointer; */
+    z-index: 1500;
+}
+
+.yellowBtn a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.yellowBtn__triangle-right {
+    background-color: #333;
+    /* background-color: #333; */
+    height: 8px;
+    width: calc(8px / 2 * tan(60deg));
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: absolute;
+    top: 32px;
+    right: 10%;
+
+}
+
+.workImg {
+    padding-top: 172px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workImg__row {
+    /* max-width: 828px; */
+    max-width: 82.8%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start; /* 内部の画像 (<img>) を上端に揃える */
+    /* padding-top: 172px; */
+    /* padding-bottom: 336px; */
+    /* gap: 80px; */
+    /* gap: 9.7%; */
+}
+
+.workImg__stamp {
+    width: 25.0%;/* 516 / 828 */
+    height: auto;
+    /* object-fit: contain; */
+}
+
+.workImg__pc {
+    /* width: 516px; */
+    width: 62.3%;/* 516 / 828 */
+    /* height: 2150px; */
+    height: auto;
+    /* aspect-ratio: 516 / 2150; */
+    /* padding-bottom: auto; */
+    object-fit: contain;
+}
+
+.workImg__sp {
+    /* width: 226px; */
+    width: 27.3%;/* 226 / 828 */ 
+    /* height: 3339px; */
+    height: auto;
+    /* aspect-ratio: 226 / 3339; */
+}
+
+.backBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 72px;
+    border: solid 1px #333;
+    border-radius: 36px;
+    background-color: #27c1ae;
+    margin: 0 auto;
+    margin-top: 196px;
+    margin-bottom: 336px;
+    /* top: 40px; */
+    /* right: 50px; */
+    position: relative;
+    /* z-index: 9998; */
+    /* cursor: pointer; */
+}
+
+.backBtn__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.triangle-left {
+    background-color: white;
+    /* background-color: #333; */
+    height: 8px;
+    width: calc(8px / 2 * tan(60deg));
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    position: absolute;
+    top: 32px;
+    left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .mockup {
+        margin-bottom: 64px;
+        border-radius: 12px;
+    }
+
+    .workInfo__textTitle, .workInfo__textContent,
+    .workIntent__targetTitle, .workIntent__afterTargetTitle,
+    .workIntent__targetText, .workIntent__contentText {
+        font-size: 14px;
+    }
+
+    .workIntent {
+        flex-direction: column;
+        gap: 20px;
+        /* padding-bottom: 120px; */
+    }
+
+    .workIntent__listItem {
+        width: 100%;
+    }
+
+    /* .workIntent__targetTitle {
+        width: 16.3%;
+    } */
+
+    .workIntent__targetTitleContainer {
+        width: 30.9%;
+    }
+
+    .workIntent__afterTargetTitle {
+    /* width: 6.3%; */
+    width: 30.9%;/* (256  / 828) - 70 */
+    /* padding-right: 70px; */
+    }
+
+    .workImg {
+        padding-top: 152px;
+        padding-bottom: 152px;
+    }
+
+    .yellowBtn {
+        width: 196px;
+        height: 56px;
+        margin-top: 152px;
+        /* margin-bottom: 152px; */
+    }
+
+    .yellowBtn a {
+        font-size: 18px;
+        line-height: 54px;
+    }
+
+    .yellowBtn__triangle-right {
+        top: 23px;
+        right: 8%;
+    }
+
+    .backBtn {
+        /* width: 168px;
+        height: 44px;
+        border-radius: 22px; */
+        width: 196px;
+        height: 56px;
+        border-radius: 28px;
+        margin-top: 152px;
+        margin-bottom: 196px;
+    }
+
+    .backBtn__text {
+        /* font-size: 14px; */
+        font-size: 18px;
+    }
+
+    .triangle-left {
+        /* top: 18px;
+        left: 8%; */
+        top: 24px;
+        left: 8%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .workInfo__textTitle, .workInfo__textContent,
+    .workIntent__targetTitle, .workIntent__afterTargetTitle,
+    .workIntent__targetText, .workIntent__contentText {
+        font-size: 12px;
+    }
+
+    .workIntent__targetTitle {
+        width: 56px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .workInfo__textTitle, .workInfo__textContent,
+    .workIntent__targetTitle, .workIntent__afterTargetTitle,
+    .workIntent__targetText, .workIntent__contentText {
+        font-size: 10px;
+    }
+
+    .workIntent__targetTitle {
+        width: 44px;       
+    }
+}  
