@@ -258,6 +258,10 @@
         width: 300px;
     }
 
+    .skills__img {
+        border-radius: 16px;
+    }
+
     .skills__text {
         width: 300px;   
     }
