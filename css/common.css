@@ -35,13 +35,20 @@ body {
 .header__nav {
     max-width: 535px;
     width: 100%;
+    /* position: fixed;
+    top: 40px;
+    right: 3.1%;
+    z-index: 9999;
+    padding-left: 20px;
+    background-color: #ffffffb6; */
 }
 
 .header__logoItem {
     width: 90px;
     position: fixed;
     top: 40px;
-    left: 3.7%;
+    /* left: 3.7%; */
+    left: 3.1%;
     z-index: 11000;
 }
 
