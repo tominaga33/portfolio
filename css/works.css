@@ -330,6 +330,11 @@ input[name="tab__item--sp"] {
     .bottomLabel {
         display: block
     }
+
+    .noImg__text {
+        font-size: 40px;
+        padding-bottom: 152px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -344,7 +349,8 @@ input[name="tab__item--sp"] {
     }
 
     .noImg__text {
-        font-size: 36px;
+        font-size: 32px;
+        padding-bottom: 152px;
     }
 
     .grid__container {
