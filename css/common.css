@@ -780,8 +780,8 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 
     .contact__info {
         width: 70.0%;
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding-top: 48px;
+        padding-bottom: 48px;
     }
 
     .contact__text {
