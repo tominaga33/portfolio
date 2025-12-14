@@ -407,6 +407,12 @@ $(function () {
 //// ====================================
 //// ネガフィルムのアニメーション
 //// ====================================
+// // 親要素の幅が変更された後
+// if ($('.scroll-infinity__list--right').hasClass('slick-initialized')) {
+//     $('.scroll-infinity__list--right').slick('unslick');
+// }
+// $('.scroll-infinity__list--right').slick({ /* 初期化オプションを再度記述 */ });
+
 //画像の自動スクロール（右方向）
 $(function () {
     $(".scroll-infinity__list--right").slick({
@@ -414,38 +420,39 @@ $(function () {
     autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
     speed: 4000, // スライドが流れる速度を設定
     cssEase: "linear", // スライドの流れ方を等速に設定
-    slidesToShow: 8, // 表示するスライドの数
+    // slidesToShow: 8, // 表示するスライドの数
     swipe: false, // 操作による切り替えはさせない
     arrows: false, // 矢印非表示
     pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
     pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
     rtl: true, //RTL (Right-to-Left) モード（流れる方向を左から右へ）を有効にする
+    variableWidth: true//画面幅に応じて表示するスライド数を決める→この設定でうまくいった！！！
+    // responsive: []
     //レスポンシブを設定してみたがうまく機能してない
-    responsive: [
-            {
-                // 画面幅が1024px以下の場合に適用
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 6, // 6枚表示
-                    // 必要であれば他の設定も変更可能
-                }
-            },
-            {
-                // 画面幅が768px以下の場合に適用
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 4, // 4枚表示
-                }
-            },
-            {
-                // 画面幅が480px以下の場合に適用
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2, // 2枚表示
-                }
-            }
-        ]
-    
+    // responsive: [
+    //         {
+    //             // 画面幅が1024px以下の場合に適用
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 6, // 6枚表示
+    //                 // 必要であれば他の設定も変更可能
+    //             }
+    //         },
+    //         {
+    //             // 画面幅が768px以下の場合に適用
+    //             breakpoint: 768,
+    //             settings: {
+    //                 slidesToShow: 4, // 4枚表示
+    //             }
+    //         },
+    //         {
+    //             // 画面幅が480px以下の場合に適用
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 2, // 2枚表示
+    //             }
+    //         }
+    //     ]
     });
 });
 
@@ -456,36 +463,37 @@ $(function () {
     autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
     speed: 4000, // スライドが流れる速度を設定
     cssEase: "linear", // スライドの流れ方を等速に設定
-    slidesToShow: 5, // 表示するスライドの数
+    // slidesToShow: 5, // 表示するスライドの数
     swipe: false, // 操作による切り替えはさせない
     arrows: false, // 矢印非表示
     pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
     pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+    variableWidth: true//画面幅に応じて表示するスライド数を決める→この設定でうまくいった！！！
     //レスポンシブを設定してみたがうまく機能してない
-    responsive: [
-            {
-                // 画面幅が1024px以下の場合に適用
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 4, // 4枚表示
-                    // 必要であれば他の設定も変更可能
-                }
-            },
-            {
-                // 画面幅が768px以下の場合に適用
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3, // 3枚表示
-                }
-            },
-            {
-                // 画面幅が480px以下の場合に適用
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2, // 2枚表示
-                }
-            }
-        ]
+    // responsive: [
+    //         {
+    //             // 画面幅が1024px以下の場合に適用
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 4, // 4枚表示
+    //                 // 必要であれば他の設定も変更可能
+    //             }
+    //         },
+    //         {
+    //             // 画面幅が768px以下の場合に適用
+    //             breakpoint: 768,
+    //             settings: {
+    //                 slidesToShow: 3, // 3枚表示
+    //             }
+    //         },
+    //         {
+    //             // 画面幅が480px以下の場合に適用
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 2, // 2枚表示
+    //             }
+    //         }
+    //     ]
     });
 });
 

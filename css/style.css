@@ -655,16 +655,33 @@
     width: 50vw;
 }
 
+.test {
+    /* width: 1777px;
+    height: 90px; */
+    /* transform: rotate(13deg); */
+    position: absolute;
+    left: 2px;
+    top: 24px;
+    /* top: 1345px; */
+}
+
 .scroll-infinity__list--right {
     /* transform: translateX(30px) rotate(13deg); */
-    transform: rotate(13deg);
-    position: absolute;
-    left: 94px;
+    /* transform: rotate(13deg); */
+    /* position: absolute;
+    left: 94px; */
     /* left: 50%; */
-    top: 1345px;
-    height: 90px;
-    width: auto;
+    /* top: 1345px; */
+    /* height: 90px;
+    width: auto; */
+    /* width: 1777px; */
+    /* height: auto; */
+    /* height: 90px; */
+    position: absolute;
+    left: 2px;
+    top: 24px;
     z-index: 0;
+    opacity: 0;
 }
 
 .scroll-infinity__item--right {
@@ -702,7 +719,7 @@
 /* } */
 
 .img-animation-film--right::before {
-    animation: img-animationDirection--right 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: img-animationDirection--right 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     /* animation: img-animationDirection--right 3s linear forwards; */
     background: #fff;
     content: '';
@@ -711,14 +728,19 @@
     z-index: 1000;
 }
 
-.img-animation--right::before {
+/* .img-animation--right::before {
     animation: img-animationDirection--right 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    /* animation: img-animationDirection--right 1s linear forwards; */
     background: #fff;
     content: '';
     inset: 0;
     position: absolute;
     z-index: 1000;
+} */
+
+.img-animation--right {
+    opacity: 1;
+    transition: 0.7s;
+    transition-delay: 0.5s;
 }
 
 /* slickを使うと自動的に設定されるクラスの初期値を変更 */
@@ -743,17 +765,25 @@
 
 .scroll-infinity__list--left {
     /* display: flex; */
-    transform: rotate(-5deg);
+    /* transform: rotate(-5deg); */
     position: absolute;
     /* transform: translateX(28px) rotate(-5deg); */
     /* padding-top: 296px;
     padding-bottom: 592px; */
-    left: -800px;
-    top: 1820px;
-    height: 360px;
-    width: auto;
+    /* left: -800px;
+    top: 1820px; */
+    /* height: 360px;
+    width: auto; */
+    position: absolute;
+    left: 200px;
+    /* left: 20%; */
+    /* left: 0; */
+    top: 46px;
     z-index: 0;
+    opacity: 0;
 }
+
+
 
 /* .scroll-infinity__list--right {
     transform: rotate(13deg);
@@ -766,7 +796,9 @@
 /* これが原因！！上で50vwの設定が残っていた？？ */
 /* 130vwで画面幅が100%を超えるので、斜めにしても画面幅いっぱいに表示されるように！ */
 .scroll-infinity__list--left .slick-list {
-    width: 130vw;
+    /* width: 130vw; */
+    /* 130だと画面幅小さくすると端が切れてしまうので思いっきり伸ばして設定 */
+    width: 300vw;
 }
 
 .scroll-infinity__item--left {
@@ -806,7 +838,7 @@
 /* } */
 
 .img-animation-film--left::before {
-    animation: img-animationDirection--left 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: img-animationDirection--left 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     /* animation: img-animationDirection--left 4s linear forwards; */
     background: #fff;
     content: '';
@@ -820,19 +852,25 @@
     top: -3px;
 }
 
-.img-animation--left::before {
-    animation: img-animationDirection--left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* .img-animation--left::before { */
+    /* animation: img-animationDirection--left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; */
     /* animation: img-animationDirection--left 2s linear forwards; */
-    background: #fff;
+    /* background: #fff;
     content: '';
     inset: 0;
-    position: absolute;
+    position: absolute; */
     /* transform: scaleY(1.5); */
-    z-index: 1000;
+    /* z-index: 1000; */
     /* 以下のheightとtopの設定は、黒い点線が出てくるのを消すため（綺麗に元の画像と重なり切ってない分生じるもの）  */
     /* topの修正だけで良さそう */
     /* height: 110%; */
-    top: -3px;
+    /* top: -3px; */
+/* } */
+
+.img-animation--left {
+    opacity: 1;
+    transition: 0.7s;
+    transition-delay: 0.5s;
 }
 
 /* slickを使うと自動的に設定されるクラスの初期値を変更 */
@@ -938,7 +976,7 @@
     
 }
 
-@media screen and (max-width: 2560px) {
+/* @media screen and (max-width: 2560px) {
     .scroll-infinity__list--right {
         left: 85px;
         top: 1398px;
@@ -1236,7 +1274,7 @@
         left: -170px;
         top: 1828px;
     }
-}
+} */
 
 /* ====================================
 // ABOUT
