@@ -838,7 +838,7 @@
 /* } */
 
 .img-animation-film--left::before {
-    animation: img-animationDirection--left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: img-animationDirection--left 2.0s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     /* animation: img-animationDirection--left 4s linear forwards; */
     background: #fff;
     content: '';
