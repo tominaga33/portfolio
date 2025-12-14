@@ -730,8 +730,8 @@ CSSでmargin相殺が起きてbodyの上に296px分の余白が生まれてし�
 
 /* @media screen and (max-width: 768px) { */
 @media screen and (max-width: 700px) {
-    .contactContainer {
-        padding-top: 296px;
+    .contactPage .contact__container {
+        margin-top: 192px;
     }
 
     .contact__outerLine {

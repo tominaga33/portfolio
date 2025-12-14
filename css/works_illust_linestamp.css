@@ -362,7 +362,7 @@
 
     .workImg {
         padding-top: 152px;
-        padding-bottom: 152px;
+        /* padding-bottom: 152px; */
     }
 
     .yellowBtn {
