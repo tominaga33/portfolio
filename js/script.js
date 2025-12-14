@@ -65,12 +65,12 @@ $(function () {
         //コンセプト内容のフェードインが完了するまでのスクロール位置
         const fadeInEnd__sp = 1000;
         // ポケットの拡大が画面幅いっぱいまで完了するスクロール位置
-        const maxExpandEnd__sp = 2000;
+        const maxExpandEnd__sp = 1600;
         // const maxExpandEnd = 2200;
         // ポケットが画面いっぱいまで拡大する速度の調整用
-        const maxExpandSpeedPocket__sp = 140;
+        const maxExpandSpeedPocket__sp = 70;
         // コンセプトの内容が上がっていく速度の調整用
-        const speedConcept__sp = 0.60;
+        const speedConcept__sp = 1.10;
 
         // ★scroll位置からポケットのscaleを毎回一意に決める関数★
         function getPocketScale(scroll) {

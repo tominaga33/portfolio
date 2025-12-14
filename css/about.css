@@ -78,7 +78,8 @@
     }
 
     .profile__text {
-        width: 300px;
+        /* width: 300px; */
+        width: fit-content;
     }
 
     .profile__image {
