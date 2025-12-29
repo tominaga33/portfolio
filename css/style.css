@@ -635,7 +635,7 @@
 .animationFilmBackLeft {
     opacity: 0.3;
     transform: rotate(5deg) translateY(0);
-    transition: 3s;
+    transition: 4s;
 }
 
 .animationFilmBackRight {

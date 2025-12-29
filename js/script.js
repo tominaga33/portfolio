@@ -1000,8 +1000,8 @@ window.addEventListener("scroll", () => {
         ease: "power1.inOut",
         // 終わったらフラグ解除して次のスクロールを受け付ける
         onComplete: () => (isTransitioning = false)
-      });
-    // }, 300);
+    //   });
+    }, 300);
     });
   }
 });
