@@ -428,6 +428,8 @@
     font-size: 24px;
     font-weight: bold;
     color: #fff;
+    line-height: 72px;
+    border-radius: 36px;
 }
 
 .concept__triangle-right {
@@ -1468,8 +1470,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 14px;
-    padding-right: 14px;
+    /* padding-left: 14px;
+    padding-right: 14px; */
+    position: relative;
     /* z-index: 500; */
     /* position: absolute; */
     /* top:200px;
@@ -1478,12 +1481,22 @@
     margin: auto; */
 }
 
+/* .aboutBtn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+} */
+
 .aboutBtn__text {
+    width: 100%;
+    height: 100%;
     color: #fff;
     /* color: #333; */
     font-weight: bold;
     line-height: 120px;
     border-radius: 60px;
+    padding-left: 14px;
 }
 
 .about__triangle-right {
@@ -1492,9 +1505,9 @@
     height: 8px;
     width: calc(8px / 2 * tan(60deg));
     clip-path: polygon(0 0, 100% 50%, 0 100%);
-    /* position: absolute; */
-    /* top: 32px; */
-    /* right: 20%; */  
+    position: absolute;
+    top: 56px;
+    right: 14px;  
 }
 
 .profile__text--sp {
@@ -1665,7 +1678,7 @@
     }
 
     .aboutBtn--sp {
-        display: block;
+        /* display: block; */
         width: 120px;
         height: 120px;
         border-radius: 60px;
@@ -1674,8 +1687,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-left: 14px;
-        padding-right: 14px;
+        position: relative;
+        /* padding-left: 14px; */
+        /* padding-right: 14px; */
         /* z-index: 500; */
         /* position: absolute; */
         /* top:200px;
@@ -1684,13 +1698,23 @@
         margin: auto; */
     }
 
+    /* .aboutBtn--sp a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 60px;
+    } */
+
     .aboutBtn__text--sp {
+        width: 100%;
+        height: 100%;
         display: block;
         color: #fff;
         /* color: #333; */
         font-weight: bold;
         line-height: 120px;
         border-radius: 60px;
+        padding-left: 14px;
     }
 
     .about__triangle-right--sp {
@@ -1700,9 +1724,9 @@
         height: 8px;
         width: calc(8px / 2 * tan(60deg));
         clip-path: polygon(0 0, 100% 50%, 0 100%);
-        /* position: absolute; */
-        /* top: 32px; */
-        /* right: 20%; */  
+        position: absolute;
+        top: 56px;
+        right: 14px;  
     }
 }
 
