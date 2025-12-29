@@ -2020,7 +2020,7 @@
     background-color: #27c1ae;
     left: calc(50% - 147px + 110px);
     rotate: 45deg;
-    margin-bottom: 400px;/* ここが原因！ここが500だとポケットから少しはみ出る動作が発生する */
+    margin-bottom: 350px;/* ここが原因！ここが400だとポケットから少しはみ出る動作が発生する */
 }
 
 /* .greenSquare.triggerOnSquare {
