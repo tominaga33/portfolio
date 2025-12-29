@@ -958,53 +958,109 @@ const threshold = 5; // 「もう下だな」って判断する余裕（ピク�
 const fadeMask = document.getElementById("fadeMask"); // フェード用のマスク要素
 let isTransitioning = false; // 今トランジション中かどうかのフラグ
 
-// --- スクロールのたびに呼ばれる処理 ---
-window.addEventListener("scroll", () => {
-  // もしすでにトランジション中なら何もしない
-  if (isTransitioning) return;
+$(function () {
+    if (MOBILE_QUERY.matches) {
+        // --- スクロールのたびに呼ばれる処理 ---
+        window.addEventListener("scroll", () => {
+        // もしすでにトランジション中なら何もしない
+        if (isTransitioning) return;
 
-  // 現在のスクロール量
-  const scroll = window.scrollY;
-  // 表示中の画面の高さ（ビューポート）
-  const vh = window.innerHeight;
-  // ページ全体の高さから画面分引くと「下端までのスクロール量」になる
-  const limit = document.body.scrollHeight - vh;
-//   console.log(`Scroll: ${scroll}, Limit: ${limit}, Target: ${limit - threshold}`);
+        // 現在のスクロール量
+        const scroll = window.scrollY;
+        // 表示中の画面の高さ（ビューポート）
+        const vh = window.innerHeight;
+        // ページ全体の高さから画面分引くと「下端までのスクロール量」になる
+        const limit = document.body.scrollHeight - vh;
+        //   console.log(`Scroll: ${scroll}, Limit: ${limit}, Target: ${limit - threshold}`);
 
-  // 下端付近に来たかチェック
-  if (scroll >= limit - threshold) {
-    //  if (scroll >= limit) {
-    // フラグON（2重に動かないように）
-    isTransitioning = true;
+        // 下端付近に来たかチェック
+        if (scroll >= limit - threshold) {
+            //  if (scroll >= limit) {
+            // フラグON（2重に動かないように）
+            isTransitioning = true;
 
-    // === ① オーバーレイをふわっと出す ===
-    // 白いマスクがゆっくりフェードイン
-    gsap.to(fadeMask, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power1.out"
-    });
+            // === ① オーバーレイをふわっと出す ===
+            // 白いマスクがゆっくりフェードイン
+            gsap.to(fadeMask, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power1.out"
+            });
 
-    // === ② 少し待ってから上に戻す ===
-    // 300msくらい待ってからスクロール位置を先頭に戻します
-    setTimeout(() => {
-      // ジャンプ的に上へ戻る（アニメーションなし）
-      window.scrollTo({ top: 0, behavior: "auto" });
+            // === ② 少し待ってから上に戻す ===
+            // 300msくらい待ってからスクロール位置を先頭に戻します
+            setTimeout(() => {
+            // ジャンプ的に上へ戻る（アニメーションなし）
+            window.scrollTo({ top: 0, behavior: "auto" });
 
-      // === ③ フェードを消す ===
-      // 白マスクをゆっくりフェードアウト
-      console.log("GSAP実行前")
-      gsap.to(fadeMask, {
-        opacity: 0,
-        duration: 0.4,
-        ease: "power1.inOut",
-        // 終わったらフラグ解除して次のスクロールを受け付ける
-        onComplete: () => (isTransitioning = false)
-      });
-    // }, 300);
-    });
-  }
-});
+            // === ③ フェードを消す ===
+            // 白マスクをゆっくりフェードアウト
+            console.log("GSAP実行前")
+            gsap.to(fadeMask, {
+                opacity: 0,
+                duration: 0.4,
+                ease: "power1.inOut",
+                // 終わったらフラグ解除して次のスクロールを受け付ける
+                onComplete: () => (isTransitioning = false)
+            });
+            }, 300);
+            // });
+        }
+        });
+
+    } else {
+
+        // --- スクロールのたびに呼ばれる処理 ---
+        window.addEventListener("scroll", () => {
+        // もしすでにトランジション中なら何もしない
+        if (isTransitioning) return;
+
+        // 現在のスクロール量
+        const scroll = window.scrollY;
+        // 表示中の画面の高さ（ビューポート）
+        const vh = window.innerHeight;
+        // ページ全体の高さから画面分引くと「下端までのスクロール量」になる
+        const limit = document.body.scrollHeight - vh;
+        //   console.log(`Scroll: ${scroll}, Limit: ${limit}, Target: ${limit - threshold}`);
+
+        // 下端付近に来たかチェック
+        if (scroll >= limit - threshold) {
+            //  if (scroll >= limit) {
+            // フラグON（2重に動かないように）
+            isTransitioning = true;
+
+            // === ① オーバーレイをふわっと出す ===
+            // 白いマスクがゆっくりフェードイン
+            gsap.to(fadeMask, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power1.out"
+            });
+
+            // === ② 少し待ってから上に戻す ===
+            // 300msくらい待ってからスクロール位置を先頭に戻します
+            setTimeout(() => {
+            // ジャンプ的に上へ戻る（アニメーションなし）
+            window.scrollTo({ top: 0, behavior: "auto" });
+
+            // === ③ フェードを消す ===
+            // 白マスクをゆっくりフェードアウト
+            console.log("GSAP実行前")
+            gsap.to(fadeMask, {
+                opacity: 0,
+                duration: 0.4,
+                ease: "power1.inOut",
+                // 終わったらフラグ解除して次のスクロールを受け付ける
+                onComplete: () => (isTransitioning = false)
+            });
+            // }, 300);
+            });
+        }
+        });
+
+
+    }
+})
 
 //// ====================================
 //// ハンバーガーメニュー
