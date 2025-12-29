@@ -77,20 +77,20 @@
     top: 250px;
     z-index: 50;
     background-color: #fbff6c;
-    animation: bounceCircle 0.2s infinite alternate ease-in-out;
+    animation: bounceCircle 0.3s infinite alternate ease-in-out;
 }
 
 .loading__pocketSquare {
     width: 138px;
     height: 138px;
-    /* rotate: 45deg; */
+    transform: rotate(45deg);
     border: solid 6px #333;
-    position: fixed;
+    position: fixed; 
     left: calc(50% - 147px + 110px);
     top: 250px;
     z-index: 40;
     background-color: #27c1ae;
-    animation: bounceSquare 0.3s infinite alternate ease-in-out;
+    animation: bounceSquare 0.3s 0.15s infinite alternate ease-in-out;
 }
 
 .loadingText {
@@ -149,7 +149,7 @@
         width: 74px;
         height: 74px;
         border: solid 3px #333;
-        left: calc(50% - 79px + 55px);
+        left: calc(50% - 79px + 62px);
         top: 275px;
     }
 
@@ -159,6 +159,36 @@
 
     .count_wrap {
         top: 80px;
+    }
+
+    @keyframes bounceCircle {
+        /* 0% はアニメーションの開始時 */
+        0% {
+            /* オブジェクトをY軸方向に移動させない（元の位置） */
+            transform: translateY(0);
+        }
+        
+        /* 100% はアニメーションの終了時 */
+        100% {
+            /* オブジェクトを下に20px移動させる */
+            transform: translateY(10px);
+        }
+    }
+
+    @keyframes bounceSquare {
+        /* 0% はアニメーションの開始時 */
+        0% {
+            /* オブジェクトをY軸方向に移動させない（元の位置） */
+            transform: translateY(0) rotate(45deg);
+            /* transform: translateY(0); */
+        }
+        
+        /* 100% はアニメーションの終了時 */
+        100% {
+            /* オブジェクトを下に20px移動させる */
+            transform: translateY(10px) rotate(45deg);
+            /* transform: translateY(20px); */
+        }
     }
 }
 
@@ -329,7 +359,7 @@
         width: 74px;
         height: 74px;
         border: solid 3px #333;
-        left: calc(50% - 79px + 55px);
+        left: calc(50% - 79px + 62px);
         top: 275px;
     }
 
@@ -2128,7 +2158,7 @@
         width: 74px;
         height: 74px;
         border: solid 3px #333;
-        left: calc(50% - 79px + 55px);
+        left: calc(50% - 79px + 62px);
         top: 275px;
         margin-bottom: 400px;
     }
