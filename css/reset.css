@@ -33,12 +33,12 @@ a,button {
   /*色を消す*/
   color: inherit;
   transition: 0.3s;
+  /* タップされた時のハイライトカラーを消す */
+  -webkit-tap-highlight-color: transparent;
 }
 a:hover,button:hover {
   /* ホバーした時に半透明になる度合い */
   opacity: 0.7;
-  /* タップされた時のハイライトカラーを消す */
-  -webkit-tap-highlight-color: transparent;
 }
 
 ul {
