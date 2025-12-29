@@ -914,6 +914,7 @@
     line-height: 70px;
     font-size: 24px;
     font-weight: bold;
+    border-radius: 36px;
 }
 
 /* .worksBtn__text {
@@ -1481,6 +1482,8 @@
     color: #fff;
     /* color: #333; */
     font-weight: bold;
+    line-height: 120px;
+    border-radius: 60px;
 }
 
 .about__triangle-right {
@@ -1686,6 +1689,8 @@
         color: #fff;
         /* color: #333; */
         font-weight: bold;
+        line-height: 120px;
+        border-radius: 60px;
     }
 
     .about__triangle-right--sp {
