@@ -979,11 +979,11 @@ window.addEventListener("scroll", () => {
 
     // === ① オーバーレイをふわっと出す ===
     // 白いマスクがゆっくりフェードイン
-    gsap.to(fadeMask, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power1.out"
-    });
+    // gsap.to(fadeMask, {
+    //   opacity: 1,
+    //   duration: 0.3,
+    //   ease: "power1.out"
+    // });
 
     // === ② 少し待ってから上に戻す ===
     // 300msくらい待ってからスクロール位置を先頭に戻します
@@ -993,14 +993,15 @@ window.addEventListener("scroll", () => {
 
       // === ③ フェードを消す ===
       // 白マスクをゆっくりフェードアウト
-      console.log("GSAP実行前")
-      gsap.to(fadeMask, {
-        opacity: 0,
-        duration: 0.4,
-        ease: "power1.inOut",
+    //   console.log("GSAP実行前")
+    //   gsap.to(fadeMask, {
+    //     opacity: 0,
+    //     duration: 0.4,
+    //     ease: "power1.inOut",
         // 終わったらフラグ解除して次のスクロールを受け付ける
-        onComplete: () => (isTransitioning = false)
-      });
+    //     onComplete: () => (isTransitioning = false)
+    //   });
+      isTransitioning = false
     // }, 300);
     });
   }
