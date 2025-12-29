@@ -622,13 +622,13 @@
     left: -180px;
     transform: rotate(5deg) translateY(100px);
     z-index: -1200;
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 .animationFilmBackLeft {
     opacity: 0.3;
     transform: rotate(5deg) translateY(0);
-    transition: 2s;
+    transition: 3s;
 }
 
 .animationFilmBackRight {
