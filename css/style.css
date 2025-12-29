@@ -1575,7 +1575,7 @@
     }
 
     .profileContainer.is-stuck {
-        transition: opacity 0.1s ease-in-out;
+        transition: opacity 0.04s ease-in-out;
     }
 
     .profileIllust {
