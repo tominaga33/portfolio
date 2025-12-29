@@ -975,7 +975,7 @@ window.addEventListener("scroll", () => {
   if (scroll >= limit - threshold) {
     //  if (scroll >= limit) {
     // フラグON（2重に動かないように）
-    isTransitioning = true;
+    // isTransitioning = true;
 
     // === ① オーバーレイをふわっと出す ===
     // 白いマスクがゆっくりフェードイン
@@ -1001,7 +1001,7 @@ window.addEventListener("scroll", () => {
         // 終わったらフラグ解除して次のスクロールを受け付ける
     //     onComplete: () => (isTransitioning = false)
     //   });
-      isTransitioning = false
+    //   isTransitioning = false
     // }, 300);
     });
   }
